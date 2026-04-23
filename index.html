@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>בניית הגוף מבפנים ומבחוץ — Elice Fit</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&family=Frank+Ruhl+Libre:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../colors_and_type.css" />
+  <link rel="stylesheet" href="guide.css" />
+
+  <!-- React + Babel -->
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+  <style>
+    body { margin: 0; background: var(--color-bg); }
+    [data-dark="true"] {
+      --color-bg: #111113;
+      --color-surface: #1D1D1F;
+      --color-surface-elevated: #2C2C2E;
+      --color-fg1: #F5F5F7;
+      --color-fg2: #98989F;
+      --color-fg3: #636366;
+      --color-border: rgba(255,255,255,0.07);
+      --color-border-strong: rgba(255,255,255,0.13);
+      --shadow-soft: 0 1px 3px rgba(0,0,0,0.4);
+      --shadow-medium: 0 4px 16px rgba(0,0,0,0.4);
+      --shadow-large: 0 12px 40px rgba(0,0,0,0.5);
+    }
+    #loading {
+      position: fixed; inset: 0;
+      background: #111113;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      z-index: 9999;
+      transition: opacity 0.5s, visibility 0.5s;
+    }
+    #loading.hidden { opacity: 0; visibility: hidden; }
+    .loader-logo { height: 36px; margin-bottom: 28px; animation: float2 2s ease-in-out infinite; }
+    .loader-bar-wrap {
+      width: 200px; height: 3px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 2px; overflow: hidden;
+    }
+    .loader-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #E85D75, #BBB2EE);
+      border-radius: 2px;
+      animation: shimmer 1.5s ease-in-out infinite;
+      background-size: 200% 100%;
+    }
+    .loader-text {
+      margin-top: 16px;
+      font-family: 'Heebo', sans-serif;
+      font-size: 13px; color: rgba(255,255,255,0.4);
+      letter-spacing: 0.05em;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Loading screen -->
+<div id="loading">
+  <img src="../assets/elice-logo-white.png" alt="Elice Fit" class="loader-logo" />
+  <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+  <div class="loader-text">טוענת את המדריך...</div>
+</div>
+
+<div id="root"></div>
+
+<!-- Single combined component file -->
+<script type="text/babel" src="combined.jsx"></script>
+
+<script>
+  // Loading screen is hidden by app.jsx after React mounts
+
+  // Restore dark mode immediately to avoid flash
+  (function() {
+    const dark = localStorage.getItem('guide_dark') === 'true';
+    if (dark) document.documentElement.setAttribute('data-dark', 'true');
+  })();
+</script>
+
+</body>
+</html>
