@@ -1,12 +1,10 @@
 // sidebar.jsx
-const { useState, useEffect } = React;
-
 const CHAPTERS = [
   { id: 'section-intro',    num: '00', label: 'מבוא' },
-  { id: 'section-bloating', num: '01', label: 'סוג הנפיחות שלך' },
-  { id: 'chapter-1',        num: '02', label: 'תזונה אנטי-דלקתית' },
-  { id: 'chapter-2',        num: '03', label: 'בריאות המעיים' },
-  { id: 'chapter-3',        num: '04', label: 'תוכנית אימון' },
+  { id: 'chapter-1',        num: '01', label: 'תזונה' },
+  { id: 'chapter-microbiome', num: '02', label: 'המיקרוביום והמעיים' },
+  { id: 'chapter-2',        num: '03', label: 'מדריך הנפיחות' },
+  { id: 'chapter-3',        num: '04', label: 'בניית אימון' },
   { id: 'chapter-4',        num: '05', label: 'אורח חיים' },
   { id: 'chapter-5',        num: '06', label: 'תוכנית 4 שבועות' },
 ];
@@ -35,7 +33,7 @@ function Sidebar({ activeSection, completedSections }) {
   const SidebarContent = () => (
     <>
       <div className="sidebar-logo">
-        <img src="../assets/elice-logo-purple.png" alt="Elice Fit" />
+        <img src="assets/elice-logo-purple.svg" alt="Elice Fit" />
       </div>
 
       <div className="sidebar-section-title">פרקים</div>

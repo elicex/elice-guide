@@ -1,6 +1,6 @@
-// globals.jsx — shared hooks, utilities, and micro-components
+// globals.jsx - shared hooks, utilities, and micro-components
 
-const { useState, useEffect, useRef, useCallback } = React;
+const { useState, useEffect, useRef, useCallback, useMemo } = React;
 
 /* ── HOOKS ──────────────────────────────────────────────────── */
 

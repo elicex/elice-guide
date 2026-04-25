@@ -1,9 +1,7 @@
-// app.jsx — Main app shell
-const { useState, useEffect } = React;
-
+// app.jsx - Main app shell
 const SECTION_IDS = [
-  'section-intro', 'section-bloating',
-  'chapter-1', 'chapter-2', 'chapter-3', 'chapter-4', 'chapter-5'
+  'section-intro',
+  'chapter-1', 'chapter-microbiome', 'chapter-2', 'chapter-3', 'chapter-4', 'chapter-5'
 ];
 
 function App() {
@@ -44,8 +42,8 @@ function App() {
         <main className="guide-content">
           <HeroSection />
           <IntroSection />
-          <BloatingSection />
           <Chapter1 />
+          <ChapterMicrobiome />
           <Chapter2 />
           <Chapter3 />
           <Chapter4 />
@@ -58,7 +56,7 @@ function App() {
             display: 'flex', alignItems: 'center', justifyContent: 'space-between',
             flexWrap: 'wrap', gap: 16,
           }}>
-            <img src="../assets/elice-logo-purple.png" alt="Elice Fit" style={{ height: 24 }} />
+            <img src="assets/elice-logo-purple.svg" alt="Elice Fit" style={{ height: 24 }} />
             <p style={{ fontSize: 13, color: 'var(--color-fg3)', margin: 0 }}>
               © 2026 Elice Fit · כל הזכויות שמורות
             </p>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>בניית הגוף מבפנים ומבחוץ — Elice Fit</title>
+  <title>בניית הגוף מבפנים ומבחוץ - Elice Fit</title>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&family=Frank+Ruhl+Libre:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
 
   <!-- Styles -->
-  <link rel="stylesheet" href="../colors_and_type.css" />
+  <link rel="stylesheet" href="colors_and_type.css" />
   <link rel="stylesheet" href="guide.css" />
 
   <!-- React + Babel -->
@@ -68,15 +68,24 @@
 
 <!-- Loading screen -->
 <div id="loading">
-  <img src="../assets/elice-logo-white.png" alt="Elice Fit" class="loader-logo" />
+  <img src="assets/elice-logo-white.svg" alt="Elice Fit" class="loader-logo" />
   <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
   <div class="loader-text">טוענת את המדריך...</div>
 </div>
 
 <div id="root"></div>
 
-<!-- Single combined component file -->
-<script type="text/babel" src="combined.jsx"></script>
+<!-- Source files -->
+<script type="text/babel" src="globals.jsx"></script>
+<script type="text/babel" src="sidebar.jsx"></script>
+<script type="text/babel" src="hero.jsx"></script>
+<script type="text/babel" src="chapter1.jsx"></script>
+<script type="text/babel" src="chapter-microbiome.jsx"></script>
+<script type="text/babel" src="chapter2.jsx"></script>
+<script type="text/babel" src="chapter3.jsx"></script>
+<script type="text/babel" src="chapter4.jsx"></script>
+<script type="text/babel" src="chapter5.jsx"></script>
+<script type="text/babel" src="app.jsx"></script>
 
 <script>
   // Loading screen is hidden by app.jsx after React mounts

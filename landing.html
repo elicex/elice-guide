@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>עמוד נחיתה - בניית הגוף מבפנים ומבחוץ</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&family=Frank+Ruhl+Libre:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="colors_and_type.css" />
+  <link rel="stylesheet" href="guide.css" />
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+
+  <style>
+    body { margin: 0; background: var(--color-bg); }
+    #loading {
+      position: fixed; inset: 0;
+      background: #111113;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      z-index: 9999;
+      transition: opacity 0.5s, visibility 0.5s;
+    }
+    #loading.hidden { opacity: 0; visibility: hidden; }
+    .loader-logo { height: 36px; margin-bottom: 28px; animation: float2 2s ease-in-out infinite; }
+    .loader-bar-wrap {
+      width: 200px; height: 3px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 2px; overflow: hidden;
+    }
+    .loader-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #E85D75, #BBB2EE);
+      border-radius: 2px;
+      animation: shimmer 1.5s ease-in-out infinite;
+      background-size: 200% 100%;
+    }
+    .loader-text {
+      margin-top: 16px;
+      font-family: 'Heebo', sans-serif;
+      font-size: 13px; color: rgba(255,255,255,0.4);
+      letter-spacing: 0.05em;
+    }
+  </style>
+</head>
+<body>
+
+<div id="loading">
+  <img src="assets/elice-logo-white.svg" alt="Elice Fit" class="loader-logo" />
+  <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+  <div class="loader-text">טוענת את עמוד הנחיתה...</div>
+</div>
+
+<div id="root"></div>
+
+<script type="text/babel" src="globals.jsx"></script>
+<script type="text/babel" src="landing.jsx"></script>
+
+</body>
+</html>

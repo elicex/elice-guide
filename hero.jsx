@@ -1,6 +1,4 @@
-// hero.jsx — with real content from Elice
-const { useEffect, useRef } = React;
-
+// hero.jsx - with real content from Elice
 function HeroSection() {
   const parallaxRef = useRef(null);
 
@@ -51,9 +49,9 @@ function HeroSection() {
 
         <div className="hero-meta">
           {[
-            { icon: '📖', label: 'קריאה של ~45 דקות' },
-            { icon: '🔬', label: 'מבוסס מדע אמיתי' },
-            { icon: '⚡', label: '5 פרקים + תוכנית' },
+            { icon: '📖', label: 'קריאה של כ-45 דקות' },
+            { icon: '✨', label: 'פרקטי, ברור וישים' },
+            { icon: '⚡', label: '5 פרקים + תוכנית ל-4 שבועות' },
           ].map((m, i) => (
             <div key={i} className="hero-meta-item">
               <span>{m.icon}</span>
@@ -120,18 +118,46 @@ function IntroSection() {
             המדריך שהייתי רוצה לתת לעצמי לפני עשר שנים
           </h2>
           <p style={{ fontSize: 15, color: 'var(--color-fg2)', lineHeight: 1.8, marginBottom: 16 }}>
-            המדריך הזה לא עוד מדריך דיאטה. הוא לא אוסף של "טיפים" שקראת מאה פעם באינסטגרם.
-            הוא מפת הדרכים שהייתי רוצה לתת לעצמי לפני עשר שנים, כשהבנתי שהבעיה לא הייתה
-            שאני אוכלת יותר מדי — אלא שלא הבנתי איך הגוף שלי באמת עובד.
+            אם גם את מרגישה שאת מנסה לאכול נכון ולהתאמן, אבל הגוף עדיין מרגיש נפוח, עייף
+            או תקוע, המדריך הזה נכתב בדיוק בשבילך. לא כדי לתת לך עוד רשימת איסורים, אלא
+            כדי לעשות סדר בגוף, בהרגלים ובהבנה.
           </p>
           <p style={{ fontSize: 15, color: 'var(--color-fg2)', lineHeight: 1.8, marginBottom: 24 }}>
-            הגוף של אישה זה לא גרסה קטנה יותר של גוף של גבר. יש לנו מחזור הורמונלי שמשפיע
-            על כל דבר, מהמים שאנחנו אוגרות ועד לכמה כוח יש לנו ביום מסוים בחדר כושר. יש לנו
-            מיקרוביום מעיים שמדבר ישירות עם האסטרוגן. יש לנו רגישות מיוחדת לקורטיזול.
+            במקום הבטחות גדולות, נעבוד כאן בצורה פשוטה: נבין מה יכול להשפיע על נפיחות,
+            רעב, אנרגיה ובניית שריר; נלמד איך להרכיב ארוחות שמתאימות לחיים אמיתיים; ונבנה
+            שגרה שאפשר להתמיד בה גם בלי להיות "מושלמת".
+          </p>
+          <p style={{ fontSize: 15, color: 'var(--color-fg2)', lineHeight: 1.8, marginBottom: 16 }}>
+            אם את רגילה לעבור בין "תקופות של שליטה" לבין ימים של בלבול, נשנושים, עייפות
+            ותחושת כישלון, חשוב לי שתדעי: בדרך כלל הבעיה היא לא חוסר כוח רצון. ברוב המקרים
+            חסר פשוט סדר. כשמבינים מה הגוף צריך, הרבה החלטות הופכות להרבה יותר קלות.
           </p>
           <p style={{ fontSize: 15, color: 'var(--color-fg2)', lineHeight: 1.8, marginBottom: 28 }}>
-            במדריך הזה אני הולכת לפרק לך את כל המערכת. <strong style={{color:'var(--color-fg1)'}}>בואי נתחיל.</strong>
+            לא כל מה שתמצאי כאן יתאים לכל אחת באותה צורה, וזה בסדר. קחי את העקרונות, בדקי
+            מה עובד לך, ותני לגוף זמן להגיב. <strong style={{color:'var(--color-fg1)'}}>המטרה היא לא שלמות, אלא יציבות והתקדמות.</strong>
           </p>
+          <div style={{
+            background: 'var(--color-surface)',
+            border: '1px solid var(--color-border)',
+            borderRadius: 'var(--radius-xl)',
+            padding: '18px 20px',
+            marginBottom: 22,
+            boxShadow: 'var(--shadow-soft)',
+          }}>
+            <div style={{ fontSize: 13, fontWeight: 700, color: 'var(--color-accent)', marginBottom: 10 }}>
+              המדריך הזה מתאים לך אם
+            </div>
+            {[
+              'את מרגישה נפוחה, כבדה או עייפה, גם כשאת "אוכלת בסדר"',
+              'את רוצה להבין איך לבנות גוף חזק ובריא בלי קיצוניות',
+              'חשוב לך לקבל מסגרת פרקטית, לא רק מוטיבציה לרגע',
+            ].map((item, i) => (
+              <div key={i} style={{ display: 'flex', gap: 8, fontSize: 13, color: 'var(--color-fg2)', marginBottom: 6 }}>
+                <span style={{ color: 'var(--color-accent)', flexShrink: 0 }}>•</span>
+                {item}
+              </div>
+            ))}
+          </div>
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
             <span className="tag tag-rose">תזונה</span>
             <span className="tag tag-purple">מעיים</span>
@@ -177,10 +203,12 @@ function IntroSection() {
               מה תמצאי במדריך
             </div>
             {[
-              'קוויז לזיהוי סוג הנפיחות האישי שלך',
-              'תפריט יומי מלא עם מתכונים',
-              'תוכנית אימון של 4 ימים בשבוע',
-              'טבלת מעקב ל-4 שבועות שמירה',
+              'אבחון עצמי ראשוני לסוגי נפיחות נפוצים',
+              'עקרונות תזונה פשוטים שאפשר ליישם ביומיום',
+              'דוגמאות לארוחות, קניות והחלפות מהחיים האמיתיים',
+              'המלצות לאימון, עיכול ואורח חיים',
+              'תוכנית 4 שבועות ליצירת שגרה יציבה',
+              'הכוונה איך לחשוב נכון, לא רק מה לעשות',
             ].map((item, i) => (
               <div key={i} style={{ display: 'flex', gap: 8, fontSize: 13, color: 'var(--color-fg2)', marginBottom: 6, alignItems: 'flex-start' }}>
                 <span style={{ color: 'var(--color-accent)', flexShrink: 0 }}>✓</span>
