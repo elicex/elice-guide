@@ -10,19 +10,19 @@ const HYPERTROPHY_MECHANISMS = [
     title: 'מתח מכני',
     tag: 'הבסיס לבניית שריר',
     color: '#E85D75',
-    desc: 'כשהשריר עובד מול התנגדות מאתגרת ובאמת צריך להפיק כוח, הוא מקבל את האות העיקרי לגדילה. לכן תרגילים מורכבים עם עומס טוב וקרבה לכישלון חשובים כל כך.',
+    desc: 'כשהשריר עובד מול התנגדות מאתגרת ובאמת צריך להפיק כוח, הוא מקבל את האות העיקרי לגדילה. לכן תרגילים מורכבים עם עומס טוב וקרבה לכשל חשובים כל כך.',
   },
   {
     title: 'עבודה במצב מתוח',
     tag: 'טווח ארוך של השריר',
     color: '#FF9500',
-    desc: 'בתרגילים שבהם השריר נטען כשהוא ארוך, כמו סקווט עמוק או דדליפט רומני, נוצר גירוי חזק מאוד להיפרטרופיה. זה אחד העקרונות הכי חשובים במבנה של אימון טוב.',
+    desc: 'מחקרים עדכניים מראים יתרון לעבודה כשהשריר ארוך, ולכן תרגילים כמו סקווט עמוק או דדליפט רומני עם טווח מלא נחשבים גירוי טוב במיוחד. זה לא אומר שתרגילים בטווח מקוצר חסרי ערך - הם פשוט פחות עדיפים אם צריך לבחור.',
   },
   {
     title: 'סטרס מטבולי',
     tag: 'הפאמפ והבערה',
     color: '#BBB2EE',
-    desc: 'החזרות הגבוהות יותר, המנוחות הקצרות והכיווץ הממושך מוסיפים נפח עבודה, תחושת בערה ופאמפ. הם לא מחליפים עומס טוב, אלא משלימים אותו.',
+    desc: 'סטרס מטבולי הוא ההצטברות של מטבוליטים בשריר העובד שיוצרת תחושת בערה ופאמפ. החזרות הגבוהות יותר, המנוחות הקצרות והכיווץ הממושך מוסיפים את הרכיב הזה. הוא לא מחליף עומס טוב, אלא משלים אותו.',
   },
 ];
 
@@ -36,9 +36,41 @@ const PROGRESSION_METHODS = [
 ];
 
 const REP_RANGES = [
-  { range: '5-8', title: 'כבד ומורכב', use: 'סקווט, דדליפט, חתירה, Lat Pulldown', note: 'מעולה לכוח ולבנייה עם עומס גבוה.' },
-  { range: '8-12', title: 'לב האימון', use: 'רוב התרגילים המשניים והעיקריים', note: 'שילוב מצוין של עומס, שליטה ונפח.' },
-  { range: '12-20', title: 'בידוד וגימור', use: 'Abduction, Kickback, Face Pull, Leg Curl', note: 'מצוין לפאמפ, לשליטה ולשרירים קטנים יותר.' },
+  { range: '5-8', title: 'כבד ונוח למעקב', use: 'סקווט, דדליפט, חתירה, Lat Pulldown', note: 'לא כי זה "בונה יותר", אלא כי קל יחסית להתקדם בו בעומסים גבוהים.' },
+  { range: '8-12', title: 'הטווח הכי נוח לרוב התרגילים', use: 'רוב התרגילים המשניים והעיקריים', note: 'שילוב טוב של עומס, שליטה ונפח עבודה בלי להכביד מדי על המפרקים.' },
+  { range: '12-20', title: 'בידוד, תחושה וגימור', use: 'Abduction, Kickback, Face Pull, Leg Curl', note: 'מעולה לשרירים קטנים יותר, לפאמפ ולפחות עומס מערכתי - כל עוד עובדים קרוב לכשל.' },
+];
+
+const WEEKLY_VOLUME_ROWS = [
+  ['מינימום אפקטיבי (MEV)', '8-10 סטים', 'הטווח שבו רוב הנשים מתחילות לקבל גירוי אמיתי לבנייה.'],
+  ['טווח אופטימלי (MAV)', '12-20 סטים', 'זה הטווח שבו רובן יתקדמו הכי טוב, אם ההתאוששות, השינה והאוכל במקום.'],
+  ['מקסימום התאוששות (MRV)', '22-25+ סטים', 'מעבר לזה הרבה נשים כבר מתקשות להתאושש, במיוחד אם יש גם סטרס או הרבה קרדיו.'],
+];
+
+const TARGET_VOLUME_ROWS = [
+  ['ישבן', '16-22 סטים בשבוע', 'לרוב צריך קצת יותר נפח מאשר לקבוצות אחרות כדי לראות שינוי ברור.'],
+  ['גב', '12-20 סטים בשבוע', 'לרוחב, עובי ויציבה.'],
+  ['ירך קדמית', '8-14 סטים בשבוע', 'תלוי כמה דגש את באמת רוצה על הרגל הקדמית.'],
+  ['ירך אחורית', '8-14 סטים בשבוע', 'כולל היפ-הינג, קרלס ותרגילים חד-צדדיים.'],
+  ['כתפיים אחוריות', '6-10 סטים בשבוע', 'מעט נפח, אבל עקבי.'],
+];
+
+const GLUTE_ACTIVATION = [
+  'הליכה קצרה או כמה מדרגות בקצב קל כדי להעיר את הגוף.',
+  'סקווטים במקום עם שליטה ונשימה, בלי לרדוף אחרי עומס.',
+  'לאנג׳ים קלים כדי להכניס את האגן והישבן לעבודה.',
+  'הנפות רגליים קדימה, אחורה ולצדדים כדי להכין טווח תנועה.',
+  'Glute Bridge, Clamshells או Banded Side Steps אם את יודעת שבאימון עצמו קשה לך להרגיש ישבן.',
+];
+
+const GLOSSARY_ROWS = [
+  ['RPE', 'דירוג קושי סובייקטיבי של הסט. RPE 8 אומר שנשארו בערך עוד 2 חזרות בקנה.'],
+  ['כשל', 'הנקודה שבה את כבר לא יכולה להשלים עוד חזרה נקייה.'],
+  ['RIR', 'Reps In Reserve - כמה חזרות עוד נשארו לך לפני כשל.'],
+  ['נפח עבודה', 'כמה סטים קשים עשית לקבוצת שריר בשבוע.'],
+  ['העמסה מתקדמת', 'להתקדם לאורך זמן במשקל, חזרות, סטים, טכניקה או שליטה.'],
+  ['Hip Hinge', 'תנועה שבה האגן הולך אחורה והעומס יושב יותר על ירך אחורית וישבן מאשר על הברך.'],
+  ['MMC', 'Mind-Muscle Connection - היכולת להרגיש ולכוון את העבודה לשריר שאת מנסה לאמן.'],
 ];
 
 const GLUTE_MUSCLES = [
@@ -48,6 +80,7 @@ const GLUTE_MUSCLES = [
     accent: '#E85D75',
     region: 'glute-max',
     view: 'back',
+    image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Gluteus%20maximus%203D.gif',
     role: 'הנפח, העגלגלות והמסה של הישבן',
     trains: 'סקווט עמוק, דדליפט רומני, Hip Thrust, לאנג׳ים',
     visual: 'ככל שהוא חזק ומפותח יותר, הישבן נראה מלא ומודגש יותר מאחור.',
@@ -58,9 +91,21 @@ const GLUTE_MUSCLES = [
     accent: '#BBB2EE',
     region: 'glute-med',
     view: 'back',
+    image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Gluteus%20medius%20muscle%20-%20animation03.gif',
     role: 'הצד העליון של הישבן ויציבות האגן',
     trains: 'Hip Abduction, Cable Side Kickback, Bulgarian Split Squat, Step-Up',
     visual: 'הוא עוזר ליצור את ה"מדף" ואת ההפרדה בין הישבן לירך.',
+  },
+  {
+    title: 'Gluteus Minimus',
+    heb: 'גלוטאוס מינימוס',
+    accent: '#8E7DFF',
+    region: 'glute-min',
+    view: 'back',
+    image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Gluteus_minimus.gif',
+    role: 'שכבה עמוקה יותר שעוזרת ליציבות האגן ולשליטה של הירך',
+    trains: 'Hip Abduction, Side Steps, Clamshells, Single-Leg Work',
+    visual: 'פחות מזהים אותו בשם, אבל הוא חלק חשוב מאוד מהשליטה, היציבות והעבודה של הצד העליון של הישבן.',
   },
   {
     title: 'Hamstrings',
@@ -68,6 +113,7 @@ const GLUTE_MUSCLES = [
     accent: '#FF9500',
     region: 'hamstrings',
     view: 'back',
+    image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Hamstrings.gif',
     role: 'המעבר החלק בין הישבן לרגל והכוח של תנועות היפ-הינג',
     trains: 'Romanian Deadlift, Leg Curl, Single-Leg RDL',
     visual: 'בלעדיהם הישבן יכול להיראות מנותק מהרגל. איתם המראה שלם יותר.',
@@ -75,39 +121,59 @@ const GLUTE_MUSCLES = [
 ];
 
 const LEG_SUPPORT_MUSCLES = [
-  { name: 'Quadriceps', heb: 'ירך קדמית', accent: '#5AC8FA', region: 'quads', view: 'front', desc: 'חשובים לתנועות סקווט, ליציבות ולמראה אתלטי מאוזן. לא צריך להגזים, אבל גם לא להזניח.' },
-  { name: 'Adductors', heb: 'מקרבים', accent: '#34C759', region: 'adductors', view: 'front', desc: 'מוסיפים כוח ויציבות לסקווטים, לאנג׳ים ותנועות רחבות.' },
-  { name: 'Calves', heb: 'שוקיים', accent: '#AF8CFF', region: 'calves', view: 'back', desc: 'פחות קריטיים לרוב הנשים מבחינת מראה, אבל כן תורמים לאתלטיות ולשלמות של הרגל.' },
+  { name: 'Quadriceps', heb: 'ירך קדמית', accent: '#5AC8FA', region: 'quads', view: 'front', image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Quadriceps%203D.gif', desc: 'חשובים לתנועות סקווט, ליציבות ולמראה אתלטי מאוזן. לא צריך להגזים, אבל גם לא להזניח.' },
+  { name: 'Adductors', heb: 'מקרבים', accent: '#34C759', region: 'adductors', view: 'front', image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Adductor%20magnus.gif', desc: 'מוסיפים כוח ויציבות לסקווטים, לאנג׳ים ותנועות רחבות.' },
+  { name: 'Calves', heb: 'שוקיים', accent: '#AF8CFF', region: 'calves', view: 'back', image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Gastrocnemius%20muscle%20-%20animation.gif', desc: 'פחות קריטיים לרוב הנשים מבחינת מראה הישבן, אבל אם את רוצה רגל שלמה יותר אפשר לשלב עמידת שוקיים או ישיבת שוקיים 2-4 סטים בסוף אימון.' },
 ];
 
 const LEG_PATTERNS = [
   {
     title: 'תנועת סקווט',
     color: '#E85D75',
+    frames: [
+      'https://commons.wikimedia.org/wiki/Special:FilePath/Squats-2-1.png',
+      'https://commons.wikimedia.org/wiki/Special:FilePath/Squats-2-2.png',
+    ],
     examples: 'Back Squat, Front Squat, Goblet Squat, Leg Press',
-    why: 'בונה בסיס של כוח, קוואדס וישבן, ומתאימה מאוד לפתוח איתה אימון.',
+    why: 'בונה בסיס של כוח, ירך קדמית וישבן, ומתאימה מאוד לפתוח איתה אימון.',
   },
   {
     title: 'תנועת Hip Hinge',
     color: '#FF9500',
+    frames: [
+      'https://commons.wikimedia.org/wiki/Special:FilePath/Romanian-deadlift-1.png',
+      'https://commons.wikimedia.org/wiki/Special:FilePath/Romanian-deadlift-2.png',
+    ],
     examples: 'Romanian Deadlift, Deadlift, Good Morning, Pull-Through',
     why: 'הדרך המרכזית להעמיס על ירך אחורית ועל הישבן במצב מתוח - וזה אחד המפתחות הכי חזקים לבניית ישבן.',
   },
   {
     title: 'Hip Thrust / Bridge',
     color: '#FF7A59',
+    frames: [
+      'https://commons.wikimedia.org/wiki/Special:FilePath/Bridge-1.png',
+      'https://commons.wikimedia.org/wiki/Special:FilePath/Bridge-2.png',
+    ],
     examples: 'Hip Thrust, Barbell Glute Bridge, Single-Leg Hip Thrust',
     why: 'זה אחד התרגילים הכי חשובים לישבן, כי הוא נותן עומס ישיר מאוד על הגלוטאוס מקסימוס דווקא בקיצור ובכיווץ. הוא לא מחליף היפ-הינג, אלא משלים אותו.',
   },
   {
     title: 'תרגיל חד-צדדי',
     color: '#BBB2EE',
+    frames: [
+      'https://commons.wikimedia.org/wiki/Special:FilePath/Lunges-2-1.png',
+      'https://commons.wikimedia.org/wiki/Special:FilePath/Lunges-2-2.png',
+    ],
     examples: 'Bulgarian Split Squat, Reverse Lunge, Step-Up, Single-Leg RDL',
     why: 'משפר יציבות, מאזן בין צדדים, ונותן הרבה עבודה לגלוטאוס מדיוס.',
   },
   {
     title: 'הרחקה ובידוד',
     color: '#34C759',
+    frames: [
+      'https://commons.wikimedia.org/wiki/Special:FilePath/One-legged-kickback-1.png',
+      'https://commons.wikimedia.org/wiki/Special:FilePath/One-legged-kickback-2.png',
+    ],
     examples: 'Hip Abduction, Cable Kickback, Side Steps, Clamshells',
     why: 'מוסיף את העבודה הייעודית לישבן הצידי ולכיווץ בסוף האימון.',
   },
@@ -160,7 +226,7 @@ const LEG_BUILD_SLOTS = [
     step: 'A1',
     title: 'פתיחה - תנועת סקווט',
     hint: 'בחרי תרגיל פתיחה אחד שאת רוצה להתקדם בו לאורך זמן.',
-    options: ['Back Squat', 'Front Squat', 'Goblet Squat', 'Hack Squat', 'Leg Press'],
+    options: ['Back Squat', 'Front Squat', 'Goblet Squat', 'Hack Squat', 'Leg Press', 'Hip Thrust'],
   },
   {
     key: 'leg-main-hinge',
@@ -196,13 +262,13 @@ const LEG_WORKOUTS = [
   {
     key: 'A',
     title: 'אימון רגליים A',
-    subtitle: 'דגש ישבן וקוואדס',
+    subtitle: 'דגש ישבן וירך קדמית',
     note: 'נבנה סביב סקווט ונותן בסיס חזק של כוח + נפח.',
     exercises: [
-      { name: 'Back Squat', sets: '4', reps: '6-8', rest: '2-3 דק׳', muscle: 'קוואדס + ישבן', technique: 'לרדת לעומק טוב בלי לאבד שליטה או קו גב יציב.', tips: 'העלי משקל רק כשכל הסטים מרגישים נקיים.', mistakes: 'לקצר עומק בשביל עוד עומס.' },
+      { name: 'Back Squat', sets: '4', reps: '6-8', rest: '2-3 דק׳', muscle: 'ירך קדמית + ישבן', technique: 'לרדת לעומק טוב בלי לאבד שליטה או קו גב יציב.', tips: 'העלי משקל רק כשכל הסטים מרגישים נקיים.', mistakes: 'לקצר עומק בשביל עוד עומס.' },
       { name: 'Romanian Deadlift', sets: '4', reps: '8-10', rest: '2 דק׳', muscle: 'ירך אחורית + ישבן', technique: 'אגן אחורה, מוט צמוד לגוף, מתיחה אמיתית בירך האחורית.', tips: 'חשבי על דחיפה של האגן אחורה, לא על כפיפה מהגב.', mistakes: 'לעגל גב או להפוך את התנועה לסקווט.' },
       { name: 'Bulgarian Split Squat', sets: '3', reps: '10-12 לכל רגל', rest: '90 שנ׳', muscle: 'ישבן + יציבות', technique: 'צעד מספיק ארוך, ירידה עמוקה, שליטה מלאה.', tips: 'אפשר להטות מעט את הגו קדימה אם המטרה היא יותר ישבן.', mistakes: 'צעד קצר מדי שיוצר עומס מיותר על הברך.' },
-      { name: 'Leg Press / Goblet Squat', sets: '3', reps: '10-12', rest: '90 שנ׳', muscle: 'קוואדס + ישבן', technique: 'שליטה בירידה, לא לנעול ברכיים למעלה.', tips: 'קצב נקי עדיף על עוד פלטה.', mistakes: 'לעבוד בטווח קצר מדי.' },
+      { name: 'Leg Press / Goblet Squat', sets: '3', reps: '10-12', rest: '90 שנ׳', muscle: 'ירך קדמית + ישבן', technique: 'שליטה בירידה, לא לנעול ברכיים למעלה.', tips: 'קצב נקי עדיף על עוד פלטה.', mistakes: 'לעבוד בטווח קצר מדי.' },
       { name: 'Hip Abduction', sets: '3', reps: '15-20', rest: '60 שנ׳', muscle: 'ישבן צידי', technique: 'כיווץ מודגש בקצה התנועה.', tips: 'להאט את החזרה פנימה.', mistakes: 'לזרוק את הרגליים בלי שליטה.' },
       { name: 'Cable Kickback', sets: '3', reps: '12-15 לכל רגל', rest: '60 שנ׳', muscle: 'ישבן', technique: 'תנועה קטנה יחסית, בלי תנופה מהגב.', tips: 'להחזיק רגע בכיווץ.', mistakes: 'להרים את הרגל גבוה מדי ולפצות עם גב תחתון.' },
     ],
@@ -227,9 +293,9 @@ const LEG_WORKOUTS = [
     subtitle: 'גרסה היברידית למי שמתאמנת פעם בשבוע',
     note: 'אם יש לך רק יום רגליים אחד, זה המבנה שיכסה את רוב מה שצריך.',
     exercises: [
-      { name: 'Back Squat', sets: '3', reps: '6-8', rest: '2-3 דק׳', muscle: 'קוואדס + ישבן', technique: 'תרגיל ראשון, כשהגוף רענן.', tips: 'שמרי 1-2 חזרות ברזרבה בסטים הראשונים.', mistakes: 'לשרוף את כל האנרגיה בסט הראשון.' },
+      { name: 'Back Squat', sets: '3', reps: '6-8', rest: '2-3 דק׳', muscle: 'ירך קדמית + ישבן', technique: 'תרגיל ראשון, כשהגוף רענן.', tips: 'שמרי 1-2 חזרות ברזרבה בסטים הראשונים.', mistakes: 'לשרוף את כל האנרגיה בסט הראשון.' },
       { name: 'Romanian Deadlift', sets: '3', reps: '8-10', rest: '2 דק׳', muscle: 'ירך אחורית + ישבן', technique: 'המשיכי לקו שליטה, לא לקו כאב.', tips: 'עבודה יפה בטווח מתוח.', mistakes: 'ברכיים נעולות לגמרי.' },
-      { name: 'Walking Lunges', sets: '3', reps: '10 לכל רגל', rest: '90 שנ׳', muscle: 'ישבן + קוואדס', technique: 'צעד ארוך ויציב.', tips: 'מתאמן גם על קואורדינציה.', mistakes: 'צעדים קצרים ומהירים מדי.' },
+      { name: 'Walking Lunges', sets: '3', reps: '10 לכל רגל', rest: '90 שנ׳', muscle: 'ישבן + ירך קדמית', technique: 'צעד ארוך ויציב.', tips: 'מתאמן גם על קואורדינציה.', mistakes: 'צעדים קצרים ומהירים מדי.' },
       { name: 'Hip Thrust', sets: '3', reps: '10-12', rest: '90 שנ׳', muscle: 'ישבן', technique: 'שליטה מלאה בחלק העליון.', tips: 'אפשר לעצור שנייה למעלה.', mistakes: 'להקפיץ משקל.' },
       { name: 'Seated Leg Curl', sets: '3', reps: '12', rest: '75 שנ׳', muscle: 'ירך אחורית', technique: 'לסיים בשליטה ולא בחיפזון.', tips: 'מתאים לסוף האימון.', mistakes: 'טווח חצי.' },
       { name: 'Hip Abduction / Kickback', sets: '3', reps: '15-20', rest: '45-60 שנ׳', muscle: 'ישבן צידי + גימור', technique: 'פוקוס על תחושה וכיווץ.', tips: 'זה מקום טוב לפאמפ.', mistakes: 'לבחור עומס כבד מדי ולהפסיד שליטה.' },
@@ -242,6 +308,7 @@ const BACK_MUSCLES = [
     title: 'Latissimus Dorsi',
     heb: 'לטים',
     accent: '#BBB2EE',
+    image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Latissimus%20dorsi%20muscle%20animation.gif',
     role: 'יוצרים גב רחב יותר ומבליטים את קו המותן',
     trains: 'Pull-Up, Lat Pulldown, Straight-Arm Pulldown',
   },
@@ -249,6 +316,7 @@ const BACK_MUSCLES = [
     title: 'Mid Back',
     heb: 'גב אמצעי',
     accent: '#E85D75',
+    image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Rhomboid%20muscles%20animation.gif',
     role: 'נותן לגב עומק, יציבה ומראה חזק יותר מאחור',
     trains: 'Seated Row, Chest-Supported Row, Barbell Row',
   },
@@ -256,6 +324,7 @@ const BACK_MUSCLES = [
     title: 'Rear Delts',
     heb: 'כתפיים אחוריות',
     accent: '#34C759',
+    image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Deltoid%20muscle%20animation.gif',
     role: 'פותחות את קו הכתפיים ומשפרות את המראה של החלק העליון',
     trains: 'Face Pull, Reverse Fly, Rear Delt Machine',
   },
@@ -263,6 +332,7 @@ const BACK_MUSCLES = [
     title: 'Erector Spinae',
     heb: 'זקפי הגב',
     accent: '#FF9500',
+    image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Semispinalis%20muscles%20-%20animation%201.gif',
     role: 'שומרים על גב יציב, זקוף וחזק בתרגילי משיכה והיפ-הינג',
     trains: 'Deadlift, RDL, Hyperextension',
   },
@@ -513,9 +583,16 @@ function MuscleMap({ nodes, centerIcon, centerLabel }) {
 }
 
 function LowerBodyHighlight({ region, accent = '#E85D75', view = 'back' }) {
-  const base = '#E9E3F4';
-  const stroke = 'rgba(86, 72, 112, 0.22)';
-  const highlight = { fill: accent, opacity: 0.92 };
+  const imageMap = {
+    'glute-max': 'https://commons.wikimedia.org/wiki/Special:FilePath/Gluteus%20maximus%203D.gif',
+    'glute-med': 'https://commons.wikimedia.org/wiki/Special:FilePath/Gluteus%20medius%20muscle%20-%20animation03.gif',
+    'glute-min': 'https://commons.wikimedia.org/wiki/Special:FilePath/Gluteus_minimus.gif',
+    'hamstrings': 'https://commons.wikimedia.org/wiki/Special:FilePath/Hamstrings.gif',
+    'quads': 'https://commons.wikimedia.org/wiki/Special:FilePath/Quadriceps%203D.gif',
+    'adductors': 'https://commons.wikimedia.org/wiki/Special:FilePath/Adductor%20magnus.gif',
+    'calves': 'https://commons.wikimedia.org/wiki/Special:FilePath/Gastrocnemius%20muscle%20-%20animation.gif',
+  };
+  const imageSrc = imageMap[region];
 
   return (
     <div
@@ -530,60 +607,71 @@ function LowerBodyHighlight({ region, accent = '#E85D75', view = 'back' }) {
         display: 'grid',
         placeItems: 'center',
         boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.35)',
+        overflow: 'hidden',
       }}
     >
-      <svg width="88" height="132" viewBox="0 0 88 132" fill="none">
-        <ellipse cx="44" cy="10" rx="11" ry="8" fill={base} stroke={stroke} />
-        <path d="M31 22c2-4 7-7 13-7s11 3 13 7l4 16c1 5-2 10-7 12l-1 1v14c0 4 1 8 3 12l6 15c1 3 0 7-3 9-3 2-7 1-9-2L44 87l-6 12c-2 3-6 4-9 2-3-2-4-6-3-9l6-15c2-4 3-8 3-12V51l-1-1c-5-2-8-7-7-12l4-16Z" fill={base} stroke={stroke} />
-        <path d="M35 63c-3 11-6 24-7 38-.2 4 2.7 7 6.2 7s6.3-2.9 6.8-6.3c1.1-8.6 2-16.6 3-24.7 1-8 2.1-16 3-24H35Z" fill={base} stroke={stroke} />
-        <path d="M53 63c3 11 6 24 7 38 .2 4-2.7 7-6.2 7s-6.3-2.9-6.8-6.3c-1.1-8.6-2-16.6-3-24.7-1-8-2.1-16-3-24H53Z" fill={base} stroke={stroke} />
+      {imageSrc ? (
+        <img
+          src={imageSrc}
+          alt=""
+          loading="lazy"
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'contain',
+            display: 'block',
+            background: '#fff',
+            padding: 6,
+          }}
+        />
+      ) : null}
+    </div>
+  );
+}
 
-        {view === 'back' && (
-          <>
-            {region === 'glute-max' && (
-              <>
-                <path d="M30 42c2 8 7 12 14 13-1 4-4 7-8 8-6 1-12-3-13-9-1-5 2-10 7-12Z" {...highlight} />
-                <path d="M58 42c-2 8-7 12-14 13 1 4 4 7 8 8 6 1 12-3 13-9 1-5-2-10-7-12Z" {...highlight} />
-              </>
-            )}
-            {region === 'glute-med' && (
-              <>
-                <path d="M27 34c4 1 7 4 9 8-3 1-6 2-9 4-4 2-8 0-9-4-1-4 1-7 4-8 2 0 3 0 5 0Z" {...highlight} />
-                <path d="M61 34c-4 1-7 4-9 8 3 1 6 2 9 4 4 2 8 0 9-4 1-4-1-7-4-8-2 0-3 0-5 0Z" {...highlight} />
-              </>
-            )}
-            {region === 'hamstrings' && (
-              <>
-                <path d="M32 67c-3 10-5 20-5 31 0 5 3 8 7 8 3 0 6-2 6-6 0-11 1-22 2-33H32Z" {...highlight} />
-                <path d="M56 67c3 10 5 20 5 31 0 5-3 8-7 8-3 0-6-2-6-6 0-11-1-22-2-33H56Z" {...highlight} />
-              </>
-            )}
-            {region === 'calves' && (
-              <>
-                <path d="M30 97c-4 6-5 12-4 18 1 4 4 6 7 6 4 0 7-3 7-7 0-7-1-12-3-19l-7 2Z" {...highlight} />
-                <path d="M58 97c4 6 5 12 4 18-1 4-4 6-7 6-4 0-7-3-7-7 0-7 1-12 3-19l7 2Z" {...highlight} />
-              </>
-            )}
-          </>
-        )}
+function ExerciseMotionPreview({ frames = [], alt }) {
+  const [frameIndex, setFrameIndex] = React.useState(0);
 
-        {view === 'front' && (
-          <>
-            {region === 'quads' && (
-              <>
-                <path d="M33 63c-4 8-6 18-6 31 0 5 3 9 8 9 4 0 7-3 7-7V63H33Z" {...highlight} />
-                <path d="M55 63c4 8 6 18 6 31 0 5-3 9-8 9-4 0-7-3-7-7V63H55Z" {...highlight} />
-              </>
-            )}
-            {region === 'adductors' && (
-              <>
-                <path d="M40 66c-3 6-4 13-4 22 0 6 2 9 5 9 2 0 4-2 4-5V66h-5Z" {...highlight} />
-                <path d="M48 66c3 6 4 13 4 22 0 6-2 9-5 9-2 0-4-2-4-5V66h5Z" {...highlight} />
-              </>
-            )}
-          </>
-        )}
-      </svg>
+  React.useEffect(function() {
+    if (!frames || frames.length <= 1) return undefined;
+    const interval = setInterval(function() {
+      setFrameIndex(function(current) {
+        return (current + 1) % frames.length;
+      });
+    }, 900);
+
+    return function() {
+      clearInterval(interval);
+    };
+  }, [frames]);
+
+  const src = frames && frames.length ? frames[frameIndex] : '';
+
+  return (
+    <div
+      style={{
+        borderRadius: 18,
+        border: '1px solid rgba(25, 34, 29, 0.12)',
+        background: 'linear-gradient(180deg, #ffffff 0%, #f7f3eb 100%)',
+        padding: 10,
+        display: 'grid',
+        placeItems: 'center',
+        minHeight: 180,
+        marginBottom: 12,
+      }}
+    >
+      {src ? (
+        <img
+          src={src}
+          alt={alt}
+          style={{
+            width: '100%',
+            maxHeight: 160,
+            objectFit: 'contain',
+            display: 'block',
+          }}
+        />
+      ) : null}
     </div>
   );
 }
@@ -895,6 +983,18 @@ function Chapter3() {
         </div>
       </Reveal>
 
+      <Reveal>
+        <div className="card" style={{ padding: '22px 24px', marginBottom: 36 }}>
+          <div style={{ fontFamily: 'var(--font-display)', fontSize: 18, fontWeight: 700, marginBottom: 10 }}>למה לפעמים "לא מרגישים ישבן"?</div>
+          <p style={{ fontSize: 14, color: 'var(--color-fg2)', lineHeight: 1.8, margin: '0 0 10px' }}>
+            אחת הבעיות הכי נפוצות אצל נשים היא שה-Hip Thrust, הסקווט או הלאנג׳ים פשוט לא "נתפסים" בישבן. הרבה פעמים זה לא כי התרגיל לא טוב, אלא כי הגוף רגיל לברוח לגב התחתון, לירך הקדמית או לדחוף את האגן להטיה קדמית.
+          </p>
+          <p style={{ fontSize: 14, color: 'var(--color-fg2)', lineHeight: 1.8, margin: 0 }}>
+            כאן בדיוק נכנס <strong>Mind-Muscle Connection</strong>: היכולת לכוון את העבודה לשריר שאת מנסה לאמן. היא לא קסם, אבל היא כן חוסכת חודשים של אימון שבו את "עושה ישבן" בלי באמת להעמיס עליו טוב.
+          </p>
+        </div>
+      </Reveal>
+
       <Ch3SectionTitle icon="load">2. עומס מתקדם, RPE וטווחי חזרות</Ch3SectionTitle>
       <Reveal>
         <SectionIntro>
@@ -923,11 +1023,14 @@ function Chapter3() {
               ברוב סטי ההיפרטרופיה תרצי להגיע בערך ל-RPE 8-9, כלומר להישאר עם עוד 1-2 חזרות ברזרבה. זה אומר שהסט באמת מאתגר, אבל לא שובר אותך לגמרי.
             </p>
             <p style={{ fontSize: 14, color: 'var(--color-fg2)', lineHeight: 1.75, margin: 0 }}>
-              בתרגילים מורכבים כבדים עדיף לא לחיות בכישלון מוחלט. בתרגילי בידוד, לעומת זאת, אפשר לפעמים להתקרב אליו יותר.
+              בתרגילים מורכבים כבדים עדיף לא לחיות בכשל מוחלט. בתרגילי בידוד, לעומת זאת, אפשר לפעמים להתקרב אליו יותר.
             </p>
           </div>
           <div className="card" style={{ padding: '22px' }}>
             <div style={{ fontFamily: 'var(--font-display)', fontSize: 18, fontWeight: 700, marginBottom: 10 }}>טווחי חזרות חכמים</div>
+            <p style={{ fontSize: 14, color: 'var(--color-fg2)', lineHeight: 1.75, margin: '0 0 12px' }}>
+              טווחי החזרות לא משנים משמעותית את בניית השריר כל עוד את עובדת קרוב לכשל. הסיבה לשלב טווחים שונים היא עומס שונה על המפרקים, יעילות זמן, נוחות טכנית וגיוון בגירוי - לא קסם בטווח עצמו.
+            </p>
             <div style={{ display: 'grid', gap: 10 }}>
               {REP_RANGES.map(function(item, i) {
                 return (
@@ -948,6 +1051,26 @@ function Chapter3() {
 
       <Reveal><RPECalc /></Reveal>
 
+      <Reveal>
+        <div className="card-grid-2" style={{ marginTop: 24, marginBottom: 34 }}>
+          <div className="card" style={{ padding: '22px' }}>
+            <div style={{ fontFamily: 'var(--font-display)', fontSize: 18, fontWeight: 700, marginBottom: 10 }}>מנוחה בין סטים</div>
+            <p style={{ fontSize: 14, color: 'var(--color-fg2)', lineHeight: 1.8, margin: '0 0 8px' }}>
+              מנוחה קצרה מדי בתרגילים כבדים חותכת לך נפח עבודה אפקטיבי. אם אין לך אוויר, אין לך כוח, ואם אין לך כוח - קשה לייצר גירוי טוב.
+            </p>
+            <p style={{ fontSize: 14, color: 'var(--color-fg2)', lineHeight: 1.8, margin: 0 }}>
+              כלל פשוט: <strong>2-3 דקות</strong> בתרגילים מורכבים כמו סקווט, RDL, חתירה או Hip Thrust כבד, ו-<strong>60-90 שניות</strong> בתרגילי בידוד כמו Abduction, Leg Curl, Kickback או Face Pull.
+            </p>
+          </div>
+          <div className="card" style={{ padding: '22px' }}>
+            <div style={{ fontFamily: 'var(--font-display)', fontSize: 18, fontWeight: 700, marginBottom: 10 }}>מה זה אומר בפועל?</div>
+            <p style={{ fontSize: 14, color: 'var(--color-fg2)', lineHeight: 1.8, margin: 0 }}>
+              אם את ממהרת מדי בין סטים כי "אין זמן", את עלולה להפוך אימון טוב לאימון קצר מדי שלא נותן מספיק עבודה אמיתית. עדיף פחות תרגילים עם מנוחה נכונה מאשר הרבה תרגילים בחצי כוח.
+            </p>
+          </div>
+        </div>
+      </Reveal>
+
       <Ch3SectionTitle icon="glute" style={{ marginTop: 60 }}>3. אנטומיית רגליים וישבן</Ch3SectionTitle>
       <Reveal>
         <SectionIntro>
@@ -958,41 +1081,46 @@ function Chapter3() {
         <MuscleMap nodes={GLUTE_MUSCLES} centerIcon="🍑" centerLabel="ישבן ורגליים" />
       </Reveal>
       <div className="card-grid-3" style={{ marginBottom: 24 }}>
-        {GLUTE_MUSCLES.map(function(item, i) {
+        {[...GLUTE_MUSCLES, ...LEG_SUPPORT_MUSCLES.filter(function(item) { return item.name !== 'Calves'; })].map(function(item, i) {
           return (
             <Reveal key={i} delay={i * 0.06}>
-              <div className="card" style={{ padding: '22px' }}>
+              <div className="card" style={{ padding: '22px', height: '100%' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', gap: 14, alignItems: 'flex-start', marginBottom: 10 }}>
                   <div style={{ flex: 1 }}>
                     <div style={{ fontFamily: 'var(--font-display)', fontSize: 17, fontWeight: 700 }}>{item.heb}</div>
-                    <div style={{ fontSize: 12, color: 'var(--color-fg3)' }}>{item.title}</div>
+                    <div style={{ fontSize: 12, color: 'var(--color-fg3)' }}>{item.title || item.name}</div>
                   </div>
                   <LowerBodyHighlight region={item.region} accent={item.accent} view={item.view} />
                 </div>
-                <div style={{ fontSize: 13, fontWeight: 700, color: 'var(--color-fg1)', marginBottom: 8 }}>{item.role}</div>
-                <p style={{ fontSize: 13, color: 'var(--color-fg2)', lineHeight: 1.7, margin: '0 0 10px' }}><strong>תרגילים מובילים:</strong> {item.trains}</p>
-                <p style={{ fontSize: 13, color: 'var(--color-fg3)', lineHeight: 1.7, margin: 0 }}>{item.visual}</p>
+                <div style={{ fontSize: 13, fontWeight: 700, color: 'var(--color-fg1)', marginBottom: 8 }}>{item.role || item.desc}</div>
+                {item.trains ? (
+                  <p style={{ fontSize: 13, color: 'var(--color-fg2)', lineHeight: 1.7, margin: '0 0 10px' }}><strong>תרגילים מובילים:</strong> {item.trains}</p>
+                ) : null}
+                <p style={{ fontSize: 13, color: 'var(--color-fg3)', lineHeight: 1.7, margin: 0 }}>{item.visual || item.desc}</p>
               </div>
             </Reveal>
           );
         })}
       </div>
       <Reveal>
-        <div className="card-grid-3" style={{ marginBottom: 36 }}>
-          {LEG_SUPPORT_MUSCLES.map(function(item, i) {
+        <div className="card" style={{ padding: '20px', marginBottom: 36 }}>
+          {LEG_SUPPORT_MUSCLES.filter(function(item) { return item.name === 'Calves'; }).map(function(item, i) {
             return (
-              <div key={i} className="card" style={{ padding: '20px' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', gap: 14, alignItems: 'flex-start', marginBottom: 10 }}>
-                  <div style={{ flex: 1 }}>
-                    <div style={{ fontFamily: 'var(--font-display)', fontSize: 16, fontWeight: 700, marginBottom: 6 }}>{item.heb}</div>
-                    <div style={{ fontSize: 12, color: 'var(--color-fg3)', marginBottom: 8 }}>{item.name}</div>
-                  </div>
-                  <LowerBodyHighlight region={item.region} accent={item.accent} view={item.view} />
+              <div key={i} style={{ display: 'flex', justifyContent: 'space-between', gap: 16, alignItems: 'flex-start' }}>
+                <div style={{ flex: 1 }}>
+                  <div style={{ fontFamily: 'var(--font-display)', fontSize: 17, fontWeight: 700, marginBottom: 6 }}>{item.heb}</div>
+                  <div style={{ fontSize: 12, color: 'var(--color-fg3)', marginBottom: 10 }}>{item.name}</div>
+                  <p style={{ fontSize: 13, color: 'var(--color-fg2)', lineHeight: 1.7, margin: 0 }}>{item.desc}</p>
                 </div>
-                <p style={{ fontSize: 13, color: 'var(--color-fg2)', lineHeight: 1.7, margin: 0 }}>{item.desc}</p>
+                <LowerBodyHighlight region={item.region} accent={item.accent} view={item.view} />
               </div>
             );
           })}
+        </div>
+      </Reveal>
+      <Reveal>
+        <div className="side-note" style={{ marginBottom: 38 }}>
+          <strong>מקור האיורים:</strong> תמונות אנטומיה מתוך Wikimedia Commons, בעיקר קבצי BodyParts3D / Anatomography, כדי שתראי שריר אמיתי ולא סימון סכמטי.
         </div>
       </Reveal>
 
@@ -1011,6 +1139,7 @@ function Chapter3() {
                   <div style={{ width: 12, height: 12, borderRadius: 999, background: item.color }} />
                   <div style={{ fontFamily: 'var(--font-display)', fontSize: 18, fontWeight: 700 }}>{item.title}</div>
                 </div>
+                <ExerciseMotionPreview frames={item.frames} alt={item.title} />
                 <p style={{ fontSize: 14, color: 'var(--color-fg2)', lineHeight: 1.7, margin: '0 0 8px' }}><strong>דוגמאות:</strong> {item.examples}</p>
                 <p style={{ fontSize: 14, color: 'var(--color-fg3)', lineHeight: 1.7, margin: 0 }}>{item.why}</p>
               </div>
@@ -1018,12 +1147,41 @@ function Chapter3() {
           );
         })}
       </div>
+      <Reveal>
+        <div className="side-note" style={{ marginBottom: 48 }}>
+          <strong>מקור ההמחשות:</strong> תמונות תרגול ואיורים מתוך Wikimedia Commons. הן נועדו לתת לך המחשה מהירה לסוג התנועה, אבל לא להחליף לימוד טכניקה מסודר.
+        </div>
+      </Reveal>
 
       <Ch3SectionTitle icon="plan">5. איך לבנות אימון רגליים שלם</Ch3SectionTitle>
       <Reveal>
         <SectionIntro>
           במקום להיתקע על "איזו תוכנית מושלמת", עדיף לחשוב על תבנית קבועה ואז לבחור מתוך מאגר תרגילים. ככה את יכולה לבנות לעצמך אימון שמתאים לרמה, לציוד ולהעדפות שלך - בלי לאבד כיוון.
         </SectionIntro>
+      </Reveal>
+      <Reveal>
+        <div className="card-grid-2" style={{ marginBottom: 28 }}>
+          <div className="card" style={{ padding: '22px' }}>
+            <div style={{ fontFamily: 'var(--font-display)', fontSize: 18, fontWeight: 700, marginBottom: 10 }}>הפעלה לפני אימון רגליים</div>
+            <p style={{ fontSize: 14, color: 'var(--color-fg2)', lineHeight: 1.8, margin: '0 0 10px' }}>
+              כל אימון חייב להתחיל באקטיבציה של שריר המטרה. זו הכנה עצבית ותנועתית שיכולה לשפר מאוד את גיוס הישבן באימון עצמו, במיוחד אם את נוטה לעבוד יותר עם הגב התחתון או הירך הקדמית.
+            </p>
+            <ul style={{ margin: 0, paddingRight: 18, color: 'var(--color-fg2)' }}>
+              {GLUTE_ACTIVATION.map((item, i) => (
+                <li key={i} style={{ marginBottom: i === GLUTE_ACTIVATION.length - 1 ? 0 : 8, lineHeight: 1.8, fontSize: 14 }}>{item}</li>
+              ))}
+            </ul>
+          </div>
+          <div className="card" style={{ padding: '22px' }}>
+            <div style={{ fontFamily: 'var(--font-display)', fontSize: 18, fontWeight: 700, marginBottom: 10 }}>הטיית אגן קדמית - למה זה חשוב</div>
+            <p style={{ fontSize: 14, color: 'var(--color-fg2)', lineHeight: 1.8, margin: '0 0 8px' }}>
+              אצל הרבה נשים האגן יושב בהטיה קדמית: הגב התחתון מקושת יותר, הישבן כאילו "מאורך" כל הזמן, והגוף בורח בקלות לגב במקום לישבן.
+            </p>
+            <p style={{ fontSize: 14, color: 'var(--color-fg2)', lineHeight: 1.8, margin: 0 }}>
+              אם את לא מרגישה Hip Thrust או Glute Bridge, נסי סנטר מעט פנימה, צלעות "סגורות", ולחשוב על סיבוב עדין של האגן לאחור בנעילה. לפעמים זה כל ההבדל.
+            </p>
+          </div>
+        </div>
       </Reveal>
       <Reveal>
         <div className="card" style={{ padding: '22px 24px', marginBottom: 28 }}>
@@ -1058,6 +1216,34 @@ function Chapter3() {
                   <div style={{ fontFamily: 'var(--font-display)', fontSize: 17, fontWeight: 700 }}>{item.heb}</div>
                 </div>
                 <div style={{ fontSize: 12, color: 'var(--color-fg3)', marginBottom: 8 }}>{item.title}</div>
+                {item.image ? (
+                  <div
+                    style={{
+                      width: '100%',
+                      borderRadius: 18,
+                      overflow: 'hidden',
+                      border: '1px solid var(--color-border)',
+                      background: '#fff',
+                      marginBottom: 12,
+                      minHeight: 220,
+                      display: 'grid',
+                      placeItems: 'center',
+                    }}
+                  >
+                    <img
+                      src={item.image}
+                      alt=""
+                      loading="lazy"
+                      style={{
+                        width: '100%',
+                        height: 220,
+                        objectFit: 'contain',
+                        display: 'block',
+                        padding: 8,
+                      }}
+                    />
+                  </div>
+                ) : null}
                 <p style={{ fontSize: 13, color: 'var(--color-fg2)', lineHeight: 1.7, margin: '0 0 8px' }}>{item.role}</p>
                 <p style={{ fontSize: 13, color: 'var(--color-fg3)', lineHeight: 1.7, margin: 0 }}><strong>איך עובדים עליו:</strong> {item.trains}</p>
               </div>
@@ -1065,6 +1251,12 @@ function Chapter3() {
           );
         })}
       </div>
+
+      <Reveal>
+        <div className="side-note" style={{ marginBottom: 34 }}>
+          <strong>מקור האיורים:</strong> גם כאן השתמשתי בתמונות אנטומיה מתוך Wikimedia Commons ו-BodyParts3D / Anatomography, כדי לשמור על שפה ויזואלית אחידה.
+        </div>
+      </Reveal>
 
       <Reveal>
         <div className="card-grid-2" style={{ marginBottom: 36 }}>
@@ -1110,6 +1302,39 @@ function Chapter3() {
       </Reveal>
 
       <Reveal>
+        <div className="card-grid-2" style={{ marginTop: 26, marginBottom: 28 }}>
+          <div className="card" style={{ padding: '22px 24px' }}>
+            <div style={{ fontFamily: 'var(--font-display)', fontSize: 18, fontWeight: 700, marginBottom: 12 }}>כמה סטים באמת צריך?</div>
+            <BloatTable headers={['רמה', 'סטים לשבוע', 'מה זה אומר']} rows={WEEKLY_VOLUME_ROWS} />
+          </div>
+          <div className="card" style={{ padding: '22px 24px' }}>
+            <div style={{ fontFamily: 'var(--font-display)', fontSize: 18, fontWeight: 700, marginBottom: 12 }}>טווחים טובים להתחלה</div>
+            <BloatTable headers={['קבוצת שריר', 'טווח מומלץ', 'הערה']} rows={TARGET_VOLUME_ROWS} />
+          </div>
+        </div>
+      </Reveal>
+
+      <Reveal>
+        <div className="card-grid-2" style={{ marginBottom: 30 }}>
+          <div className="card" style={{ padding: '22px' }}>
+            <div style={{ fontFamily: 'var(--font-display)', fontSize: 18, fontWeight: 700, marginBottom: 10 }}>קרדיו ובניית ישבן</div>
+            <p style={{ fontSize: 14, color: 'var(--color-fg2)', lineHeight: 1.8, margin: '0 0 10px' }}>
+              קרדיו הוא לא אויב, אבל גם לא יושב באותו מקום כמו אימון כוח. אם את רצה הרבה מאוד ומנסה במקביל לבנות ישבן, ההתאוששות שלך, העומס המצטבר ושיווי המשקל הקלורי יכולים להיפגע.
+            </p>
+            <p style={{ fontSize: 14, color: 'var(--color-fg2)', lineHeight: 1.8, margin: 0 }}>
+              בשביל רוב הנשים שהמטרה שלהן היא ישבן, הליכה היא הקרדיו הכי ידידותי: בערך 8,000-10,000 צעדים ביום, עם מינימום פגיעה בהתאוששות ומקסימום תרומה לבריאות ולניהול תיאבון.
+            </p>
+          </div>
+          <div className="card" style={{ padding: '22px' }}>
+            <div style={{ fontFamily: 'var(--font-display)', fontSize: 18, fontWeight: 700, marginBottom: 10 }}>איך למקם את זה חכם</div>
+            <p style={{ fontSize: 14, color: 'var(--color-fg2)', lineHeight: 1.8, margin: 0 }}>
+              אם את אוהבת קרדיו, שמרי אותו במינון שעובד יחד עם המטרה שלך: הליכות, מעט אופניים או ריצה מתונה אם את נהנית ממנה, אבל לא להפוך שבוע שבנוי לישבן לשבוע של שחיקה מתמדת.
+            </p>
+          </div>
+        </div>
+      </Reveal>
+
+      <Reveal>
         <div className="card-grid-2" style={{ marginBottom: 36 }}>
           <div className="card" style={{ padding: '22px' }}>
             <div style={{ fontFamily: 'var(--font-display)', fontSize: 18, fontWeight: 700, marginBottom: 10 }}>סימנים שהתוכנית עובדת</div>
@@ -1128,6 +1353,13 @@ function Chapter3() {
       </Reveal>
 
       <PullQuote text="אימון טוב הוא לא אוסף תרגילים יפים. הוא מערכת ברורה: מטרה, סדר, עומס, התמדה והתאוששות." />
+
+      <Ch3SectionTitle icon="summary" style={{ marginTop: 44 }}>9. מילון מושגים קצר</Ch3SectionTitle>
+      <Reveal>
+        <div className="card" style={{ padding: '22px 24px', marginBottom: 28 }}>
+          <BloatTable headers={['מושג', 'מה זה אומר']} rows={GLOSSARY_ROWS} />
+        </div>
+      </Reveal>
 
       <Reveal>
         <div className="side-note" style={{ marginTop: 34 }}>

@@ -110,12 +110,24 @@ function IntroSection() {
     <section id="section-intro" className="guide-section">
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, alignItems: 'start' }}>
         <Reveal>
+          <div style={{
+            background: 'rgba(255,255,255,0.82)',
+            border: '1px solid rgba(25,34,29,0.12)',
+            borderRadius: 'var(--radius-xl)',
+            padding: '14px 16px',
+            marginBottom: 18,
+            boxShadow: 'var(--shadow-soft)',
+          }}>
+            <p style={{ fontSize: 13, color: 'var(--color-fg2)', lineHeight: 1.7, margin: 0 }}>
+              המידע במדריך הזה הוא חינוכי בלבד ולא מהווה תחליף לייעוץ רפואי מקצועי. אם יש לך מצב רפואי קיים, את בהריון, מניקה או נוטלת תרופות - התייעצי עם רופא או דיאטנית קלינית לפני שאת מיישמת שינויים משמעותיים.
+            </p>
+          </div>
           <div className="chapter-label">
             <div className="chapter-label-line" />
             ברוכה הבאה
           </div>
           <h2 className="chapter-title" style={{ marginBottom: 20 }}>
-            המדריך שהייתי רוצה לתת לעצמי לפני עשר שנים
+            המדריך שהייתי רוצה לתת לעצמי בתחילת הדרך
           </h2>
           <p style={{ fontSize: 15, color: 'var(--color-fg2)', lineHeight: 1.8, marginBottom: 16 }}>
             אם גם את מרגישה שאת מנסה לאכול נכון ולהתאמן, אבל הגוף עדיין מרגיש נפוח, עייף
