@@ -2521,14 +2521,19 @@ function Chapter5() {
           <div style={{ fontSize: 48, marginBottom: 16 }}>❤️</div>
           <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 28, fontWeight: 900, marginBottom: 20 }}>מילה אחרונה ממני</h2>
           <div style={{ fontSize: 15, color: 'var(--color-fg2)', lineHeight: 1.8, maxWidth: 560, margin: '0 auto 20px', textAlign: 'right' }}>
-            <p>עברת דרך ארוכה אם קראת עד כאן. ואני כבר גאה בך.</p>
-            <p>הגוף שלך מדבר איתך כל יום. כשהוא אומר "אני נפוחה" - הוא מבקש ממך עזרה. כשהוא אומר "אני עייפה" - הוא מבקש ממך עזרה. כשהוא אומר "אני רעבה בחמש בערב" - הוא מבקש ממך עזרה.</p>
-            <p>התפקיד שלך הוא להקשיב. ולהגיב עם מה שהוא באמת צריך.</p>
+            <p>אם קראת עד כאן, כבר עשית צעד חשוב: התחלת להבין טוב יותר מה הגוף שלך מנסה להגיד לך.</p>
+            <p>עכשיו המטרה היא לא לעשות הכול מושלם, אלא לקחת מכאן כמה עקרונות טובים, ליישם אותם בעקביות, ולתת לגוף זמן להגיב.</p>
+            <p>ואם תוך כדי הקריאה הרגשת שאת רוצה להפוך את כל זה לפרקטיקה שמותאמת אישית אלייך — עם תוכנית, בקרה ודיוק אמיתי — יכול להיות שתכנית הליווי שלי תהיה בדיוק הצעד הבא שלך.</p>
             <p style={{ fontWeight: 700, color: 'var(--color-fg1)' }}>בהצלחה. אליס ❤️</p>
           </div>
-          <button onClick={function() { window.scrollTo({ top: 0, behavior: 'smooth' }); }} style={{ padding: '14px 28px', background: 'var(--color-accent)', color: 'white', border: 'none', borderRadius: 'var(--radius-full)', fontFamily: 'var(--font-body)', fontSize: 15, fontWeight: 700, cursor: 'pointer', boxShadow: 'var(--shadow-accent)' }}>
-            חזרי להתחלה
-          </button>
+          <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
+            <a href="https://coach.elice.co.il" target="_blank" rel="noreferrer" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', padding: '14px 28px', background: 'var(--color-accent)', color: 'white', textDecoration: 'none', border: 'none', borderRadius: 'var(--radius-full)', fontFamily: 'var(--font-body)', fontSize: 15, fontWeight: 700, cursor: 'pointer', boxShadow: 'var(--shadow-accent)' }}>
+              להצצה לתכנית הליווי
+            </a>
+            <button onClick={function() { window.scrollTo({ top: 0, behavior: 'smooth' }); }} style={{ padding: '14px 28px', background: 'transparent', color: 'var(--color-fg1)', border: '1px solid var(--color-border-strong)', borderRadius: 'var(--radius-full)', fontFamily: 'var(--font-body)', fontSize: 15, fontWeight: 700, cursor: 'pointer' }}>
+              חזרי להתחלה
+            </button>
+          </div>
         </div>
       </Reveal>
 

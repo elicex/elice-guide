@@ -1,6 +1,6 @@
 const LANDING_FUNNEL = {
   productName: 'בניית הגוף מבפנים ומבחוץ',
-  subtitle: 'המדריך הדיגיטלי לנשים שרוצות להבין נפיחות, מעיים, תזונה, אימון ואורח חיים - בלי קיצוניות ובלי בלבול',
+  subtitle: 'המדריך הדיגיטלי לנשים שרוצות להבין נפיחות, מעיים, תזונה, אימון ואורח חיים - בצורה פרקטית, נשית וברורה',
   priceLabel: '149 ש"ח במקום 380 ש"ח',
   checkoutUrl: '',
   sellerEmail: '',
@@ -31,16 +31,31 @@ const LANDING_FOR_HER = [
 ];
 
 const LANDING_RESULTS = [
-  'יותר בהירות מול אוכל וארוחות',
-  'פחות נפיחות ויותר הבנה של הטריגרים שלך',
-  'מסגרת מסודרת לבניית שגרה',
-  'יכולת להתחיל ליישם מיד, גם בלי ליווי צמוד',
+  'יותר בהירות מול אוכל, ארוחות וקבלת החלטות ביומיום',
+  'פחות ניסוי וטעייה ויותר הבנה של מה יכול להשפיע עלייך',
+  'מסגרת מסודרת להתחיל לבנות שגרה שאפשר להתמיד בה',
+  'יכולת להתחיל ליישם לבד, גם בלי ליווי צמוד',
+];
+
+const LANDING_DIFFERENT = [
+  {
+    title: 'לא עוד תוכן מפוזר',
+    desc: 'במקום לקפוץ בין סרטונים, פוסטים וטיפים סותרים - יש כאן מסלול אחד שמחבר בין כל החלקים לתמונה ברורה.'
+  },
+  {
+    title: 'גם הבנה וגם פרקטיקה',
+    desc: 'לא רק להסביר למה את נפוחה או עייפה, אלא גם לעזור לך להבין מה לבדוק קודם, מה לשנות, ואיך ליישם בפועל.'
+  },
+  {
+    title: 'מוצר מעבר חכם לליווי',
+    desc: 'אם תרגישי שאת רוצה לקחת את זה צעד קדימה, המדריך יוביל אותך בצורה טבעית ומדויקת גם לתכנית הליווי.'
+  },
 ];
 
 const LANDING_FAQ = [
   {
     q: 'איך אני מקבלת את המדריך אחרי הרכישה?',
-    a: 'המטרה של התשתית היא שהלקוחה תקבל למייל שלה קישור מסודר למדריך, כדי שתוכל לפתוח אותו מתי שנוח לה ולחזור אליו שוב ושוב.',
+    a: 'מיד אחרי הרכישה תקבלי גישה מסודרת למדריך, וגם מייל עם קישור אישי כדי שתוכלי לפתוח אותו מתי שנוח לך ולחזור אליו שוב ושוב.',
   },
   {
     q: 'זה מתאים רק למי שסובלת מנפיחות?',
@@ -49,6 +64,10 @@ const LANDING_FAQ = [
   {
     q: 'זה פרקטי או רק מסביר?',
     a: 'פרקטי מאוד. יש הסברים, אבל גם טבלאות, תבניות, דוגמאות, מעקבים, ובנייה של ממש - כדי שתוכלי ליישם ולא רק לקרוא.',
+  },
+  {
+    q: 'זה מחליף ליווי אישי?',
+    a: 'לא. המדריך נותן הרבה מאוד בהירות וכלים, אבל הוא עדיין מוצר דיגיטלי כללי. אם תרצי התאמה אישית, פרקטיקה צמודה ובקרה - תוכלי לעבור אחר כך גם לתכנית הליווי.',
   },
 ];
 
@@ -107,7 +126,7 @@ function LandingHero() {
 
         <p className="hero-subtitle">
           מדריך אחד שמחבר בין תזונה, מיקרוביום, נפיחות,<br />
-          אימון ואורח חיים - בצורה נשית, פרקטית וברורה
+          אימון ואורח חיים - כדי לעשות סדר בגוף שלך ובמה שהוא מנסה להגיד לך
         </p>
 
         <div className="hero-meta">
@@ -149,7 +168,7 @@ function LandingPainSection() {
             זה בדיוק המדריך שנועד לעשות לך סדר
           </h2>
           <p className="chapter-desc" style={{ marginBottom: 22 }}>
-            לא עוד מידע מפוזר. לא עוד "תאכלי פחות ותזוזי יותר". אלא מדריך שבונה הבנה - למה את נפוחה, למה האנרגיה שלך נופלת, איך לאכול, איך להתאמן ואיך סוף סוף לעבוד עם הגוף שלך במקום להילחם בו.
+            לא עוד מידע מפוזר. לא עוד "תאכלי פחות ותזוזי יותר". אלא מדריך שבונה הבנה: למה את נפוחה, למה האנרגיה שלך נופלת, איך לאכול, איך להתאמן, ואיך להתחיל לעבוד עם הגוף שלך במקום להילחם בו.
           </p>
           <div className="card-grid-2">
             {LANDING_PAIN_POINTS.map(function(point, i) {
@@ -236,6 +255,35 @@ function LandingForWhoSection() {
   );
 }
 
+function LandingDifferentSection() {
+  return (
+    <section className="guide-section" style={{ paddingTop: 8 }}>
+      <Reveal>
+        <div className="chapter-label" style={{ marginBottom: 16 }}>
+          <div className="chapter-label-line" />
+          למה זה שונה
+        </div>
+        <h2 className="chapter-title" style={{ marginBottom: 14 }}>זה לא עוד אוסף טיפים - אלא מסלול מסודר להבנה ויישום</h2>
+        <p className="chapter-desc" style={{ marginBottom: 24 }}>
+          הרעיון כאן הוא לא להציף אותך בעוד מידע, אלא לקחת תחומים שנשמעים מורכבים ולתרגם אותם למשהו בהיר, ישים ונעים לעבודה.
+        </p>
+      </Reveal>
+      <div className="card-grid-3">
+        {LANDING_DIFFERENT.map(function(item, i) {
+          return (
+            <Reveal key={i} delay={i * 0.05}>
+              <div className="card" style={{ padding: '24px 22px', minHeight: 198 }}>
+                <div style={{ fontFamily: 'var(--font-display)', fontSize: 20, fontWeight: 700, marginBottom: 10 }}>{item.title}</div>
+                <p style={{ fontSize: 14, color: 'var(--color-fg2)', lineHeight: 1.75, margin: 0 }}>{item.desc}</p>
+              </div>
+            </Reveal>
+          );
+        })}
+      </div>
+    </section>
+  );
+}
+
 function PurchaseSection() {
   const [form, setForm] = useState(function() {
     return JSON.parse(localStorage.getItem('landing_purchase_form') || '{"name":"","email":"","phone":"","consent":true}');
@@ -268,17 +316,17 @@ function PurchaseSection() {
     const result = await submitLandingLead(payload);
 
     if (!result.ok) {
-      setStatus('הפרטים נשמרו מקומית, אבל עדיין אין חיבור אמיתי לשרת.');
+      setStatus('הפרטים נשמרו. חיבור הסליקה/שרת עדיין לא הושלם, אבל הטופס עצמו קלט את הנתונים.');
       return;
     }
 
     if (LANDING_FUNNEL.checkoutUrl) {
       window.open(LANDING_FUNNEL.checkoutUrl, '_blank', 'noopener,noreferrer');
-      setStatus('הפרטים נשמרו. מעבירה לרכישה.');
+      setStatus('הפרטים נשמרו. מעבירה אותך לרכישה.');
       return;
     }
 
-    setStatus('הפרטים נשמרו. עכשיו נשאר לחבר סליקה אמיתית.');
+    setStatus('הפרטים נשמרו. השלב הבא הוא לחבר את העמוד הזה לרכישה האמיתית.');
   }
 
   return (
@@ -292,14 +340,14 @@ function PurchaseSection() {
             </div>
             <h3 className="chapter-title" style={{ marginBottom: 12 }}>{LANDING_FUNNEL.productName}</h3>
             <p className="chapter-desc" style={{ marginBottom: 16 }}>
-              ברגע שהרכישה תושלם, הלקוחה אמורה לקבל את המדריך ישירות למייל שלה עם קישור מסודר, כדי שתוכל לפתוח, לשמור ולחזור אליו בכל זמן.
+              ברגע שהרכישה תושלם, הלקוחה תקבל גישה מסודרת למדריך וגם מייל עם קישור אישי, כדי שתוכל לפתוח, לשמור ולחזור אליו בכל זמן.
             </p>
             <div style={{ display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap', marginBottom: 16 }}>
               <div className="sales-price-tag" style={{ fontSize: 16 }}>{LANDING_FUNNEL.priceLabel}</div>
               <div style={{ fontSize: 14, color: 'var(--color-fg3)', textDecoration: 'line-through' }}>380 ש"ח</div>
             </div>
             <div className="sales-mini-note">
-              מה היא מקבלת: גישה דיגיטלית למדריך, תוכן מעמיק, תבניות עבודה, ומוצר שהיא יכולה לחזור אליו שוב ושוב.
+              מה היא מקבלת: גישה דיגיטלית למדריך, תוכן מעמיק, עקרונות יישומיים, תבניות חשיבה ומוצר שאפשר לחזור אליו שוב ושוב.
             </div>
             <div style={{ marginTop: 18, display: 'grid', gap: 8 }}>
               {LANDING_RESULTS.map(function(item, i) {
@@ -316,7 +364,7 @@ function PurchaseSection() {
           <div className="sales-form-wrap">
             <div style={{ fontFamily: 'var(--font-display)', fontSize: 24, fontWeight: 700, marginBottom: 8 }}>שרייני לעצמך את המדריך</div>
             <p style={{ fontSize: 14, color: 'var(--color-fg3)', lineHeight: 1.7, marginBottom: 16 }}>
-              השאירי פרטים כדי לעבור לרכישה ולקבל אחר כך את המדריך למייל שלך.
+              השאירי פרטים כדי לעבור לרכישה, ולקבל אחר כך את המדריך ישירות למייל שלך.
             </p>
 
             <div className="sales-form-grid">
@@ -395,6 +443,8 @@ function LandingFinalCta() {
           <div className="sales-final-title">149 ש"ח במקום 380 ש"ח</div>
           <div className="sales-final-text">
             אם חיפשת סוף סוף להבין את הגוף שלך כמו שצריך - זה המקום להתחיל ממנו. מדריך אחד שיכול לעשות לך הרבה סדר, ולחסוך לך חודשים של ניסוי וטעייה.
+            <br /><br />
+            ואם אחר כך תרגישי שאת רוצה לקחת את זה צעד קדימה ולעבור לפרקטיקה מותאמת אישית - מחכה לך גם אפשרות להמשיך לתכנית הליווי.
           </div>
         </div>
         <a className="hero-cta" href="#landing-purchase">
@@ -412,6 +462,7 @@ function LandingApp() {
       <LandingPainSection />
       <LandingIncludesSection />
       <LandingForWhoSection />
+      <LandingDifferentSection />
       <PurchaseSection />
       <DeliverySection />
       <LandingFinalCta />
