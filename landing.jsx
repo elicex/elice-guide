@@ -269,7 +269,7 @@ function LandingHero() {
 
         <h1 className="hero-title">
           {LANDING_FUNNEL.productName}<br />
-          <span>המדריך שמחבר בין מיקרוביום, נפיחות, הורמונים, רעב וחשקים - והופך את זה לסדר פעולה ברור</span>
+          <span>כל מה שלא הסבירו לך על תזונה, מיקרוביום ונפיחות - עם כלים שיעזרו לך להבין את הגוף וליישם כבר מהיום</span>
         </h1>
 
         <p className="hero-subtitle">
