@@ -68,39 +68,6 @@ const LANDING_TAKEAWAYS = [
   'להחזיק במקום אחד ידע וכלים שיכולים לחסוך לך חודשים של ניסוי וטעייה.',
 ];
 
-const LANDING_CURIOSITY_TOPICS = [
-  {
-    icon: 'microbiome',
-    title: 'המיקרוביום שלך לא רק "מעכל אוכל"',
-    desc: 'הוא יכול להשפיע על נפיחות, יציאות, חשקים, מצב רוח, דלקתיות ואפילו על הדרך שבה הגוף מגיב לתהליך ירידה במשקל.',
-  },
-  {
-    icon: 'moon',
-    title: 'סטרס ושינה יכולים להרגיש כמו "תקיעות"',
-    desc: 'קורטיזול, חוסר שינה והתאוששות לא טובה יכולים להשפיע על רעב, חשקים, אגירת נוזלים והיכולת שלך להתמיד.',
-  },
-  {
-    icon: 'leaf',
-    title: 'לא כל נפיחות אומרת אותו דבר',
-    desc: 'נפיחות אחרי אוכל, סביב מחזור, בבוקר, בערב, עם עצירות או עם גזים - כל אחת יכולה להצביע על כיוון אחר לגמרי.',
-  },
-  {
-    icon: 'nutrition',
-    title: 'יכול להיות שאת לא אוכלת "יותר מדי"',
-    desc: 'לפעמים הבעיה היא חוסר חלבון, ארוחות לא מספקות, מעט סיבים, פיזור לא נכון ביום או גירעון שלא באמת מתאים לך.',
-  },
-  {
-    icon: 'brain',
-    title: 'הורמונים, רעב ונפיחות מחוברים',
-    desc: 'המחזור, מערכת העיכול, רמות סטרס ותזונה משפיעים אחד על השני. כשמבינים את החיבור, מפסיקים לפרש כל סימן ככישלון.',
-  },
-  {
-    icon: 'tools',
-    title: 'את לא אמורה לנחש מה הטריגר שלך',
-    desc: 'המדריך נותן דרך לעקוב, להשוות, לזהות דפוסים ולבנות סדר פעולות במקום להוריד כל פעם עוד מאכל בלי להבין למה.',
-  },
-];
-
 const LANDING_TRANSFORMATION_POINTS = {
   before: [
     'אוכלת "בסדר" ועדיין מסיימת את היום עם בטן נפוחה וכבדה',
@@ -387,42 +354,6 @@ function LandingPainSection() {
         </div>
         <PurchaseCta note="אם זה נשמע מוכר, המדריך בנוי בדיוק כדי לעשות לך סדר." />
       </Reveal>
-    </section>
-  );
-}
-
-function LandingCuriositySection() {
-  return (
-    <section className="guide-section landing-curiosity-section" style={{ paddingTop: 34 }}>
-      <Reveal>
-        <div className="chapter-label" style={{ marginBottom: 16 }}>
-          <div className="chapter-label-line" />
-          הצצה למה שתגלי בפנים
-        </div>
-        <h2 className="chapter-title" style={{ marginBottom: 14 }}>
-          הדברים שאף פעם לא הסבירו לך כמו שצריך על הגוף שלך
-        </h2>
-        <p className="chapter-desc" style={{ marginBottom: 24 }}>
-          המדריך נוגע בדיוק בנושאים שגורמים לך להגיד “רגע, אולי בגלל זה אני תקועה?” -
-          ומתרגם אותם לשפה ברורה, נשית ופרקטית.
-        </p>
-      </Reveal>
-      <div className="card-grid-3">
-        {LANDING_CURIOSITY_TOPICS.map(function(item, i) {
-          return (
-            <Reveal key={i} delay={i * 0.04}>
-              <div className="card" style={{ padding: '24px 22px', minHeight: 230 }}>
-                <div style={{ marginBottom: 12 }}>
-                  <LandingIcon name={item.icon} size={22} />
-                </div>
-                <div style={{ fontFamily: 'var(--font-display)', fontSize: 20, fontWeight: 700, marginBottom: 10 }}>{item.title}</div>
-                <p style={{ fontSize: 14, color: 'var(--color-fg2)', lineHeight: 1.75, margin: 0 }}>{item.desc}</p>
-              </div>
-            </Reveal>
-          );
-        })}
-      </div>
-      <PurchaseCta note="אם כבר עכשיו את מרגישה שזה מחבר לך נקודות, המדריך לוקח אותך הרבה יותר עמוק." />
     </section>
   );
 }
@@ -875,7 +806,6 @@ function LandingApp() {
       <LandingHero />
       <LandingValueSection />
       <LandingTransformationSection />
-      <LandingCuriositySection />
       <LandingPainSection />
       <LandingIncludesSection />
       <LandingTakeawaySection />
