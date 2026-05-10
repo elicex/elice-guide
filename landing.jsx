@@ -1,6 +1,6 @@
 const LANDING_FUNNEL = {
   productName: 'בניית הגוף מבפנים ומבחוץ',
-  subtitle: 'המדריך הדיגיטלי לנשים שרוצות להבין נפיחות, מעיים, תזונה, אימון ואורח חיים - בצורה פרקטית, נשית וברורה',
+  subtitle: 'המדריך הדיגיטלי לנשים שרוצות להבין סוף סוף מה קורה בגוף שלהן, להפסיק לנחש, ולקבל דרך ברורה לתזונה, נפיחות, מעיים ואורח חיים - בצורה פרקטית, נשית וברורה',
   priceLabel: '149 ש"ח במקום 380 ש"ח',
   checkoutUrl: '',
   sellerEmail: '',
@@ -9,48 +9,79 @@ const LANDING_FUNNEL = {
 };
 
 const LANDING_PAIN_POINTS = [
-  'את אוכלת "בריא" ועדיין מרגישה נפוחה, עייפה או מבולבלת מול האוכל.',
-  'את מנסה להתאמן, אבל לא באמת יודעת איך לבנות תפריט או תוכנית שעובדים יחד.',
-  'כל פעם יש תקופה טובה, ואז בלגן, חשקים, חוסר סדר ותחושה שהגוף לא משתף פעולה.',
-  'את רוצה להבין מה קורה בגוף שלך - לא רק לקבל עוד רשימת איסורים.',
+  'את אוכלת "בריא" ועדיין מרגישה נפוחה, כבדה או לא מבינה למה שום דבר לא מתיישב.',
+  'יש לך מלא מידע בראש - חלבון, הורמונים, נפיחות, מעיים, קלוריות, אימונים - אבל אין לך שיטה אחת מסודרת.',
+  'את רוצה לרדת בשומן, להרגיש טוב יותר בגוף, ולבנות שגרה שעובדת באמת - בלי לקפוץ כל שבוע למשהו אחר.',
+  'את לא מחפשת עוד השראה. את מחפשת להבין מה לעשות, למה, ואיך ליישם את זה בחיים האמיתיים שלך.',
 ];
 
 const LANDING_INCLUDES = [
-  { icon: '🥗', title: 'פרק תזונה מלא', desc: 'מאקרו, קלוריות, הורמונים, בניית ארוחות והבנה אמיתית של מה הגוף שלך צריך.' },
-  { icon: '🦠', title: 'פרק מיקרוביום ומעיים', desc: 'הסבר עמוק אבל ברור על חיידקי המעי, ציר המעי-מוח, פרוביוטיקה ופרה-ביוטיקה.' },
-  { icon: '🌿', title: 'מדריך נפיחות מעשי', desc: 'סוגי נפיחות, FODMAP, טריגרים נפוצים, וכלים לזהות מה באמת מפריע לך.' },
-  { icon: '🏋️', title: 'פרק אימון פרקטי', desc: 'בניית תוכנית לישבן, רגליים וגב, כולל תבניות ומאגרי תרגילים לבחירה.' },
-  { icon: '🌙', title: 'אורח חיים לנשים', desc: 'שינה, סטרס, קורטיזול, הידרציה והרגלים קטנים שמשנים את התמונה כולה.' },
-  { icon: '🗓️', title: 'תוכנית 4 שבועות', desc: 'מסלול ישים שמוציא אותך מבלבול לשגרה בריאה וברורה.' },
+  { icon: '🥗', title: 'פרק תזונה מלא', desc: 'קלוריות, חלבון, שומן, פחמימות, הורמונים, בניית ארוחות, קריאת תוויות, אלכוהול, צום לסירוגין - והכול מוסבר בעברית ברורה.' },
+  { icon: '🦠', title: 'פרק מיקרוביום ומעיים', desc: 'מה באמת קורה במעי שלך, איך זה קשור לנפיחות, לאנרגיה, למצב הרוח ולהורמונים, ומה אפשר להתחיל לעשות אחרת כבר עכשיו.' },
+  { icon: '🌿', title: 'מדריך נפיחות פרקטי', desc: '7 סוגי נפיחות, Low FODMAP, טריגרים נפוצים, טבלת מעקב, תפריט התחלה, וכלים לזהות מה באמת מפעיל אותך.' },
+  { icon: '🌙', title: 'אורח חיים שמביא תוצאות', desc: 'שינה, סטרס, קורטיזול, הידרציה והרגלים קטנים שמשפיעים על איך את נראית, מרגישה ומתאוששת.' },
+  { icon: '🗓️', title: 'תוכנית 4 שבועות', desc: 'מסלול יישום ברור שעוזר לך להפוך ידע לפעולה, במקום רק לקרוא ולהרגיש מוצפת.' },
 ];
 
 const LANDING_FOR_HER = [
-  'אם את רוצה להבין למה הגוף שלך מגיב כמו שהוא מגיב - ולא רק "לנסות עוד משהו".',
-  'אם את מרגישה שהבטן, האנרגיה, התזונה והאימונים שלך לא באמת עובדים יחד.',
-  'אם חשוב לך לקבל מדריך נשי, מדויק, ברור ועמוק - בלי ניסוחים יבשים ובלי תיאוריה מנותקת.',
+  'אם את רוצה להבין למה הגוף שלך מגיב כמו שהוא מגיב - ולא רק לנסות עוד שיטה אקראית.',
+  'אם את מרגישה שהבטן, האנרגיה, האוכל וההורמונים שלך לא באמת עובדים יחד.',
+  'אם חשוב לך מדריך נשי, עמוק, פרקטי ולא מתנשא - כזה שמסביר וגם מראה לך מה לעשות.',
 ];
 
 const LANDING_RESULTS = [
-  'יותר בהירות מול אוכל, ארוחות וקבלת החלטות ביומיום',
-  'פחות ניסוי וטעייה ויותר הבנה של מה יכול להשפיע עלייך',
-  'מסגרת מסודרת להתחיל לבנות שגרה שאפשר להתמיד בה',
-  'יכולת להתחיל ליישם לבד, גם בלי ליווי צמוד',
+  'יותר בהירות מול אוכל, ארוחות וקלוריות',
+  'פחות נפיחות ויותר הבנה של הטריגרים האישיים שלך',
+  'יכולת לבנות צלחת ושבוע אכילה בלי לנחש',
+  'תבניות, טבלאות וכלים שתוכלי לחזור אליהם שוב ושוב',
+  'פחות בלבול, פחות קיצוניות ויותר שיטה',
+  'בסיס חזק שיכול לחסוך לך חודשים של ניסוי וטעייה',
 ];
 
 const LANDING_DIFFERENT = [
   {
     title: 'לא עוד תוכן מפוזר',
-    desc: 'במקום לקפוץ בין סרטונים, פוסטים וטיפים סותרים - יש כאן מסלול אחד שמחבר בין כל החלקים לתמונה ברורה.'
+    desc: 'במקום לקפוץ בין פוסטים, סרטונים והמלצות סותרות - יש כאן מסלול אחד שמחבר בין כל החלקים לתמונה ברורה.'
   },
   {
     title: 'גם הבנה וגם פרקטיקה',
     desc: 'לא רק להסביר למה את נפוחה או עייפה, אלא גם לעזור לך להבין מה לבדוק קודם, מה לשנות, ואיך ליישם בפועל.'
   },
   {
-    title: 'מוצר מעבר חכם לליווי',
-    desc: 'אם תרגישי שאת רוצה לקחת את זה צעד קדימה, המדריך יוביל אותך בצורה טבעית ומדויקת גם לתכנית הליווי.'
+    title: 'בסיס מעולה לפני ליווי',
+    desc: 'גם אם אחר כך תרצי להעמיק או לעבור לליווי, המדריך הזה נותן לך קודם קרקע יציבה, שפה ברורה והבנה אמיתית של הגוף שלך.'
   },
 ];
+
+const LANDING_VALUE_STACK = [
+  { icon: '🧭', title: 'בהירות', desc: 'תביני סוף סוף מה לעשות קודם, מה קשור למה, ואיפה בכלל מתחילים.' },
+  { icon: '🛠️', title: 'כלים אמיתיים', desc: 'מחשבון, טבלאות מעקב, תבניות לבניית ארוחות, תוכנית 4 שבועות וכלים שאפשר ממש להשתמש בהם.' },
+  { icon: '🧠', title: 'הבנה עמוקה', desc: 'לא רק "מה לאכול", אלא למה הגוף שלך מגיב כמו שהוא מגיב - במעיים, בהורמונים, בנפיחות ובשגרה היומיומית.' },
+  { icon: '📅', title: 'יישום לחיים', desc: 'תוכנית 4 שבועות, סדר פעולות ברור, והרבה פחות תחושה של הצפה.' },
+];
+
+const LANDING_TAKEAWAYS = [
+  'לדעת לבנות לעצמך ארוחה מאוזנת בלי להסתבך כל יום מחדש.',
+  'להבין מה ההבדל בין נפיחות של גזים, הורמונים, עצירות, סטרס, היסטמין או SIBO.',
+  'לזהות איפה את נופלת בגרעון קלורי, בחלבון, בשומן, או בחוסר סדר יומי.',
+  'להבין למה שינה, סטרס, מים ואורח חיים משפיעים ישירות על התוצאות שלך.',
+  'להחזיק ביד מוצר אחד שמרכז לך במקום אחד חודשים של מידע מפוזר.',
+];
+
+const LANDING_TRANSFORMATION_POINTS = {
+  before: [
+    'אוכלת "בסדר" ועדיין מסיימת ימים נפוחה',
+    'לא בטוחה אם הבעיה היא האוכל, ההורמונים או המעיים',
+    'כל שבוע מתחילה שוב משהו אחר',
+    'יש הרבה מידע, אבל אין סדר',
+  ],
+  after: [
+    'מבינה מה כנראה מפעיל אותך ומה לא',
+    'יודעת איך לאכול בצורה שמרגיעה את הגוף',
+    'יש לך שיטה ברורה ולא עוד ניסוי וטעייה',
+    'את מרגישה שיש לך על מה להישען',
+  ],
+};
 
 const LANDING_FAQ = [
   {
@@ -59,7 +90,7 @@ const LANDING_FAQ = [
   },
   {
     q: 'זה מתאים רק למי שסובלת מנפיחות?',
-    a: 'לא. הנפיחות היא חלק משמעותי במדריך, אבל יש כאן גם תזונה, מיקרוביום, אימון, הורמונים ואורח חיים. זה מדריך רחב על הגוף הנשי מבפנים ומבחוץ.',
+    a: 'לא. הנפיחות היא חלק משמעותי במדריך, אבל יש כאן גם תזונה, מיקרוביום, הורמונים ואורח חיים. זה מדריך רחב על הגוף הנשי מבפנים ומבחוץ.',
   },
   {
     q: 'זה פרקטי או רק מסביר?',
@@ -121,19 +152,19 @@ function LandingHero() {
 
         <h1 className="hero-title">
           {LANDING_FUNNEL.productName}<br />
-          <span>הבנה אמיתית של הגוף שלך - מהבטן ועד התוצאות</span>
+          <span>הבנה אמיתית של הגוף שלך - מהבטן, דרך הצלחת, ועד התוצאות</span>
         </h1>
 
         <p className="hero-subtitle">
-          מדריך אחד שמחבר בין תזונה, מיקרוביום, נפיחות,<br />
-          אימון ואורח חיים - כדי לעשות סדר בגוף שלך ובמה שהוא מנסה להגיד לך
+          זה לא עוד PDF עם טיפים. זה מדריך דיגיטלי עמוק, פרקטי ומסודר<br />
+          שנותן לך סוף סוף שיטה להבין את הגוף שלך ולעבוד איתו, לא נגדו
         </p>
 
         <div className="hero-meta">
           {[
-            { icon: '📚', label: '6 פרקים עמוקים ומעשיים' },
-            { icon: '✨', label: 'מדריך שאפשר באמת ליישם' },
-            { icon: '📩', label: 'נשלח ישירות למייל שלך' },
+            { icon: '📚', label: '5 פרקים עמוקים עם יישום אמיתי' },
+            { icon: '🛠️', label: 'כלים, טבלאות, מחשבון ותבניות' },
+            { icon: '📩', label: 'נשלח ישירות למייל שלך אחרי הרכישה' },
           ].map((m, i) => (
             <div key={i} className="hero-meta-item">
               <span>{m.icon}</span>
@@ -144,7 +175,7 @@ function LandingHero() {
 
         <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', justifyContent: 'center', marginTop: 18 }}>
           <div className="sales-price-tag" style={{ fontSize: 15, minHeight: 50 }}>{LANDING_FUNNEL.priceLabel}</div>
-          <div className="sales-chip" style={{ minHeight: 50 }}>גישה דיגיטלית + חזרה חופשית למדריך</div>
+          <div className="sales-chip" style={{ minHeight: 50 }}>גישה דיגיטלית מלאה + חזרה חופשית למדריך</div>
         </div>
 
         <a className="hero-cta" href="#landing-purchase">
@@ -168,7 +199,7 @@ function LandingPainSection() {
             זה בדיוק המדריך שנועד לעשות לך סדר
           </h2>
           <p className="chapter-desc" style={{ marginBottom: 22 }}>
-            לא עוד מידע מפוזר. לא עוד "תאכלי פחות ותזוזי יותר". אלא מדריך שבונה הבנה: למה את נפוחה, למה האנרגיה שלך נופלת, איך לאכול, איך להתאמן, ואיך להתחיל לעבוד עם הגוף שלך במקום להילחם בו.
+            לא עוד מידע מפוזר. לא עוד "תאכלי פחות ותזוזי יותר". אלא מדריך שבונה לך הבנה אמיתית: למה את נפוחה, למה האנרגיה שלך נופלת, איך לאכול, ואיך סוף סוף לעבוד עם הגוף שלך במקום להילחם בו.
           </p>
           <div className="card-grid-2">
             {LANDING_PAIN_POINTS.map(function(point, i) {
@@ -188,6 +219,159 @@ function LandingPainSection() {
   );
 }
 
+function BellyStateCard({ title, subtitle, chips, state = 'before' }) {
+  const before = state === 'before';
+  return (
+    <div className="card" style={{ padding: '26px 24px', minHeight: 420 }}>
+      <div style={{ fontFamily: 'var(--font-display)', fontSize: 22, fontWeight: 700, marginBottom: 6 }}>{title}</div>
+      <div style={{ fontSize: 14, color: 'var(--color-fg3)', lineHeight: 1.7, marginBottom: 18 }}>{subtitle}</div>
+
+      <div
+        aria-hidden="true"
+        style={{
+          height: 220,
+          borderRadius: 28,
+          background: before
+            ? 'linear-gradient(180deg, rgba(232,93,117,0.12), rgba(232,93,117,0.04))'
+            : 'linear-gradient(180deg, rgba(123,198,164,0.16), rgba(187,178,238,0.08))',
+          border: '1px solid rgba(25,34,29,0.08)',
+          display: 'grid',
+          placeItems: 'center',
+          marginBottom: 18,
+          position: 'relative',
+          overflow: 'hidden',
+        }}
+      >
+        <div
+          style={{
+            position: 'absolute',
+            width: before ? 170 : 148,
+            height: before ? 170 : 148,
+            borderRadius: '48% 52% 46% 54% / 44% 45% 55% 56%',
+            background: before
+              ? 'radial-gradient(circle at 40% 35%, #ffd2da 0%, #f3a8b7 48%, #e17b91 100%)'
+              : 'radial-gradient(circle at 40% 35%, #f6efe5 0%, #e8c7b3 44%, #d99d82 100%)',
+            transform: before ? 'translateY(14px)' : 'translateY(4px)',
+            boxShadow: before
+              ? '0 24px 50px rgba(232,93,117,0.16)'
+              : '0 24px 50px rgba(123,198,164,0.14)',
+          }}
+        />
+        <div
+          style={{
+            position: 'absolute',
+            width: before ? 112 : 96,
+            height: 140,
+            borderRadius: '48px 48px 24px 24px',
+            background: before
+              ? 'linear-gradient(180deg, #f7dccf 0%, #efc3ad 100%)'
+              : 'linear-gradient(180deg, #f8e2d3 0%, #efc6b1 100%)',
+            transform: 'translateY(-38px)',
+            boxShadow: '0 8px 20px rgba(25,34,29,0.06)',
+          }}
+        />
+        <div
+          style={{
+            position: 'absolute',
+            top: 28,
+            left: 28,
+            padding: '8px 12px',
+            borderRadius: 999,
+            background: before ? 'rgba(232,93,117,0.12)' : 'rgba(123,198,164,0.18)',
+            color: before ? 'var(--color-accent)' : '#2E8B57',
+            fontSize: 12,
+            fontWeight: 700,
+          }}
+        >
+          {before ? 'נפיחות, לחץ וכבדות' : 'יותר רוגע, יותר בהירות'}
+        </div>
+      </div>
+
+      <div style={{ display: 'grid', gap: 10 }}>
+        {chips.map(function(chip, i) {
+          return (
+            <div key={i} style={{ display: 'flex', gap: 10, alignItems: 'flex-start' }}>
+              <span style={{ color: before ? 'var(--color-accent)' : '#2E8B57', fontWeight: 800 }}>•</span>
+              <div style={{ fontSize: 14, color: 'var(--color-fg2)', lineHeight: 1.7 }}>{chip}</div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+function LandingTransformationSection() {
+  return (
+    <section className="guide-section" style={{ paddingTop: 10 }}>
+      <Reveal>
+        <div className="chapter-label" style={{ marginBottom: 16 }}>
+          <div className="chapter-label-line" />
+          השינוי שהיא קונה
+        </div>
+        <h2 className="chapter-title" style={{ marginBottom: 14 }}>
+          לא עוד “אני נפוחה ואין לי מושג למה” - אלא יותר שקט, יותר הבנה, ויותר שליטה
+        </h2>
+        <p className="chapter-desc" style={{ marginBottom: 24 }}>
+          המדריך הזה לא מבטיח קסם ולא “בטן שטוחה ב־3 ימים”. הוא נותן משהו הרבה יותר חזק: הבנה אמיתית של מה כנראה קורה אצלך, וכלים להתחיל לשנות את זה בצורה חכמה.
+        </p>
+      </Reveal>
+
+      <div className="card-grid-2">
+        <Reveal>
+          <BellyStateCard
+            state="before"
+            title="לפני"
+            subtitle="בלבול, נפיחות, ותחושה שהגוף עושה מה שהוא רוצה"
+            chips={LANDING_TRANSFORMATION_POINTS.before}
+          />
+        </Reveal>
+        <Reveal delay={0.05}>
+          <BellyStateCard
+            state="after"
+            title="אחרי"
+            subtitle="יותר סדר, פחות בלבול, וכלים שמרגיעים את הגוף במקום להילחם בו"
+            chips={LANDING_TRANSFORMATION_POINTS.after}
+          />
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+function LandingValueSection() {
+  return (
+    <section className="guide-section" style={{ paddingTop: 10 }}>
+      <Reveal>
+        <div className="chapter-label" style={{ marginBottom: 16 }}>
+          <div className="chapter-label-line" />
+          הערך שאת מקבלת
+        </div>
+        <h2 className="chapter-title" style={{ marginBottom: 14 }}>
+          את לא קונה רק מדריך - את קונה סדר, הבנה וכלים שילכו איתך הרבה אחרי הקריאה
+        </h2>
+        <p className="chapter-desc" style={{ marginBottom: 24 }}>
+          המטרה של המדריך הזה היא לא רק שתסיימי לקרוא ותגידי "מעניין". המטרה היא שתצאי ממנו עם יותר בהירות, יותר ביטחון, ופחות תחושת ניסוי וטעייה מול הגוף שלך.
+        </p>
+      </Reveal>
+
+      <div className="card-grid-2">
+        {LANDING_VALUE_STACK.map(function(item, i) {
+          return (
+            <Reveal key={i} delay={i * 0.05}>
+              <div className="card" style={{ padding: '24px 22px', minHeight: 180 }}>
+                <div style={{ fontSize: 28, marginBottom: 10 }}>{item.icon}</div>
+                <div style={{ fontFamily: 'var(--font-display)', fontSize: 20, fontWeight: 700, marginBottom: 10 }}>{item.title}</div>
+                <p style={{ fontSize: 14, color: 'var(--color-fg2)', lineHeight: 1.75, margin: 0 }}>{item.desc}</p>
+              </div>
+            </Reveal>
+          );
+        })}
+      </div>
+    </section>
+  );
+}
+
 function LandingIncludesSection() {
   return (
     <section className="guide-section" style={{ paddingTop: 10 }}>
@@ -198,7 +382,7 @@ function LandingIncludesSection() {
         </div>
         <h2 className="chapter-title" style={{ marginBottom: 14 }}>כל מה שאת צריכה כדי להבין את הגוף שלך בצורה אחרת</h2>
         <p className="chapter-desc" style={{ marginBottom: 24 }}>
-          המדריך בנוי כמו מערכת אחת. כל פרק מסביר שכבה אחרת - אבל יחד הם מתחברים לתמונה שלמה, ישימה ומדויקת.
+          המדריך בנוי כמו מערכת אחת. כל פרק מסביר שכבה אחרת, אבל יחד הם נותנים לך תמונה שלמה, ישימה ומדויקת - כדי שלא תצטרכי לחבר לבד בין עשרות פוסטים, סרטונים והמלצות סותרות.
         </p>
       </Reveal>
       <div className="card-grid-3">
@@ -214,6 +398,39 @@ function LandingIncludesSection() {
           );
         })}
       </div>
+    </section>
+  );
+}
+
+function LandingTakeawaySection() {
+  return (
+    <section className="guide-section" style={{ paddingTop: 24 }}>
+      <Reveal>
+        <div className="card" style={{ padding: '34px 32px' }}>
+          <div className="chapter-label" style={{ marginBottom: 16 }}>
+            <div className="chapter-label-line" />
+            עם מה את יוצאת
+          </div>
+          <h2 className="chapter-title" style={{ marginBottom: 14 }}>
+            לא רק מידע - אלא דברים שתוכלי ממש לקחת איתך הלאה
+          </h2>
+          <p className="chapter-desc" style={{ marginBottom: 22 }}>
+            אם את שואלת את עצמך מה נשאר לך ביד בסוף, התשובה היא: הרבה יותר מבסיס. את יוצאת עם שפה חדשה להבין את הגוף שלך, ועם כלים שאפשר לחזור אליהם שוב ושוב.
+          </p>
+          <div className="card-grid-2">
+            {LANDING_TAKEAWAYS.map(function(item, i) {
+              return (
+                <div key={i} className="card" style={{ padding: '18px 20px' }}>
+                  <div style={{ display: 'flex', gap: 10, alignItems: 'flex-start' }}>
+                    <span style={{ color: 'var(--color-accent)', fontWeight: 800 }}>✓</span>
+                    <div style={{ fontSize: 14, color: 'var(--color-fg2)', lineHeight: 1.75 }}>{item}</div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </Reveal>
     </section>
   );
 }
@@ -340,14 +557,14 @@ function PurchaseSection() {
             </div>
             <h3 className="chapter-title" style={{ marginBottom: 12 }}>{LANDING_FUNNEL.productName}</h3>
             <p className="chapter-desc" style={{ marginBottom: 16 }}>
-              ברגע שהרכישה תושלם, הלקוחה תקבל גישה מסודרת למדריך וגם מייל עם קישור אישי, כדי שתוכל לפתוח, לשמור ולחזור אליו בכל זמן.
+              ברגע שהרכישה תושלם, המדריך יישלח ישירות למייל שלה עם קישור מסודר, כדי שתוכל לפתוח, לשמור ולחזור אליו בכל זמן.
             </p>
             <div style={{ display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap', marginBottom: 16 }}>
               <div className="sales-price-tag" style={{ fontSize: 16 }}>{LANDING_FUNNEL.priceLabel}</div>
               <div style={{ fontSize: 14, color: 'var(--color-fg3)', textDecoration: 'line-through' }}>380 ש"ח</div>
             </div>
             <div className="sales-mini-note">
-              מה היא מקבלת: גישה דיגיטלית למדריך, תוכן מעמיק, עקרונות יישומיים, תבניות חשיבה ומוצר שאפשר לחזור אליו שוב ושוב.
+              ב־149 ש"ח היא מקבלת מדריך דיגיטלי עמוק, מסודר ויישומי, עם תבניות, טבלאות, מחשבון וכלים שיכולים לחסוך לה הרבה מאוד בלבול, זמן וניסוי וטעייה.
             </div>
             <div style={{ marginTop: 18, display: 'grid', gap: 8 }}>
               {LANDING_RESULTS.map(function(item, i) {
@@ -364,7 +581,7 @@ function PurchaseSection() {
           <div className="sales-form-wrap">
             <div style={{ fontFamily: 'var(--font-display)', fontSize: 24, fontWeight: 700, marginBottom: 8 }}>שרייני לעצמך את המדריך</div>
             <p style={{ fontSize: 14, color: 'var(--color-fg3)', lineHeight: 1.7, marginBottom: 16 }}>
-              השאירי פרטים כדי לעבור לרכישה, ולקבל אחר כך את המדריך ישירות למייל שלך.
+              השאירי פרטים כדי לעבור לרכישה ולקבל אחר כך את המדריך למייל שלך. אם חיפשת נקודת התחלה אחת טובה, מסודרת ורצינית - זה בדיוק זה.
             </p>
 
             <div className="sales-form-grid">
@@ -442,9 +659,9 @@ function LandingFinalCta() {
           <div className="sales-final-kicker">הצעה מיוחדת</div>
           <div className="sales-final-title">149 ש"ח במקום 380 ש"ח</div>
           <div className="sales-final-text">
-            אם חיפשת סוף סוף להבין את הגוף שלך כמו שצריך - זה המקום להתחיל ממנו. מדריך אחד שיכול לעשות לך הרבה סדר, ולחסוך לך חודשים של ניסוי וטעייה.
+            אם חיפשת סוף סוף להבין את הגוף שלך כמו שצריך - זה המקום להתחיל ממנו. בשביל 149 ש"ח את מקבלת מדריך שיכול לעשות לך הרבה סדר, לתת לך כלים אמיתיים, ולחסוך לך חודשים של ניסוי וטעייה.
             <br /><br />
-            ואם אחר כך תרגישי שאת רוצה לקחת את זה צעד קדימה ולעבור לפרקטיקה מותאמת אישית - מחכה לך גם אפשרות להמשיך לתכנית הליווי.
+            זה לא עוד קובץ שפותחים פעם אחת ושוכחים. זה מדריך שאפשר לחזור אליו שוב ושוב, ליישם ממנו, ולבנות בעזרתו שפה חדשה מול הגוף, האוכל והנפיחות שלך.
           </div>
         </div>
         <a className="hero-cta" href="#landing-purchase">
@@ -460,7 +677,10 @@ function LandingApp() {
     <div>
       <LandingHero />
       <LandingPainSection />
+      <LandingTransformationSection />
+      <LandingValueSection />
       <LandingIncludesSection />
+      <LandingTakeawaySection />
       <LandingForWhoSection />
       <LandingDifferentSection />
       <PurchaseSection />

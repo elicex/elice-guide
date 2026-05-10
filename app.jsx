@@ -1,7 +1,7 @@
 // app.jsx - Main app shell
 const SECTION_IDS = [
   'section-intro',
-  'chapter-1', 'chapter-microbiome', 'chapter-2', 'chapter-3', 'chapter-4', 'chapter-5'
+  'chapter-1', 'chapter-microbiome', 'chapter-2', 'chapter-4', 'chapter-5'
 ];
 
 function App() {
@@ -45,7 +45,6 @@ function App() {
           <Chapter1 />
           <ChapterMicrobiome />
           <Chapter2 />
-          <Chapter3 />
           <Chapter4 />
           <Chapter5 />
 

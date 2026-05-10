@@ -36,9 +36,9 @@ const PROGRESSION_METHODS = [
 ];
 
 const REP_RANGES = [
-  { range: '5-8', title: 'כבד ונוח למעקב', use: 'סקווט, דדליפט, חתירה, Lat Pulldown', note: 'לא כי זה "בונה יותר", אלא כי קל יחסית להתקדם בו בעומסים גבוהים.' },
+  { range: '5-8', title: 'כבד ונוח למעקב', use: 'סקווט, דדליפט, חתירה, משיכת פולי עליון', note: 'לא כי זה "בונה יותר", אלא כי קל יחסית להתקדם בו בעומסים גבוהים.' },
   { range: '8-12', title: 'הטווח הכי נוח לרוב התרגילים', use: 'רוב התרגילים המשניים והעיקריים', note: 'שילוב טוב של עומס, שליטה ונפח עבודה בלי להכביד מדי על המפרקים.' },
-  { range: '12-20', title: 'בידוד, תחושה וגימור', use: 'Abduction, Kickback, Face Pull, Leg Curl', note: 'מעולה לשרירים קטנים יותר, לפאמפ ולפחות עומס מערכתי - כל עוד עובדים קרוב לכשל.' },
+  { range: '12-20', title: 'בידוד, תחושה וגימור', use: 'הרחקת ירך, בעיטת כבל, פייס פול, כפיפת ברך', note: 'מעולה לשרירים קטנים יותר, לפאמפ ולפחות עומס מערכתי - כל עוד עובדים קרוב לכשל.' },
 ];
 
 const WEEKLY_VOLUME_ROWS = [
@@ -60,17 +60,17 @@ const GLUTE_ACTIVATION = [
   'סקווטים במקום עם שליטה ונשימה, בלי לרדוף אחרי עומס.',
   'לאנג׳ים קלים כדי להכניס את האגן והישבן לעבודה.',
   'הנפות רגליים קדימה, אחורה ולצדדים כדי להכין טווח תנועה.',
-  'Glute Bridge, Clamshells או Banded Side Steps אם את יודעת שבאימון עצמו קשה לך להרגיש ישבן.',
+  'גשר ישבן, צדפה עם גומייה או צעדי צד עם גומייה אם את יודעת שבאימון עצמו קשה לך להרגיש ישבן.',
 ];
 
 const GLOSSARY_ROWS = [
-  ['RPE', 'דירוג קושי סובייקטיבי של הסט. RPE 8 אומר שנשארו בערך עוד 2 חזרות בקנה.'],
+  ['תחושת מאמץ (RPE)', 'דירוג הקושי של הסט. RPE 8 אומר שנשארו בערך עוד 2 חזרות בקנה.'],
   ['כשל', 'הנקודה שבה את כבר לא יכולה להשלים עוד חזרה נקייה.'],
-  ['RIR', 'Reps In Reserve - כמה חזרות עוד נשארו לך לפני כשל.'],
+  ['חזרות שנשארו (RIR)', 'כמה חזרות עוד נשארו לך לפני כשל.'],
   ['נפח עבודה', 'כמה סטים קשים עשית לקבוצת שריר בשבוע.'],
   ['העמסה מתקדמת', 'להתקדם לאורך זמן במשקל, חזרות, סטים, טכניקה או שליטה.'],
-  ['Hip Hinge', 'תנועה שבה האגן הולך אחורה והעומס יושב יותר על ירך אחורית וישבן מאשר על הברך.'],
-  ['MMC', 'Mind-Muscle Connection - היכולת להרגיש ולכוון את העבודה לשריר שאת מנסה לאמן.'],
+  ['היפ הינג', 'תנועה שבה האגן הולך אחורה והעומס יושב יותר על ירך אחורית וישבן מאשר על הברך.'],
+  ['חיבור לשריר (MMC)', 'היכולת להרגיש ולכוון את העבודה לשריר שאת מנסה לאמן.'],
 ];
 
 const GLUTE_MUSCLES = [
@@ -82,7 +82,7 @@ const GLUTE_MUSCLES = [
     view: 'back',
     image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Gluteus%20maximus%203D.gif',
     role: 'הנפח, העגלגלות והמסה של הישבן',
-    trains: 'סקווט עמוק, דדליפט רומני, Hip Thrust, לאנג׳ים',
+    trains: 'סקווט עמוק, דדליפט רומני, היפ תראסט, לאנג׳ים',
     visual: 'ככל שהוא חזק ומפותח יותר, הישבן נראה מלא ומודגש יותר מאחור.',
   },
   {
@@ -93,7 +93,7 @@ const GLUTE_MUSCLES = [
     view: 'back',
     image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Gluteus%20medius%20muscle%20-%20animation03.gif',
     role: 'הצד העליון של הישבן ויציבות האגן',
-    trains: 'Hip Abduction, Cable Side Kickback, Bulgarian Split Squat, Step-Up',
+    trains: 'הרחקת ירך, בעיטת כבל לצד, ספליט סקוואט בולגרי, עלייה לספסל',
     visual: 'הוא עוזר ליצור את ה"מדף" ואת ההפרדה בין הישבן לירך.',
   },
   {
@@ -104,7 +104,7 @@ const GLUTE_MUSCLES = [
     view: 'back',
     image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Gluteus_minimus.gif',
     role: 'שכבה עמוקה יותר שעוזרת ליציבות האגן ולשליטה של הירך',
-    trains: 'Hip Abduction, Side Steps, Clamshells, Single-Leg Work',
+    trains: 'הרחקת ירך, צעדי צד, צדפה עם גומייה, עבודה על רגל אחת',
     visual: 'פחות מזהים אותו בשם, אבל הוא חלק חשוב מאוד מהשליטה, היציבות והעבודה של הצד העליון של הישבן.',
   },
   {
@@ -115,7 +115,7 @@ const GLUTE_MUSCLES = [
     view: 'back',
     image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Hamstrings.gif',
     role: 'המעבר החלק בין הישבן לרגל והכוח של תנועות היפ-הינג',
-    trains: 'Romanian Deadlift, Leg Curl, Single-Leg RDL',
+    trains: 'דדליפט רומני, כפיפת ברך במכונה, דדליפט רומני על רגל אחת',
     visual: 'בלעדיהם הישבן יכול להיראות מנותק מהרגל. איתם המראה שלם יותר.',
   },
 ];
@@ -134,27 +134,27 @@ const LEG_PATTERNS = [
       'https://commons.wikimedia.org/wiki/Special:FilePath/Squats-2-1.png',
       'https://commons.wikimedia.org/wiki/Special:FilePath/Squats-2-2.png',
     ],
-    examples: 'Back Squat, Front Squat, Goblet Squat, Leg Press',
+    examples: 'סקווט עם מוט על הגב, סקווט קדמי, סקווט גביע, לחיצת רגליים',
     why: 'בונה בסיס של כוח, ירך קדמית וישבן, ומתאימה מאוד לפתוח איתה אימון.',
   },
   {
-    title: 'תנועת Hip Hinge',
+    title: 'תנועת היפ הינג',
     color: '#FF9500',
     frames: [
       'https://commons.wikimedia.org/wiki/Special:FilePath/Romanian-deadlift-1.png',
       'https://commons.wikimedia.org/wiki/Special:FilePath/Romanian-deadlift-2.png',
     ],
-    examples: 'Romanian Deadlift, Deadlift, Good Morning, Pull-Through',
+    examples: 'דדליפט רומני, דדליפט, גוד מורנינג, משיכת כבל בין הרגליים',
     why: 'הדרך המרכזית להעמיס על ירך אחורית ועל הישבן במצב מתוח - וזה אחד המפתחות הכי חזקים לבניית ישבן.',
   },
   {
-    title: 'Hip Thrust / Bridge',
+    title: 'היפ תראסט / גשר ישבן',
     color: '#FF7A59',
     frames: [
       'https://commons.wikimedia.org/wiki/Special:FilePath/Bridge-1.png',
       'https://commons.wikimedia.org/wiki/Special:FilePath/Bridge-2.png',
     ],
-    examples: 'Hip Thrust, Barbell Glute Bridge, Single-Leg Hip Thrust',
+    examples: 'היפ תראסט, גשר ישבן עם מוט, היפ תראסט על רגל אחת',
     why: 'זה אחד התרגילים הכי חשובים לישבן, כי הוא נותן עומס ישיר מאוד על הגלוטאוס מקסימוס דווקא בקיצור ובכיווץ. הוא לא מחליף היפ-הינג, אלא משלים אותו.',
   },
   {
@@ -164,7 +164,7 @@ const LEG_PATTERNS = [
       'https://commons.wikimedia.org/wiki/Special:FilePath/Lunges-2-1.png',
       'https://commons.wikimedia.org/wiki/Special:FilePath/Lunges-2-2.png',
     ],
-    examples: 'Bulgarian Split Squat, Reverse Lunge, Step-Up, Single-Leg RDL',
+    examples: 'ספליט סקוואט בולגרי, לאנג׳ לאחור, עלייה לספסל, דדליפט רומני על רגל אחת',
     why: 'משפר יציבות, מאזן בין צדדים, ונותן הרבה עבודה לגלוטאוס מדיוס.',
   },
   {
@@ -174,14 +174,14 @@ const LEG_PATTERNS = [
       'https://commons.wikimedia.org/wiki/Special:FilePath/One-legged-kickback-1.png',
       'https://commons.wikimedia.org/wiki/Special:FilePath/One-legged-kickback-2.png',
     ],
-    examples: 'Hip Abduction, Cable Kickback, Side Steps, Clamshells',
+    examples: 'הרחקת ירך, בעיטת כבל, צעדי צד, צדפה עם גומייה',
     why: 'מוסיף את העבודה הייעודית לישבן הצידי ולכיווץ בסוף האימון.',
   },
 ];
 
 const LEG_BUILDER_TEMPLATE = [
   ['A1', 'תנועת סקווט או תרגיל פתיחה כבד', '3-5 סטים', '5-8 חזרות', 'לבחור תרגיל אחד מוביל'],
-  ['A2', 'Hip Hinge או Hip Thrust', '3-4 סטים', '6-10 חזרות', 'לבחור תרגיל אחד משלים לישבן/ירך אחורית'],
+  ['A2', 'היפ הינג או היפ תראסט', '3-4 סטים', '6-10 חזרות', 'לבחור תרגיל אחד משלים לישבן/ירך אחורית'],
   ['B1', 'תרגיל חד-צדדי', '3 סטים', '8-12 לכל רגל', 'ליציבות, איזון והרבה עבודת ישבן'],
   ['C1', 'בידוד / הרחקה / גימור', '3 סטים', '12-20 חזרות', 'לישבן צידי, תחושה וכיווץ'],
   ['C2', 'גימור אופציונלי', '2-3 סטים', '12-20 חזרות', 'רק אם יש כוח, זמן והתאוששות'],
@@ -190,32 +190,32 @@ const LEG_BUILDER_TEMPLATE = [
 const LEG_EXERCISE_BANK = [
   {
     title: 'תנועת סקווט',
-    options: 'Back Squat, Front Squat, Goblet Squat, Hack Squat, Leg Press',
+    options: 'סקווט עם מוט על הגב, סקווט קדמי, סקווט גביע, האק סקוואט, לחיצת רגליים',
     tip: 'בחרי תרגיל אחד שאת יכולה להתקדם בו לאורך זמן.'
   },
   {
-    title: 'Hip Hinge',
-    options: 'Romanian Deadlift, Deadlift, Good Morning, Pull-Through',
+    title: 'היפ הינג',
+    options: 'דדליפט רומני, דדליפט, גוד מורנינג, משיכת כבל בין הרגליים',
     tip: 'אם המטרה היא ישבן וירך אחורית, זה אחד העוגנים של האימון.'
   },
   {
-    title: 'Hip Thrust / Bridge',
-    options: 'Hip Thrust, Barbell Glute Bridge, Single-Leg Hip Thrust, Smith Hip Thrust',
+    title: 'היפ תראסט / גשר ישבן',
+    options: 'היפ תראסט, גשר ישבן עם מוט, היפ תראסט על רגל אחת, היפ תראסט במכשיר סמית׳',
     tip: 'אם את רוצה ישבן מודגש יותר, זה מקום מרכזי מאוד בתוכנית.'
   },
   {
     title: 'חד-צדדי',
-    options: 'Bulgarian Split Squat, Reverse Lunge, Step-Up, Walking Lunge, Single-Leg RDL',
+    options: 'ספליט סקוואט בולגרי, לאנג׳ לאחור, עלייה לספסל, לאנג׳ בהליכה, דדליפט רומני על רגל אחת',
     tip: 'בחרי תרגיל אחד או שניים, לא את כולם.'
   },
   {
     title: 'הרחקה / בידוד',
-    options: 'Hip Abduction, Cable Kickback, Side Steps, Clamshells, Frog Pumps',
+    options: 'הרחקת ירך, בעיטת כבל, צעדי צד, צדפה עם גומייה, פרוג פאמפס',
     tip: 'אלה תרגילים של תחושה, שליטה וכיווץ - לא של אגו.'
   },
   {
     title: 'ירך אחורית / גימור',
-    options: 'Seated Leg Curl, Lying Leg Curl, Hyperextension, Glute Ham Raise',
+    options: 'כפיפת ברך בישיבה, כפיפת ברך בשכיבה, היפראקסטנשן, גלוט האם רייז',
     tip: 'כאן אפשר להשלים עבודה שחסרה לירך האחורית.'
   },
 ];
@@ -224,37 +224,37 @@ const LEG_BUILD_SLOTS = [
   {
     key: 'leg-main-squat',
     step: 'A1',
-    title: 'פתיחה - תנועת סקווט',
-    hint: 'בחרי תרגיל פתיחה אחד שאת רוצה להתקדם בו לאורך זמן.',
-    options: ['Back Squat', 'Front Squat', 'Goblet Squat', 'Hack Squat', 'Leg Press', 'Hip Thrust'],
+    title: 'פתיחה - תנועה מרכזית לרגליים',
+    hint: 'בחרי תרגיל פתיחה אחד שאת רוצה להתקדם בו לאורך זמן. לרוב זה יהיה סקווט או לחיצה לרגליים.',
+    options: ['סקוואט עם מוט על הגב (Back Squat)', 'סקוואט קדמי (Front Squat)', 'סקוואט גביע (Goblet Squat)', 'האק סקוואט במכונה (Hack Squat)', 'לחיצת רגליים (Leg Press)'],
   },
   {
     key: 'leg-main-hinge',
     step: 'A2',
-    title: 'תרגיל כבד שני - Hip Hinge או Hip Thrust',
+    title: 'תרגיל כבד שני - היפ הינג או היפ תראסט',
     hint: 'פה מגיע העומס המרכזי לישבן ולירך האחורית.',
-    options: ['Romanian Deadlift', 'Deadlift', 'Good Morning', 'Pull-Through', 'Hip Thrust', 'Barbell Glute Bridge', 'Smith Hip Thrust'],
+    options: ['דדליפט רומני (Romanian Deadlift)', 'דדליפט (Deadlift)', 'גוד מורנינג (Good Morning)', 'משיכת כבל בין הרגליים (Pull-Through)', 'היפ תראסט (Hip Thrust)', 'גשר ישבן עם מוט (Barbell Glute Bridge)', 'היפ תראסט במכשיר סמית׳ (Smith Hip Thrust)'],
   },
   {
     key: 'leg-single',
     step: 'B1',
     title: 'תרגיל חד-צדדי',
     hint: 'לבחור תרגיל אחד ליציבות, איזון ועבודה עמוקה יותר על הישבן.',
-    options: ['Bulgarian Split Squat', 'Reverse Lunge', 'Step-Up', 'Walking Lunge', 'Single-Leg RDL'],
+    options: ['ספליט סקוואט בולגרי (Bulgarian Split Squat)', 'לאנג׳ לאחור (Reverse Lunge)', 'עלייה לספסל (Step-Up)', 'לאנג׳ בהליכה (Walking Lunge)', 'דדליפט רומני על רגל אחת (Single-Leg RDL)'],
   },
   {
     key: 'leg-isolation',
     step: 'C1',
     title: 'בידוד / הרחקה',
     hint: 'כאן בוחרים תרגיל שמוסיף כיווץ ותחושה לישבן.',
-    options: ['Hip Abduction', 'Cable Kickback', 'Side Steps', 'Clamshells', 'Frog Pumps'],
+    options: ['הרחקת ירך (Hip Abduction)', 'בעיטת כבל לאחור (Cable Kickback)', 'צעדי צד (Side Steps)', 'צדפה עם גומייה (Clamshells)', 'פרוג פאמפס (Frog Pumps)'],
   },
   {
     key: 'leg-finisher',
     step: 'C2',
     title: 'גימור אופציונלי',
     hint: 'לא חובה. רק אם יש זמן, התאוששות ותחושה שחסר משהו.',
-    options: ['Seated Leg Curl', 'Lying Leg Curl', 'Hyperextension', 'Glute Ham Raise', 'Cable Pull-Through'],
+    options: ['כפיפת ברך בישיבה (Seated Leg Curl)', 'כפיפת ברך בשכיבה (Lying Leg Curl)', 'היפראקסטנשן (Hyperextension)', 'גלוט האם רייז (Glute Ham Raise)', 'משיכת כבל בין הרגליים (Cable Pull-Through)'],
   },
 ];
 
@@ -265,12 +265,12 @@ const LEG_WORKOUTS = [
     subtitle: 'דגש ישבן וירך קדמית',
     note: 'נבנה סביב סקווט ונותן בסיס חזק של כוח + נפח.',
     exercises: [
-      { name: 'Back Squat', sets: '4', reps: '6-8', rest: '2-3 דק׳', muscle: 'ירך קדמית + ישבן', technique: 'לרדת לעומק טוב בלי לאבד שליטה או קו גב יציב.', tips: 'העלי משקל רק כשכל הסטים מרגישים נקיים.', mistakes: 'לקצר עומק בשביל עוד עומס.' },
-      { name: 'Romanian Deadlift', sets: '4', reps: '8-10', rest: '2 דק׳', muscle: 'ירך אחורית + ישבן', technique: 'אגן אחורה, מוט צמוד לגוף, מתיחה אמיתית בירך האחורית.', tips: 'חשבי על דחיפה של האגן אחורה, לא על כפיפה מהגב.', mistakes: 'לעגל גב או להפוך את התנועה לסקווט.' },
-      { name: 'Bulgarian Split Squat', sets: '3', reps: '10-12 לכל רגל', rest: '90 שנ׳', muscle: 'ישבן + יציבות', technique: 'צעד מספיק ארוך, ירידה עמוקה, שליטה מלאה.', tips: 'אפשר להטות מעט את הגו קדימה אם המטרה היא יותר ישבן.', mistakes: 'צעד קצר מדי שיוצר עומס מיותר על הברך.' },
-      { name: 'Leg Press / Goblet Squat', sets: '3', reps: '10-12', rest: '90 שנ׳', muscle: 'ירך קדמית + ישבן', technique: 'שליטה בירידה, לא לנעול ברכיים למעלה.', tips: 'קצב נקי עדיף על עוד פלטה.', mistakes: 'לעבוד בטווח קצר מדי.' },
-      { name: 'Hip Abduction', sets: '3', reps: '15-20', rest: '60 שנ׳', muscle: 'ישבן צידי', technique: 'כיווץ מודגש בקצה התנועה.', tips: 'להאט את החזרה פנימה.', mistakes: 'לזרוק את הרגליים בלי שליטה.' },
-      { name: 'Cable Kickback', sets: '3', reps: '12-15 לכל רגל', rest: '60 שנ׳', muscle: 'ישבן', technique: 'תנועה קטנה יחסית, בלי תנופה מהגב.', tips: 'להחזיק רגע בכיווץ.', mistakes: 'להרים את הרגל גבוה מדי ולפצות עם גב תחתון.' },
+      { name: 'סקווט עם מוט על הגב (Back Squat)', sets: '4', reps: '6-8', rest: '2-3 דק׳', muscle: 'ירך קדמית + ישבן', technique: 'לרדת לעומק טוב בלי לאבד שליטה או קו גב יציב.', tips: 'העלי משקל רק כשכל הסטים מרגישים נקיים.', mistakes: 'לקצר עומק בשביל עוד עומס.' },
+      { name: 'דדליפט רומני (Romanian Deadlift)', sets: '4', reps: '8-10', rest: '2 דק׳', muscle: 'ירך אחורית + ישבן', technique: 'אגן אחורה, מוט צמוד לגוף, מתיחה אמיתית בירך האחורית.', tips: 'חשבי על דחיפה של האגן אחורה, לא על כפיפה מהגב.', mistakes: 'לעגל גב או להפוך את התנועה לסקווט.' },
+      { name: 'ספליט סקוואט בולגרי (Bulgarian Split Squat)', sets: '3', reps: '10-12 לכל רגל', rest: '90 שנ׳', muscle: 'ישבן + יציבות', technique: 'צעד מספיק ארוך, ירידה עמוקה, שליטה מלאה.', tips: 'אפשר להטות מעט את הגו קדימה אם המטרה היא יותר ישבן.', mistakes: 'צעד קצר מדי שיוצר עומס מיותר על הברך.' },
+      { name: 'לחיצת רגליים או סקווט גביע', sets: '3', reps: '10-12', rest: '90 שנ׳', muscle: 'ירך קדמית + ישבן', technique: 'שליטה בירידה, לא לנעול ברכיים למעלה.', tips: 'קצב נקי עדיף על עוד פלטה.', mistakes: 'לעבוד בטווח קצר מדי.' },
+      { name: 'הרחקת ירך (Hip Abduction)', sets: '3', reps: '15-20', rest: '60 שנ׳', muscle: 'ישבן צידי', technique: 'כיווץ מודגש בקצה התנועה.', tips: 'להאט את החזרה פנימה.', mistakes: 'לזרוק את הרגליים בלי שליטה.' },
+      { name: 'בעיטת כבל לאחור (Cable Kickback)', sets: '3', reps: '12-15 לכל רגל', rest: '60 שנ׳', muscle: 'ישבן', technique: 'תנועה קטנה יחסית, בלי תנופה מהגב.', tips: 'להחזיק רגע בכיווץ.', mistakes: 'להרים את הרגל גבוה מדי ולפצות עם גב תחתון.' },
     ],
   },
   {
@@ -279,12 +279,12 @@ const LEG_WORKOUTS = [
     subtitle: 'דגש ישבן וירך אחורית',
     note: 'מתאים לימים שבהם את רוצה יותר עבודה במצב מתוח ופחות ברך-דומיננטי.',
     exercises: [
-      { name: 'Romanian Deadlift', sets: '4', reps: '6-8', rest: '2-3 דק׳', muscle: 'ירך אחורית + ישבן', technique: 'עומס כבד יחסית, שליטה חזקה בטווח.', tips: 'אם האחיזה מגבילה אותך, רצועות יכולות לעזור.', mistakes: 'לרדוף אחרי עומק על חשבון גב יציב.' },
-      { name: 'Barbell Hip Thrust', sets: '4', reps: '8-10', rest: '2 דק׳', muscle: 'ישבן', technique: 'נעילה מלאה של האגן וכיווץ למעלה.', tips: 'סנטר מעט פנימה כדי לא לקשת גב.', mistakes: 'לרוץ עם החזרות בלי שליטה.' },
-      { name: 'Single-Leg RDL', sets: '3', reps: '8-10 לכל רגל', rest: '90 שנ׳', muscle: 'ירך אחורית + יציבות', technique: 'אגן מאוזן, טווח תנועה איכותי, לא מרדף אחרי משקל.', tips: 'החזיקי יד חופשית על קיר אם צריך.', mistakes: 'לסובב את האגן הצידה.' },
-      { name: 'Seated Leg Curl', sets: '3', reps: '10-12', rest: '75-90 שנ׳', muscle: 'ירך אחורית', technique: 'כיווץ מלא וקצב איטי בחזרה.', tips: 'לא לעבוד בפיצוצים.', mistakes: 'לשחרר את המשקל בבת אחת.' },
-      { name: 'Cable Pull-Through', sets: '3', reps: '12-15', rest: '60 שנ׳', muscle: 'ישבן + ירך אחורית', technique: 'מתיחה עמוקה בירידה, דחיפת אגן קדימה בעלייה.', tips: 'שמרי על צוואר ניטרלי.', mistakes: 'להפוך את התרגיל לסקווט.' },
-      { name: 'Banded Side Steps', sets: '3', reps: '15-20', rest: '45-60 שנ׳', muscle: 'ישבן צידי', technique: 'צעדים קטנים, מתח קבוע בגומייה.', tips: 'מעולה גם כחימום.', mistakes: 'לשחרר מתח בין צעד לצעד.' },
+      { name: 'דדליפט רומני (Romanian Deadlift)', sets: '4', reps: '6-8', rest: '2-3 דק׳', muscle: 'ירך אחורית + ישבן', technique: 'עומס כבד יחסית, שליטה חזקה בטווח.', tips: 'אם האחיזה מגבילה אותך, רצועות יכולות לעזור.', mistakes: 'לרדוף אחרי עומק על חשבון גב יציב.' },
+      { name: 'היפ תראסט עם מוט (Barbell Hip Thrust)', sets: '4', reps: '8-10', rest: '2 דק׳', muscle: 'ישבן', technique: 'נעילה מלאה של האגן וכיווץ למעלה.', tips: 'סנטר מעט פנימה כדי לא לקשת גב.', mistakes: 'לרוץ עם החזרות בלי שליטה.' },
+      { name: 'דדליפט רומני על רגל אחת', sets: '3', reps: '8-10 לכל רגל', rest: '90 שנ׳', muscle: 'ירך אחורית + יציבות', technique: 'אגן מאוזן, טווח תנועה איכותי, לא מרדף אחרי משקל.', tips: 'החזיקי יד חופשית על קיר אם צריך.', mistakes: 'לסובב את האגן הצידה.' },
+      { name: 'כפיפת ברך בישיבה', sets: '3', reps: '10-12', rest: '75-90 שנ׳', muscle: 'ירך אחורית', technique: 'כיווץ מלא וקצב איטי בחזרה.', tips: 'לא לעבוד בפיצוצים.', mistakes: 'לשחרר את המשקל בבת אחת.' },
+      { name: 'משיכת כבל בין הרגליים', sets: '3', reps: '12-15', rest: '60 שנ׳', muscle: 'ישבן + ירך אחורית', technique: 'מתיחה עמוקה בירידה, דחיפת אגן קדימה בעלייה.', tips: 'שמרי על צוואר ניטרלי.', mistakes: 'להפוך את התרגיל לסקווט.' },
+      { name: 'צעדי צד עם גומייה', sets: '3', reps: '15-20', rest: '45-60 שנ׳', muscle: 'ישבן צידי', technique: 'צעדים קטנים, מתח קבוע בגומייה.', tips: 'מעולה גם כחימום.', mistakes: 'לשחרר מתח בין צעד לצעד.' },
     ],
   },
   {
@@ -293,12 +293,12 @@ const LEG_WORKOUTS = [
     subtitle: 'גרסה היברידית למי שמתאמנת פעם בשבוע',
     note: 'אם יש לך רק יום רגליים אחד, זה המבנה שיכסה את רוב מה שצריך.',
     exercises: [
-      { name: 'Back Squat', sets: '3', reps: '6-8', rest: '2-3 דק׳', muscle: 'ירך קדמית + ישבן', technique: 'תרגיל ראשון, כשהגוף רענן.', tips: 'שמרי 1-2 חזרות ברזרבה בסטים הראשונים.', mistakes: 'לשרוף את כל האנרגיה בסט הראשון.' },
-      { name: 'Romanian Deadlift', sets: '3', reps: '8-10', rest: '2 דק׳', muscle: 'ירך אחורית + ישבן', technique: 'המשיכי לקו שליטה, לא לקו כאב.', tips: 'עבודה יפה בטווח מתוח.', mistakes: 'ברכיים נעולות לגמרי.' },
-      { name: 'Walking Lunges', sets: '3', reps: '10 לכל רגל', rest: '90 שנ׳', muscle: 'ישבן + ירך קדמית', technique: 'צעד ארוך ויציב.', tips: 'מתאמן גם על קואורדינציה.', mistakes: 'צעדים קצרים ומהירים מדי.' },
-      { name: 'Hip Thrust', sets: '3', reps: '10-12', rest: '90 שנ׳', muscle: 'ישבן', technique: 'שליטה מלאה בחלק העליון.', tips: 'אפשר לעצור שנייה למעלה.', mistakes: 'להקפיץ משקל.' },
-      { name: 'Seated Leg Curl', sets: '3', reps: '12', rest: '75 שנ׳', muscle: 'ירך אחורית', technique: 'לסיים בשליטה ולא בחיפזון.', tips: 'מתאים לסוף האימון.', mistakes: 'טווח חצי.' },
-      { name: 'Hip Abduction / Kickback', sets: '3', reps: '15-20', rest: '45-60 שנ׳', muscle: 'ישבן צידי + גימור', technique: 'פוקוס על תחושה וכיווץ.', tips: 'זה מקום טוב לפאמפ.', mistakes: 'לבחור עומס כבד מדי ולהפסיד שליטה.' },
+      { name: 'סקווט עם מוט על הגב (Back Squat)', sets: '3', reps: '6-8', rest: '2-3 דק׳', muscle: 'ירך קדמית + ישבן', technique: 'תרגיל ראשון, כשהגוף רענן.', tips: 'שמרי 1-2 חזרות ברזרבה בסטים הראשונים.', mistakes: 'לשרוף את כל האנרגיה בסט הראשון.' },
+      { name: 'דדליפט רומני (Romanian Deadlift)', sets: '3', reps: '8-10', rest: '2 דק׳', muscle: 'ירך אחורית + ישבן', technique: 'המשיכי לקו שליטה, לא לקו כאב.', tips: 'עבודה יפה בטווח מתוח.', mistakes: 'ברכיים נעולות לגמרי.' },
+      { name: 'לאנג׳ בהליכה', sets: '3', reps: '10 לכל רגל', rest: '90 שנ׳', muscle: 'ישבן + ירך קדמית', technique: 'צעד ארוך ויציב.', tips: 'מתאמן גם על קואורדינציה.', mistakes: 'צעדים קצרים ומהירים מדי.' },
+      { name: 'היפ תראסט (Hip Thrust)', sets: '3', reps: '10-12', rest: '90 שנ׳', muscle: 'ישבן', technique: 'שליטה מלאה בחלק העליון.', tips: 'אפשר לעצור שנייה למעלה.', mistakes: 'להקפיץ משקל.' },
+      { name: 'כפיפת ברך בישיבה', sets: '3', reps: '12', rest: '75 שנ׳', muscle: 'ירך אחורית', technique: 'לסיים בשליטה ולא בחיפזון.', tips: 'מתאים לסוף האימון.', mistakes: 'טווח חצי.' },
+      { name: 'הרחקת ירך או בעיטת כבל', sets: '3', reps: '15-20', rest: '45-60 שנ׳', muscle: 'ישבן צידי + גימור', technique: 'פוקוס על תחושה וכיווץ.', tips: 'זה מקום טוב לפאמפ.', mistakes: 'לבחור עומס כבד מדי ולהפסיד שליטה.' },
     ],
   },
 ];
@@ -310,7 +310,7 @@ const BACK_MUSCLES = [
     accent: '#BBB2EE',
     image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Latissimus%20dorsi%20muscle%20animation.gif',
     role: 'יוצרים גב רחב יותר ומבליטים את קו המותן',
-    trains: 'Pull-Up, Lat Pulldown, Straight-Arm Pulldown',
+    trains: 'עליות מתח, משיכת פולי עליון, פולי ישר ללטים',
   },
   {
     title: 'Mid Back',
@@ -318,7 +318,7 @@ const BACK_MUSCLES = [
     accent: '#E85D75',
     image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Rhomboid%20muscles%20animation.gif',
     role: 'נותן לגב עומק, יציבה ומראה חזק יותר מאחור',
-    trains: 'Seated Row, Chest-Supported Row, Barbell Row',
+    trains: 'חתירה בישיבה, חתירה עם תמיכת חזה, חתירה עם מוט',
   },
   {
     title: 'Rear Delts',
@@ -326,7 +326,7 @@ const BACK_MUSCLES = [
     accent: '#34C759',
     image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Deltoid%20muscle%20animation.gif',
     role: 'פותחות את קו הכתפיים ומשפרות את המראה של החלק העליון',
-    trains: 'Face Pull, Reverse Fly, Rear Delt Machine',
+    trains: 'פייס פול, רוורס פליי, מכונת כתף אחורית',
   },
   {
     title: 'Erector Spinae',
@@ -334,24 +334,24 @@ const BACK_MUSCLES = [
     accent: '#FF9500',
     image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Semispinalis%20muscles%20-%20animation%201.gif',
     role: 'שומרים על גב יציב, זקוף וחזק בתרגילי משיכה והיפ-הינג',
-    trains: 'Deadlift, RDL, Hyperextension',
+    trains: 'דדליפט, דדליפט רומני, היפראקסטנשן',
   },
 ];
 
 const HOURGLASS_RULES = [
-  { title: 'יותר משיכות מלמעלה', desc: 'אם המטרה שלך היא גב רחב יותר ומראה של מותן צרה יותר, רוב נפח האימון צריך להגיע מתרגילים כמו Pulldown, Pull-Up ומשיכות דומות מלמעלה.' },
+  { title: 'יותר משיכות מלמעלה', desc: 'אם המטרה שלך היא גב רחב יותר ומראה של מותן צרה יותר, רוב נפח האימון צריך להגיע מתרגילים כמו משיכת פולי עליון, עליות מתח ומשיכות דומות מלמעלה.' },
   { title: 'עובי - אבל במינון נכון', desc: 'כן צריך גם חתירות, אבל לא להפוך את כל אימון הגב לאימון אופקי. לרוב השילוב הטוב הוא יותר עבודה לרוחב, וקצת פחות לעובי.' },
-  { title: 'פחות עומס מיותר לטרפז העליון', desc: 'לא חייבים לבנות את כל החלק העליון סביב Shrugs ותרגילים שמעמיסים בעיקר על האזור שבין הצוואר לכתף.' },
+  { title: 'פחות עומס מיותר לטרפז העליון', desc: 'לא חייבים לבנות את כל החלק העליון סביב שרגס ותרגילים שמעמיסים בעיקר על האזור שבין הצוואר לכתף.' },
   { title: 'למשוך עם המרפקים, לא עם כפות הידיים', desc: 'בתרגילי גב הידיים רק מחזיקות את הידית. המטרה היא לחשוב על המרפקים שנעים, כדי שהגב באמת יעבוד ולא רק האמות והביצפס.' },
 ];
 
 const BACK_WORKOUT = [
-  { name: 'Lat Pulldown', sets: '4', reps: '8-10', rest: '2 דק׳', muscle: 'לטים', technique: 'להוביל עם המרפקים כלפי מטה, לפתוח חזה ולשלוט בחזרה.', tips: 'רצועות יכולות לעזור אם האחיזה נשרפת קודם.', mistakes: 'למשוך עם הידיים בלבד.' },
-  { name: 'Chest-Supported Row', sets: '4', reps: '8-10', rest: '2 דק׳', muscle: 'גב אמצעי', technique: 'כיווץ שכמות בלי תנופה מהגב.', tips: 'תרגיל מצוין לשמור בו על טכניקה נקייה.', mistakes: 'להרים את החזה מהספסל.' },
-  { name: 'Single-Arm Dumbbell Row', sets: '3', reps: '10-12 לכל צד', rest: '90 שנ׳', muscle: 'לטים + גב אמצעי', technique: 'מתיחה אמיתית למטה, מרפק קרוב לגוף בעלייה.', tips: 'מעולה גם לאיזון בין צדדים.', mistakes: 'לסובב את הגו.' },
-  { name: 'Seated Cable Row', sets: '3', reps: '10-12', rest: '90 שנ׳', muscle: 'גב אמצעי', technique: 'התחילי מהשכמות ורק אז כופפי מרפקים.', tips: 'קצב רגוע ומכוון.', mistakes: 'לנדנד את הגב אחורה.' },
-  { name: 'Straight-Arm Pulldown', sets: '3', reps: '12-15', rest: '60 שנ׳', muscle: 'לטים', technique: 'זרועות כמעט ישרות, תנועה ארוכה ונקייה.', tips: 'מעולה כשלא רוצים עוד עומס על הביצפס.', mistakes: 'לכופף מרפקים ולהפוך את זה לפולדאון רגיל.' },
-  { name: 'Face Pull', sets: '3', reps: '15', rest: '60 שנ׳', muscle: 'כתפיים אחוריות + יציבה', technique: 'מרפקים גבוהים ומשיכה אל קו הפנים.', tips: 'להרגיש פתיחה בחלק העליון של הגב.', mistakes: 'משיכה נמוכה מדי.' },
+  { name: 'משיכת פולי עליון (Lat Pulldown)', sets: '4', reps: '8-10', rest: '2 דק׳', muscle: 'לטים', technique: 'להוביל עם המרפקים כלפי מטה, לפתוח חזה ולשלוט בחזרה.', tips: 'רצועות יכולות לעזור אם האחיזה נשרפת קודם.', mistakes: 'למשוך עם הידיים בלבד.' },
+  { name: 'חתירה עם תמיכת חזה', sets: '4', reps: '8-10', rest: '2 דק׳', muscle: 'גב אמצעי', technique: 'כיווץ שכמות בלי תנופה מהגב.', tips: 'תרגיל מצוין לשמור בו על טכניקה נקייה.', mistakes: 'להרים את החזה מהספסל.' },
+  { name: 'חתירה עם משקולת ביד אחת', sets: '3', reps: '10-12 לכל צד', rest: '90 שנ׳', muscle: 'לטים + גב אמצעי', technique: 'מתיחה אמיתית למטה, מרפק קרוב לגוף בעלייה.', tips: 'מעולה גם לאיזון בין צדדים.', mistakes: 'לסובב את הגו.' },
+  { name: 'חתירת כבל בישיבה', sets: '3', reps: '10-12', rest: '90 שנ׳', muscle: 'גב אמצעי', technique: 'התחילי מהשכמות ורק אז כופפי מרפקים.', tips: 'קצב רגוע ומכוון.', mistakes: 'לנדנד את הגב אחורה.' },
+  { name: 'פולי ישר ללטים', sets: '3', reps: '12-15', rest: '60 שנ׳', muscle: 'לטים', technique: 'זרועות כמעט ישרות, תנועה ארוכה ונקייה.', tips: 'מעולה כשלא רוצים עוד עומס על הביצפס.', mistakes: 'לכופף מרפקים ולהפוך את זה לפולדאון רגיל.' },
+  { name: 'פייס פול', sets: '3', reps: '15', rest: '60 שנ׳', muscle: 'כתפיים אחוריות + יציבה', technique: 'מרפקים גבוהים ומשיכה אל קו הפנים.', tips: 'להרגיש פתיחה בחלק העליון של הגב.', mistakes: 'משיכה נמוכה מדי.' },
 ];
 
 const BACK_BUILDER_TEMPLATE = [
@@ -365,32 +365,32 @@ const BACK_BUILDER_TEMPLATE = [
 const BACK_EXERCISE_BANK = [
   {
     title: 'משיכה אנכית',
-    options: 'Pull-Up, Assisted Pull-Up, Lat Pulldown, Neutral-Grip Pulldown',
+    options: 'עליית מתח, עליית מתח עם עזרה, משיכת פולי עליון, פולי עליון באחיזה ניטרלית',
     tip: 'זה המאגר המרכזי לרוחב הגב.'
   },
   {
     title: 'חתירה אופקית',
-    options: 'Seated Row, Chest-Supported Row, Barbell Row, Machine Row',
+    options: 'חתירה בישיבה, חתירה עם תמיכת חזה, חתירה עם מוט, חתירה במכונה',
     tip: 'בחרי תרגיל אחד עיקרי ועוד אחד משלים אם צריך.'
   },
   {
     title: 'עבודה חד-צדדית',
-    options: 'Single-Arm Dumbbell Row, One-Arm Cable Row, Meadows Row',
+    options: 'חתירה עם משקולת ביד אחת, חתירת כבל ביד אחת, חתירת מדווס',
     tip: 'מעולה לחיבור טוב יותר לכל צד בנפרד.'
   },
   {
     title: 'בידוד ללטים',
-    options: 'Straight-Arm Pulldown, Dumbbell Pullover, Single-Arm Lat Prayer',
+    options: 'פולי ישר ללטים, פולאובר עם משקולת, לט פרייר ביד אחת',
     tip: 'כאן מרגישים את הלטים בלי שהביצפס יגנוב את העבודה.'
   },
   {
     title: 'כתפיים אחוריות / יציבה',
-    options: 'Face Pull, Reverse Fly, Rear Delt Machine, Band Pull Apart',
+    options: 'פייס פול, רוורס פליי, מכונת כתף אחורית, פתיחת גומייה',
     tip: 'תורם למראה פתוח ונקי יותר של הגב העליון.'
   },
   {
     title: 'זקפי גב',
-    options: 'Hyperextension, Deadlift, RDL, Back Extension',
+    options: 'היפראקסטנשן, דדליפט, דדליפט רומני, פשיטת גב',
     tip: 'לא תמיד חייבים להוסיף אותם בנפרד אם כבר יש הרבה היפ-הינג בתוכנית.'
   },
 ];
@@ -401,35 +401,35 @@ const BACK_BUILD_SLOTS = [
     step: 'A1',
     title: 'פתיחה - משיכה אנכית',
     hint: 'זה הבסיס לרוחב של הגב ולמראה של מותן צרה יותר.',
-    options: ['Pull-Up', 'Assisted Pull-Up', 'Lat Pulldown', 'Neutral-Grip Pulldown'],
+    options: ['עליית מתח (Pull-Up)', 'עליית מתח עם עזרה (Assisted Pull-Up)', 'משיכת פולי עליון (Lat Pulldown)', 'פולי עליון באחיזה ניטרלית (Neutral-Grip Pulldown)'],
   },
   {
     key: 'back-row',
     step: 'A2',
     title: 'חתירה עיקרית',
     hint: 'כאן בונים עומק, יציבה ועובי לגב האמצעי.',
-    options: ['Seated Row', 'Chest-Supported Row', 'Barbell Row', 'Machine Row'],
+    options: ['חתירה בישיבה (Seated Row)', 'חתירה עם תמיכת חזה (Chest-Supported Row)', 'חתירה עם מוט (Barbell Row)', 'חתירה במכונה (Machine Row)'],
   },
   {
     key: 'back-single',
     step: 'B1',
     title: 'תרגיל חד-צדדי או זווית נוספת',
     hint: 'מעולה לאיזון בין צדדים ולחיבור טוב יותר לגב.',
-    options: ['Single-Arm Dumbbell Row', 'One-Arm Cable Row', 'Meadows Row'],
+    options: ['חתירה עם משקולת ביד אחת (Single-Arm Dumbbell Row)', 'חתירת כבל ביד אחת (One-Arm Cable Row)', 'חתירת מדווס (Meadows Row)'],
   },
   {
     key: 'back-isolation',
     step: 'B2',
     title: 'בידוד ללטים או לכתפיים אחוריות',
     hint: 'לבחור תרגיל אחד שנותן דיוק והשלמה לחלק העליון.',
-    options: ['Straight-Arm Pulldown', 'Dumbbell Pullover', 'Single-Arm Lat Prayer', 'Face Pull', 'Reverse Fly', 'Rear Delt Machine', 'Band Pull Apart'],
+    options: ['פולי ישר ללטים (Straight-Arm Pulldown)', 'פולאובר עם משקולת (Dumbbell Pullover)', 'לט פרייר ביד אחת (Single-Arm Lat Prayer)', 'פייס פול (Face Pull)', 'רוורס פליי (Reverse Fly)', 'מכונת כתף אחורית (Rear Delt Machine)', 'פתיחת גומייה (Band Pull Apart)'],
   },
   {
     key: 'back-finish',
     step: 'C1',
     title: 'גימור / יציבה',
     hint: 'שלב אחרון - רק מה שחסר לך באמת.',
-    options: ['Face Pull', 'Reverse Fly', 'Rear Delt Machine', 'Hyperextension', 'Back Extension'],
+    options: ['פייס פול (Face Pull)', 'רוורס פליי (Reverse Fly)', 'מכונת כתף אחורית (Rear Delt Machine)', 'היפראקסטנשן (Hyperextension)', 'פשיטת גב (Back Extension)'],
   },
 ];
 
@@ -478,8 +478,8 @@ const RANDOM_VS_SMART = [
     points: [
       'אותה תבנית למשך כמה שבועות',
       'סדר תרגילים עם מטרה ברורה',
-      'רישום חזרות, משקל ו־RPE',
-      'פרוגרס שקל למדוד'
+      'רישום חזרות, משקל ותחושת מאמץ',
+      'התקדמות שקל למדוד'
     ],
   },
 ];
@@ -522,13 +522,13 @@ function TrainingHero() {
     <div className="train-hero card">
       <div className="train-hero-copy">
         <div className="nutrition-kicker">אימון שנבנה נכון נראה אחרת</div>
-        <h4>לא אוסף תרגילים. מערכת של מטרה, סדר ופרוגרס.</h4>
+        <h4>לא אוסף תרגילים. מערכת של מטרה, סדר והתקדמות.</h4>
         <p>המטרה של הפרק הזה היא לקחת אותך מתוכנית אקראית לאימון שבאמת בונה גוף: ישבן, רגליים וגב עם כיוון ברור, עומס מתקדם והתאוששות חכמה.</p>
         <div className="train-chip-row">
-          <span className="train-chip">Glutes</span>
-          <span className="train-chip">Back</span>
-          <span className="train-chip">RPE</span>
-          <span className="train-chip">Progressive Overload</span>
+          <span className="train-chip">ישבן</span>
+          <span className="train-chip">גב</span>
+          <span className="train-chip">תחושת מאמץ (RPE)</span>
+          <span className="train-chip">העמסה מתקדמת</span>
         </div>
       </div>
       <div className="train-hero-art" aria-hidden="true">
@@ -542,7 +542,7 @@ function TrainingHero() {
         <div className="train-float train-float-1">כוח</div>
         <div className="train-float train-float-2">טכניקה</div>
         <div className="train-float train-float-3">נפח</div>
-        <div className="train-float train-float-4">פרוגרס</div>
+        <div className="train-float train-float-4">התקדמות</div>
       </div>
     </div>
   );
@@ -893,7 +893,7 @@ function RPECalc() {
           <input className="calc-input" type="number" value={weight} onChange={function(e) { setWeight(e.target.value); }} placeholder="60" />
         </div>
         <div className="calc-input-wrap">
-          <label className="calc-label">RPE</label>
+          <label className="calc-label">תחושת מאמץ (RPE)</label>
           <input className="calc-input" type="number" value={rpe} min="6" max="10" onChange={function(e) { setRpe(e.target.value); }} placeholder="8" />
         </div>
       </div>
@@ -931,7 +931,7 @@ function Chapter3() {
 
       <Reveal>
         <SectionIntro>
-          אם את כבר יודעת מה זה סקווט, דדליפט וחתירה אבל עדיין לא באמת מבינה איך לסדר אותם, כמה לבחור, ולמה תרגיל אחד צריך לבוא לפני השני, זה בדיוק המקום שלך. ההבדל בין אימון אקראי לבין אימון שבאמת בונה גוף הוא לא רק התרגילים עצמם, אלא ההיגיון שמחבר ביניהם.
+          אם את כבר מכירה תרגילים כמו סקווט, דדליפט וחתירה אבל עדיין לא באמת מבינה איך לסדר אותם, כמה לבחור, ולמה תרגיל אחד צריך לבוא לפני השני, זה בדיוק המקום שלך. ההבדל בין אימון אקראי לבין אימון שבאמת בונה גוף הוא לא רק התרגילים עצמם, אלא ההיגיון שמחבר ביניהם.
         </SectionIntro>
       </Reveal>
 
@@ -987,15 +987,15 @@ function Chapter3() {
         <div className="card" style={{ padding: '22px 24px', marginBottom: 36 }}>
           <div style={{ fontFamily: 'var(--font-display)', fontSize: 18, fontWeight: 700, marginBottom: 10 }}>למה לפעמים "לא מרגישים ישבן"?</div>
           <p style={{ fontSize: 14, color: 'var(--color-fg2)', lineHeight: 1.8, margin: '0 0 10px' }}>
-            אחת הבעיות הכי נפוצות אצל נשים היא שה-Hip Thrust, הסקווט או הלאנג׳ים פשוט לא "נתפסים" בישבן. הרבה פעמים זה לא כי התרגיל לא טוב, אלא כי הגוף רגיל לברוח לגב התחתון, לירך הקדמית או לדחוף את האגן להטיה קדמית.
+            אחת הבעיות הכי נפוצות אצל נשים היא שההיפ תראסט, הסקווט או הלאנג׳ים פשוט לא "נתפסים" בישבן. הרבה פעמים זה לא כי התרגיל לא טוב, אלא כי הגוף רגיל לברוח לגב התחתון, לירך הקדמית או לדחוף את האגן להטיה קדמית.
           </p>
           <p style={{ fontSize: 14, color: 'var(--color-fg2)', lineHeight: 1.8, margin: 0 }}>
-            כאן בדיוק נכנס <strong>Mind-Muscle Connection</strong>: היכולת לכוון את העבודה לשריר שאת מנסה לאמן. היא לא קסם, אבל היא כן חוסכת חודשים של אימון שבו את "עושה ישבן" בלי באמת להעמיס עליו טוב.
+            כאן בדיוק נכנס <strong>החיבור לשריר</strong>: היכולת לכוון את העבודה לשריר שאת מנסה לאמן. זה לא קסם, אבל זה כן חוסך חודשים של אימון שבו את "עושה ישבן" בלי באמת להעמיס עליו טוב.
           </p>
         </div>
       </Reveal>
 
-      <Ch3SectionTitle icon="load">2. עומס מתקדם, RPE וטווחי חזרות</Ch3SectionTitle>
+      <Ch3SectionTitle icon="load">2. עומס מתקדם, תחושת מאמץ וטווחי חזרות</Ch3SectionTitle>
       <Reveal>
         <SectionIntro>
           אם את מבצעת שוב ושוב את אותו אימון בדיוק, הגוף מפסיק לקבל סיבה להשתנות. העמסה מתקדמת היא הדרך שלך לתת לשריר סיבה לגדול: עוד משקל, עוד חזרה, יותר שליטה או יותר נפח עבודה.
@@ -1020,7 +1020,7 @@ function Chapter3() {
           <div className="card" style={{ padding: '22px' }}>
             <div style={{ fontFamily: 'var(--font-display)', fontSize: 18, fontWeight: 700, marginBottom: 10 }}>איך לכוון מאמץ</div>
             <p style={{ fontSize: 14, color: 'var(--color-fg2)', lineHeight: 1.75, margin: '0 0 10px' }}>
-              ברוב סטי ההיפרטרופיה תרצי להגיע בערך ל-RPE 8-9, כלומר להישאר עם עוד 1-2 חזרות ברזרבה. זה אומר שהסט באמת מאתגר, אבל לא שובר אותך לגמרי.
+              ברוב הסטים שמטרתם בניית שריר תרצי להגיע בערך ל-RPE 8-9, כלומר להישאר עם עוד 1-2 חזרות ברזרבה. זה אומר שהסט באמת מאתגר, אבל לא שובר אותך לגמרי.
             </p>
             <p style={{ fontSize: 14, color: 'var(--color-fg2)', lineHeight: 1.75, margin: 0 }}>
               בתרגילים מורכבים כבדים עדיף לא לחיות בכשל מוחלט. בתרגילי בידוד, לעומת זאת, אפשר לפעמים להתקרב אליו יותר.
@@ -1059,7 +1059,7 @@ function Chapter3() {
               מנוחה קצרה מדי בתרגילים כבדים חותכת לך נפח עבודה אפקטיבי. אם אין לך אוויר, אין לך כוח, ואם אין לך כוח - קשה לייצר גירוי טוב.
             </p>
             <p style={{ fontSize: 14, color: 'var(--color-fg2)', lineHeight: 1.8, margin: 0 }}>
-              כלל פשוט: <strong>2-3 דקות</strong> בתרגילים מורכבים כמו סקווט, RDL, חתירה או Hip Thrust כבד, ו-<strong>60-90 שניות</strong> בתרגילי בידוד כמו Abduction, Leg Curl, Kickback או Face Pull.
+              כלל פשוט: <strong>2-3 דקות</strong> בתרגילים מורכבים כמו סקווט, דדליפט רומני, חתירה או היפ תראסט כבד, ו-<strong>60-90 שניות</strong> בתרגילי בידוד כמו הרחקת ירך, כפיפת ברך, בעיטת כבל או פייס פול.
             </p>
           </div>
           <div className="card" style={{ padding: '22px' }}>
@@ -1178,7 +1178,7 @@ function Chapter3() {
               אצל הרבה נשים האגן יושב בהטיה קדמית: הגב התחתון מקושת יותר, הישבן כאילו "מאורך" כל הזמן, והגוף בורח בקלות לגב במקום לישבן.
             </p>
             <p style={{ fontSize: 14, color: 'var(--color-fg2)', lineHeight: 1.8, margin: 0 }}>
-              אם את לא מרגישה Hip Thrust או Glute Bridge, נסי סנטר מעט פנימה, צלעות "סגורות", ולחשוב על סיבוב עדין של האגן לאחור בנעילה. לפעמים זה כל ההבדל.
+              אם את לא מרגישה היפ תראסט או גשר ישבן, נסי סנטר מעט פנימה, צלעות "סגורות", ולחשוב על סיבוב עדין של האגן לאחור בנעילה. לפעמים זה כל ההבדל.
             </p>
           </div>
         </div>

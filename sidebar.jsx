@@ -4,9 +4,8 @@ const CHAPTERS = [
   { id: 'chapter-1',        num: '01', label: 'תזונה' },
   { id: 'chapter-microbiome', num: '02', label: 'המיקרוביום והמעיים' },
   { id: 'chapter-2',        num: '03', label: 'מדריך הנפיחות' },
-  { id: 'chapter-3',        num: '04', label: 'בניית אימון' },
-  { id: 'chapter-4',        num: '05', label: 'אורח חיים' },
-  { id: 'chapter-5',        num: '06', label: 'תוכנית 4 שבועות' },
+  { id: 'chapter-4',        num: '04', label: 'אורח חיים' },
+  { id: 'chapter-5',        num: '05', label: 'תוכנית 4 שבועות' },
 ];
 
 function Sidebar({ activeSection, completedSections }) {
