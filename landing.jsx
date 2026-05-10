@@ -664,7 +664,7 @@ function PurchaseSection() {
           <div className="sales-form-wrap">
             <div style={{ fontFamily: 'var(--font-display)', fontSize: 24, fontWeight: 700, marginBottom: 8 }}>שרייני לעצמך את המדריך</div>
             <p style={{ fontSize: 14, color: 'var(--color-fg3)', lineHeight: 1.7, marginBottom: 16 }}>
-              השאירי פרטים כדי לעבור לרכישה ולקבל אחר כך את המדריך למייל שלך. אם את רוצה להבין סוף סוף מה משפיע על הגוף שלך מבפנים, זו נקודת התחלה מצוינת.
+              לפני המעבר לרכישה, מלאי את הפרטים כדי שנוכל לשלוח אלייך את המדריך למייל מיד לאחר התשלום.
             </p>
 
             <div className="sales-form-grid">
