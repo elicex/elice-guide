@@ -102,13 +102,6 @@ const LANDING_FAQ = [
   },
 ];
 
-const TRUST_SIGNALS = [
-  'תשלום מאובטח ב-Cardcom',
-  'קישור אישי למייל אחרי הרכישה',
-  'גישה דיגיטלית מיידית',
-  '149 ש"ח בלבד',
-];
-
 function LandingIcon({ name, size = 22, color = 'var(--color-accent)' }) {
   const common = {
     width: size,
@@ -232,21 +225,6 @@ function PurchaseCta({ note = 'רכישה מאובטחת, גישה אישית ל
       </a>
       <div className="landing-cta-note">{note}</div>
     </div>
-  );
-}
-
-function LandingTrustStrip() {
-  return (
-    <section className="landing-trust-strip" aria-label="פרטי רכישה ואמון">
-      {TRUST_SIGNALS.map(function(item, i) {
-        return (
-          <div key={i} className="landing-trust-item">
-            <span className="landing-trust-dot" aria-hidden="true" />
-            {item}
-          </div>
-        );
-      })}
-    </section>
   );
 }
 
@@ -820,7 +798,6 @@ function LandingApp() {
   return (
     <div className="landing-page">
       <LandingHero />
-      <LandingTrustStrip />
       <LandingPainSection />
       <LandingTransformationSection />
       <LandingValueSection />

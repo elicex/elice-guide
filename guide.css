@@ -2693,39 +2693,6 @@ body {
   text-decoration: none;
   white-space: nowrap;
 }
-.landing-trust-strip {
-  width: min(100% - 44px, 1120px);
-  margin: -26px auto 30px;
-  position: relative;
-  z-index: 5;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
-}
-.landing-trust-item {
-  min-height: 54px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 10px 12px;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-xl);
-  background: rgba(255,255,255,0.86);
-  box-shadow: var(--shadow-soft);
-  color: var(--color-fg2);
-  font-size: 13px;
-  font-weight: 700;
-  text-align: center;
-  line-height: 1.35;
-}
-.landing-trust-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--color-success);
-  flex: 0 0 auto;
-}
 .landing-section-cta {
   display: grid;
   justify-items: center;
@@ -3100,17 +3067,6 @@ body {
     width: min(100%, 360px);
     min-width: 0;
     white-space: normal;
-  }
-  .landing-trust-strip {
-    width: min(100% - 36px, 390px);
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-    margin: -20px auto 18px;
-  }
-  .landing-trust-item {
-    min-height: 50px;
-    font-size: 12px;
-    padding: 9px 10px;
   }
   .landing-section-cta {
     margin-top: 18px;
