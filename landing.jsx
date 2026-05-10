@@ -32,21 +32,6 @@ const LANDING_RESULTS = [
   'תקבלי שיטה שמחברת בין אוכל, מעיים, שינה, סטרס והורמונים לתמונה אחת',
 ];
 
-const LANDING_DIFFERENT = [
-  {
-    title: 'לא עוד תוכן מפוזר',
-    desc: 'במקום לקפוץ בין פוסטים, סרטונים והמלצות סותרות - יש כאן מסלול אחד שמחבר בין כל החלקים לתמונה ברורה.'
-  },
-  {
-    title: 'גם הבנה וגם פרקטיקה',
-    desc: 'לא רק להסביר למה את נפוחה או עייפה, אלא גם לעזור לך להבין מה לבדוק קודם, מה לשנות, ואיך ליישם בפועל.'
-  },
-  {
-    title: 'בסיס מעולה לפני ליווי',
-    desc: 'גם אם אחר כך תרצי להעמיק או לעבור לליווי, המדריך הזה נותן לך קודם קרקע יציבה, שפה ברורה והבנה אמיתית של הגוף שלך.'
-  },
-];
-
 const LANDING_VALUE_STACK = [
   { icon: 'compass', title: 'מפה של הגוף', desc: 'תביני מה קשור למה: אוכל, יציאות, נפיחות, מיקרוביום, הורמונים, שינה, סטרס וירידה במשקל.' },
   { icon: 'tools', title: 'כלים אמיתיים', desc: 'מחשבון, טבלאות מעקב, תבניות לבניית ארוחות, תוכנית 4 שבועות וכלים שאפשר ממש להשתמש בהם.' },
@@ -567,37 +552,6 @@ function LandingTakeawaySection() {
   );
 }
 
-function LandingDifferentSection() {
-  return (
-    <section className="guide-section" style={{ paddingTop: 8 }}>
-      <Reveal>
-        <div className="chapter-label" style={{ marginBottom: 16 }}>
-          <div className="chapter-label-line" />
-          למה זה שונה
-        </div>
-        <h2 className="chapter-title" style={{ marginBottom: 14 }}>זה לא עוד אוסף טיפים - זה החיבור בין כל הדברים שפעם נראו לך לא קשורים</h2>
-        <p className="chapter-desc" style={{ marginBottom: 24 }}>
-          אוכל, נפיחות, מיקרוביום, הורמונים, סטרס, שינה וירידה במשקל. במקום ללמוד כל נושא בנפרד,
-          המדריך מחבר אותם לתמונה אחת שאפשר להבין וליישם.
-        </p>
-      </Reveal>
-      <div className="card-grid-3">
-        {LANDING_DIFFERENT.map(function(item, i) {
-          return (
-            <Reveal key={i} delay={i * 0.05}>
-              <div className="card" style={{ padding: '24px 22px', minHeight: 198 }}>
-                <div style={{ fontFamily: 'var(--font-display)', fontSize: 20, fontWeight: 700, marginBottom: 10 }}>{item.title}</div>
-                <p style={{ fontSize: 14, color: 'var(--color-fg2)', lineHeight: 1.75, margin: 0 }}>{item.desc}</p>
-              </div>
-            </Reveal>
-          );
-        })}
-      </div>
-      <PurchaseCta note="במקום עוד תוכן מפוזר, קבלי מסלול אחד מסודר." />
-    </section>
-  );
-}
-
 function PurchaseSection() {
   const [form, setForm] = useState(function() {
     return JSON.parse(localStorage.getItem('landing_purchase_form') || '{"name":"","email":"","phone":"","consent":true,"termsAccepted":false}');
@@ -788,7 +742,6 @@ function LandingApp() {
       <LandingIncludesSection />
       <LandingPainSection />
       <LandingTakeawaySection />
-      <LandingDifferentSection />
       <PurchaseSection />
       <DeliverySection />
       <LandingFinalCta />
