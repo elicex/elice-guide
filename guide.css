@@ -3162,6 +3162,240 @@ body {
 }
 
 @media (max-width: 900px) {
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  .guide-layout {
+    display: block;
+    width: 100%;
+    min-height: 100vh;
+  }
+  .guide-content {
+    width: 100%;
+    max-width: 100%;
+    padding-right: 0;
+    overflow-x: hidden;
+  }
+  #guide-progress-pct {
+    top: 10px;
+    left: 14px;
+    font-size: 10px;
+  }
+  .dark-mode-toggle {
+    top: 14px;
+    left: 14px;
+  }
+  .mobile-toc-btn {
+    left: 16px;
+    bottom: 16px;
+    width: 48px;
+    height: 48px;
+  }
+  .guide-sidebar.mobile-open {
+    width: min(86vw, 320px);
+    max-width: 320px;
+    padding-top: 64px;
+  }
+  .guide-content .hero-section {
+    min-height: 100svh !important;
+    padding: 68px 18px 58px;
+  }
+  .guide-content .hero-content {
+    width: 100%;
+    max-width: 390px;
+    padding: 24px 0;
+  }
+  .guide-content .hero-badge {
+    max-width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 8px 14px;
+    margin-bottom: 22px;
+    line-height: 1.4;
+    text-align: center;
+    white-space: normal;
+  }
+  .guide-content .hero-title {
+    width: 100%;
+    font-size: clamp(38px, 14vw, 52px);
+    line-height: 1.12;
+    margin-bottom: 16px;
+    overflow-wrap: break-word;
+  }
+  .guide-content .hero-subtitle {
+    max-width: 330px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 24px;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+  .guide-content .hero-meta {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 9px;
+    max-width: 330px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 24px;
+  }
+  .guide-content .hero-meta-item {
+    justify-content: center;
+    text-align: center;
+    min-height: 34px;
+  }
+  .guide-content .hero-cta {
+    width: min(100%, 310px);
+    justify-content: center;
+    padding: 15px 22px;
+    white-space: normal;
+  }
+  .scroll-indicator {
+    display: none;
+  }
+  .guide-section {
+    width: 100%;
+    max-width: 100%;
+    padding: 56px 18px !important;
+    overflow-x: hidden;
+  }
+  .guide-section [style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+  }
+  .guide-section [style*="gridTemplateColumns"] {
+    grid-template-columns: 1fr !important;
+  }
+  .chapter-header {
+    margin-bottom: 34px;
+  }
+  .chapter-title {
+    font-size: clamp(28px, 8.5vw, 38px);
+    line-height: 1.18;
+    overflow-wrap: break-word;
+  }
+  .chapter-desc {
+    max-width: 100%;
+    font-size: 15px;
+    line-height: 1.8;
+  }
+  .card {
+    max-width: 100%;
+    padding: 22px 18px !important;
+    border-radius: 20px;
+  }
+  .card:hover,
+  .principle-card:hover,
+  .exercise-row:hover,
+  .week-capsule:hover,
+  .accordion-card:hover {
+    transform: none;
+  }
+  .principle-card,
+  .habit-item,
+  .cycle-step,
+  .swap-item {
+    padding: 18px 16px;
+    gap: 12px;
+  }
+  .principle-num {
+    min-width: 42px;
+    font-size: 36px;
+  }
+  .accordion-header,
+  .week-capsule-header {
+    padding: 18px 16px;
+    gap: 12px;
+  }
+  .accordion-title,
+  .week-title {
+    font-size: 17px;
+    line-height: 1.35;
+  }
+  .accordion-body {
+    padding: 0 16px;
+  }
+  .week-capsule-body {
+    padding: 0 16px;
+  }
+  .week-num-badge {
+    width: 46px;
+    height: 46px;
+    font-size: 18px;
+  }
+  .exercise-header {
+    grid-template-columns: 1fr 42px;
+    gap: 8px;
+    padding: 15px 14px;
+  }
+  .exercise-header .exercise-meta {
+    display: none;
+  }
+  .exercise-detail {
+    padding: 0 14px;
+  }
+  .food-table-wrap,
+  .tracker-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .food-table {
+    min-width: 620px;
+  }
+  .tracker-table {
+    min-width: 560px;
+  }
+  .food-table th,
+  .food-table td {
+    padding: 12px 14px;
+    font-size: 13px;
+  }
+  .tab-bar {
+    margin-right: -4px;
+    margin-left: -4px;
+    padding: 4px;
+  }
+  .tab-btn {
+    flex: 0 0 auto;
+    min-width: 104px;
+    padding: 10px 14px;
+  }
+  .micro-scene,
+  .micro-impact-map,
+  .micro-functions-grid,
+  .micro-action-grid,
+  .micro-signal-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .microbiome-container {
+    padding: 24px 0;
+    overflow: hidden;
+  }
+  .microbiome-svg {
+    width: min(100%, 320px);
+    height: auto;
+  }
+  .pull-quote {
+    margin: 28px 0;
+    padding: 18px 20px;
+  }
+  .pull-quote-text {
+    font-size: 21px;
+  }
+  .tooltip-box {
+    width: min(260px, 78vw);
+  }
+  .guide-content footer {
+    padding: 28px 18px !important;
+    justify-content: center !important;
+    text-align: center;
+  }
+}
+
+@media (max-width: 900px) {
   .landing-page .guide-section {
     padding: 56px 22px;
   }
