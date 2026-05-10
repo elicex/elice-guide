@@ -2616,6 +2616,83 @@ body {
 .compare-bullet { color: var(--color-accent); font-size: 18px; flex-shrink: 0; margin-top: -2px; }
 
 /* ── SALES FUNNEL ─────────────────────────────────────────── */
+.landing-page {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(187,178,238,0.05) 38%, rgba(232,93,117,0.04) 100%),
+    var(--color-bg);
+}
+.landing-page .guide-section {
+  width: min(100%, 1120px);
+  max-width: 1120px;
+  padding: 84px 32px;
+}
+.landing-page .guide-section + .guide-section {
+  padding-top: 24px;
+}
+.landing-page .chapter-title {
+  max-width: 860px;
+}
+.landing-page .chapter-desc {
+  max-width: 760px;
+}
+.landing-hero {
+  min-height: auto;
+  padding: 86px 24px 58px;
+}
+.landing-hero-content {
+  width: min(100%, 880px);
+  max-width: 880px;
+  padding: 28px 0;
+}
+.landing-hero .hero-title {
+  max-width: 820px;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: clamp(36px, 5.4vw, 58px);
+  overflow-wrap: break-word;
+}
+.landing-hero .hero-title span {
+  display: block;
+}
+.landing-hero .hero-subtitle {
+  max-width: 720px;
+  margin: 0 auto 26px;
+}
+.landing-hero .hero-meta {
+  gap: 12px;
+  margin-bottom: 24px;
+}
+.landing-hero .hero-meta-item {
+  min-height: 42px;
+  padding: 0 14px;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.04);
+  color: rgba(255,255,255,0.72);
+}
+.landing-hero-actions {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 0 auto 18px;
+}
+.landing-hero-chip {
+  min-height: 48px;
+  font-size: 14px;
+  white-space: normal;
+  text-align: center;
+}
+.landing-primary-cta {
+  justify-content: center;
+  min-width: 210px;
+  min-height: 56px;
+  margin-top: 4px;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+}
 .sales-shell {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
@@ -2645,6 +2722,7 @@ body {
   font-size: 13px;
   font-weight: 700;
   color: var(--color-fg1);
+  line-height: 1.35;
 }
 .sales-price-tag {
   background: rgba(232,93,117,0.12);
@@ -2716,8 +2794,13 @@ body {
 .sales-purchase-shell {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
-  gap: 26px;
-  padding: 34px 32px;
+  gap: 32px;
+  padding: 36px;
+  align-items: stretch;
+}
+.sales-purchase-copy,
+.sales-form-wrap {
+  min-width: 0;
 }
 .sales-mini-note {
   padding: 14px 16px;
@@ -2732,7 +2815,8 @@ body {
   background: linear-gradient(180deg, rgba(255,255,255,0.86), rgba(246,241,251,0.8));
   border: 1px solid var(--color-border);
   border-radius: var(--radius-2xl);
-  padding: 22px;
+  padding: 26px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.65);
 }
 .sales-form-grid {
   display: grid;
@@ -2750,6 +2834,7 @@ body {
 .sales-input,
 .sales-form-wrap select {
   width: 100%;
+  min-height: 48px;
   padding: 12px 14px;
   border: 1.5px solid var(--color-border-strong);
   border-radius: var(--radius-xl);
@@ -2779,6 +2864,10 @@ body {
   color: var(--color-fg2);
   line-height: 1.7;
 }
+.sales-consent input {
+  flex: 0 0 auto;
+  margin-top: 4px;
+}
 .sales-secondary-btn {
   display: inline-flex;
   align-items: center;
@@ -2794,8 +2883,8 @@ body {
   font-weight: 700;
 }
 .sales-final-cta {
-  margin: 56px 0 10px;
-  padding: 28px 30px;
+  margin: 0;
+  padding: 32px;
   border-radius: 28px;
   border: 1px solid rgba(232,93,117,0.16);
   background: linear-gradient(135deg, rgba(232,93,117,0.08), rgba(187,178,238,0.08));
@@ -2865,6 +2954,60 @@ body {
 }
 
 @media (max-width: 900px) {
+  .landing-page .guide-section {
+    padding: 56px 22px;
+  }
+  .landing-page .guide-section + .guide-section {
+    padding-top: 18px;
+  }
+  .landing-hero {
+    padding: 72px 18px 48px;
+  }
+  .landing-hero .hero-badge {
+    max-width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 8px 14px;
+    margin-bottom: 22px;
+    line-height: 1.4;
+    white-space: normal;
+  }
+  .landing-hero .hero-title {
+    width: 100%;
+    max-width: 350px;
+    font-size: clamp(30px, 9vw, 38px);
+    line-height: 1.18;
+    margin-bottom: 16px;
+  }
+  .landing-hero .hero-subtitle {
+    max-width: 350px;
+    font-size: 16px;
+    margin-bottom: 22px;
+  }
+  .landing-hero .hero-meta {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    max-width: 360px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 18px;
+  }
+  .landing-hero .hero-meta-item {
+    justify-content: center;
+    text-align: center;
+  }
+  .landing-hero-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 360px;
+    margin-bottom: 18px;
+  }
+  .landing-primary-cta {
+    width: min(100%, 360px);
+    min-width: 0;
+    white-space: normal;
+  }
   .sales-shell,
   .sales-purchase-shell,
   .sales-steps-grid,
@@ -2872,8 +3015,14 @@ body {
   .sales-final-cta {
     grid-template-columns: 1fr;
   }
+  .sales-purchase-shell,
+  .sales-form-wrap,
+  .sales-final-cta {
+    padding: 24px;
+  }
   .sales-final-cta {
     display: grid;
+    justify-items: stretch;
   }
   .sales-flow-card-2,
   .sales-flow-card-3,

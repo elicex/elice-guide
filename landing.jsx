@@ -247,7 +247,7 @@ async function createCheckout(payload) {
 
 function LandingHero() {
   return (
-    <section className="hero-section" style={{ minHeight: '100vh' }}>
+    <section className="hero-section landing-hero">
       <div className="hero-bg" />
       <div style={{ position: 'absolute', inset: 0, zIndex: 1 }}>
         <div className="hero-blob hero-blob-1" />
@@ -256,7 +256,7 @@ function LandingHero() {
         <div className="hero-grid-overlay" />
       </div>
 
-      <div className="hero-content" style={{ zIndex: 2, position: 'relative' }}>
+      <div className="hero-content landing-hero-content">
         <div className="hero-badge">
           <div className="hero-badge-dot" />
           מדריך דיגיטלי פרימיום לנשים
@@ -270,7 +270,7 @@ function LandingHero() {
         </h1>
 
         <p className="hero-subtitle">
-          זה לא עוד PDF עם טיפים. זה מדריך דיגיטלי עמוק, פרקטי ומסודר<br />
+          זה לא עוד PDF עם טיפים. זה מדריך דיגיטלי עמוק, פרקטי ומסודר{' '}
           שנותן לך סוף סוף שיטה להבין את הגוף שלך ולעבוד איתו, לא נגדו
         </p>
 
@@ -287,12 +287,12 @@ function LandingHero() {
           ))}
         </div>
 
-        <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', justifyContent: 'center', marginTop: 18 }}>
-          <div className="sales-price-tag" style={{ fontSize: 15, minHeight: 50 }}>{LANDING_FUNNEL.priceLabel}</div>
-          <div className="sales-chip" style={{ minHeight: 50 }}>גישה דיגיטלית מלאה + חזרה חופשית למדריך</div>
+        <div className="landing-hero-actions">
+          <div className="sales-price-tag landing-hero-chip">{LANDING_FUNNEL.priceLabel}</div>
+          <div className="sales-chip landing-hero-chip">גישה דיגיטלית מלאה + חזרה חופשית למדריך</div>
         </div>
 
-        <a className="hero-cta" href="#landing-purchase">
+        <a className="hero-cta landing-primary-cta" href="#landing-purchase">
           אני רוצה את המדריך
         </a>
       </div>
@@ -748,28 +748,30 @@ function DeliverySection() {
 
 function LandingFinalCta() {
   return (
-    <Reveal>
-      <div className="sales-final-cta">
-        <div>
-          <div className="sales-final-kicker">הצעה מיוחדת</div>
-          <div className="sales-final-title">149 ש"ח במקום 380 ש"ח</div>
-          <div className="sales-final-text">
-            אם חיפשת סוף סוף להבין את הגוף שלך כמו שצריך - זה המקום להתחיל ממנו. בשביל 149 ש"ח את מקבלת מדריך שיכול לעשות לך הרבה סדר, לתת לך כלים אמיתיים, ולחסוך לך חודשים של ניסוי וטעייה.
-            <br /><br />
-            זה לא עוד קובץ שפותחים פעם אחת ושוכחים. זה מדריך שאפשר לחזור אליו שוב ושוב, ליישם ממנו, ולבנות בעזרתו שפה חדשה מול הגוף, האוכל והנפיחות שלך.
+    <section className="guide-section landing-final-section">
+      <Reveal>
+        <div className="sales-final-cta">
+          <div>
+            <div className="sales-final-kicker">הצעה מיוחדת</div>
+            <div className="sales-final-title">149 ש"ח במקום 380 ש"ח</div>
+            <div className="sales-final-text">
+              אם חיפשת סוף סוף להבין את הגוף שלך כמו שצריך - זה המקום להתחיל ממנו. בשביל 149 ש"ח את מקבלת מדריך שיכול לעשות לך הרבה סדר, לתת לך כלים אמיתיים, ולחסוך לך חודשים של ניסוי וטעייה.
+              <br /><br />
+              זה לא עוד קובץ שפותחים פעם אחת ושוכחים. זה מדריך שאפשר לחזור אליו שוב ושוב, ליישם ממנו, ולבנות בעזרתו שפה חדשה מול הגוף, האוכל והנפיחות שלך.
+            </div>
           </div>
+          <a className="hero-cta landing-primary-cta" href="#landing-purchase">
+            עברי לרכישה
+          </a>
         </div>
-        <a className="hero-cta" href="#landing-purchase">
-          עברי לרכישה
-        </a>
-      </div>
-    </Reveal>
+      </Reveal>
+    </section>
   );
 }
 
 function LandingApp() {
   return (
-    <div>
+    <div className="landing-page">
       <LandingHero />
       <LandingPainSection />
       <LandingTransformationSection />
