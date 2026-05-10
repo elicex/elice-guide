@@ -2693,6 +2693,26 @@ body {
   text-decoration: none;
   white-space: nowrap;
 }
+.landing-personal-note {
+  padding: 34px 32px;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.9), rgba(187,178,238,0.09)),
+    var(--color-surface);
+}
+.landing-personal-note .chapter-title {
+  max-width: 760px;
+}
+.landing-personal-note-text {
+  max-width: 820px;
+  display: grid;
+  gap: 14px;
+}
+.landing-personal-note-text p {
+  margin: 0;
+  color: var(--color-fg2);
+  font-size: 15px;
+  line-height: 1.9;
+}
 .landing-section-cta {
   display: grid;
   justify-items: center;
@@ -3198,6 +3218,12 @@ body {
   }
   .landing-section-cta {
     margin-top: 18px;
+  }
+  .landing-personal-note {
+    padding: 26px 22px;
+  }
+  .landing-personal-note-text p {
+    font-size: 14px;
   }
   .landing-sticky-cta {
     display: flex;

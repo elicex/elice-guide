@@ -302,6 +302,40 @@ function LandingHero() {
   );
 }
 
+function LandingPersonalNoteSection() {
+  return (
+    <section className="guide-section landing-personal-note-section" style={{ paddingTop: 46 }}>
+      <Reveal>
+        <div className="landing-personal-note card">
+          <div className="chapter-label" style={{ marginBottom: 16 }}>
+            <div className="chapter-label-line" />
+            נקודת התחלה
+          </div>
+          <h2 className="chapter-title" style={{ marginBottom: 16 }}>
+            המדריך שהייתי רוצה לתת לעצמי בתחילת הדרך
+          </h2>
+          <div className="landing-personal-note-text">
+            <p>
+              אם גם את מנסה לאכול נכון ולהתאמן, אבל הגוף עדיין מרגיש נפוח, עייף או תקוע,
+              המדריך הזה נכתב בשבילך. לא כדי לתת לך עוד רשימת איסורים, אלא כדי לעשות סדר בגוף,
+              בהרגלים ובהבנה.
+            </p>
+            <p>
+              במקום הבטחות גדולות, נבין מה יכול להשפיע על נפיחות, רעב, אנרגיה ובניית שריר,
+              נלמד איך להרכיב ארוחות שמתאימות לחיים אמיתיים, ונבנה שגרה שאפשר להתמיד בה
+              גם בלי להיות “מושלמת”.
+            </p>
+            <p>
+              אם את עוברת בין תקופות של שליטה לבין ימים של בלבול, נשנושים ועייפות,
+              חשוב לי שתדעי: בדרך כלל הבעיה היא לא חוסר כוח רצון. ברוב המקרים חסר פשוט סדר.
+            </p>
+          </div>
+        </div>
+      </Reveal>
+    </section>
+  );
+}
+
 function LandingPainSection() {
   return (
     <section className="guide-section" style={{ paddingTop: 70 }}>
@@ -737,6 +771,7 @@ function LandingApp() {
   return (
     <div className="landing-page">
       <LandingHero />
+      <LandingPersonalNoteSection />
       <LandingValueSection />
       <LandingTransformationSection />
       <LandingIncludesSection />
