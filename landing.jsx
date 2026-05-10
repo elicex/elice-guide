@@ -806,8 +806,8 @@ function LandingApp() {
       <LandingHero />
       <LandingValueSection />
       <LandingTransformationSection />
-      <LandingPainSection />
       <LandingIncludesSection />
+      <LandingPainSection />
       <LandingTakeawaySection />
       <LandingForWhoSection />
       <LandingDifferentSection />
