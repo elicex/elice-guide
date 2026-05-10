@@ -72,6 +72,14 @@ async function findPaidOrderByAccessToken(token) {
   return rows && rows[0];
 }
 
+async function findEvent(orderId, type) {
+  const rows = await supabaseRequest(
+    `events?order_id=eq.${encodeURIComponent(orderId)}&type=eq.${encodeURIComponent(type)}&select=*&limit=1`,
+    { method: 'GET' }
+  );
+  return rows && rows[0];
+}
+
 async function logEvent(orderId, type, payload) {
   await supabaseRequest('events', {
     method: 'POST',
@@ -83,4 +91,4 @@ async function logEvent(orderId, type, payload) {
   });
 }
 
-module.exports = { createOrder, updateOrder, findOrder, findPaidOrderByAccessToken, logEvent };
+module.exports = { createOrder, updateOrder, findOrder, findPaidOrderByAccessToken, findEvent, logEvent };
