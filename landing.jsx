@@ -10,17 +10,17 @@ const LANDING_FUNNEL = {
 
 const LANDING_PAIN_POINTS = [
   'את אוכלת "בריא" ועדיין מרגישה נפוחה, כבדה או לא מבינה למה שום דבר לא מתיישב.',
-  'יש לך מלא מידע בראש - חלבון, הורמונים, נפיחות, מעיים, קלוריות, אימונים - אבל אין לך שיטה אחת מסודרת.',
+  'יש לך מלא מידע בראש - חלבון, הורמונים, נפיחות, מעיים וקלוריות - אבל אין לך שיטה אחת מסודרת.',
   'את רוצה לרדת בשומן, להרגיש טוב יותר בגוף, ולבנות שגרה שעובדת באמת - בלי לקפוץ כל שבוע למשהו אחר.',
   'את לא מחפשת עוד השראה. את מחפשת להבין מה לעשות, למה, ואיך ליישם את זה בחיים האמיתיים שלך.',
 ];
 
 const LANDING_INCLUDES = [
-  { icon: '🥗', title: 'פרק תזונה מלא', desc: 'קלוריות, חלבון, שומן, פחמימות, הורמונים, בניית ארוחות, קריאת תוויות, אלכוהול, צום לסירוגין - והכול מוסבר בעברית ברורה.' },
-  { icon: '🦠', title: 'פרק מיקרוביום ומעיים', desc: 'מה באמת קורה במעי שלך, איך זה קשור לנפיחות, לאנרגיה, למצב הרוח ולהורמונים, ומה אפשר להתחיל לעשות אחרת כבר עכשיו.' },
-  { icon: '🌿', title: 'מדריך נפיחות פרקטי', desc: '7 סוגי נפיחות, Low FODMAP, טריגרים נפוצים, טבלת מעקב, תפריט התחלה, וכלים לזהות מה באמת מפעיל אותך.' },
-  { icon: '🌙', title: 'אורח חיים שמביא תוצאות', desc: 'שינה, סטרס, קורטיזול, הידרציה והרגלים קטנים שמשפיעים על איך את נראית, מרגישה ומתאוששת.' },
-  { icon: '🗓️', title: 'תוכנית 4 שבועות', desc: 'מסלול יישום ברור שעוזר לך להפוך ידע לפעולה, במקום רק לקרוא ולהרגיש מוצפת.' },
+  { icon: 'nutrition', title: 'פרק תזונה מלא', desc: 'קלוריות, חלבון, שומן, פחמימות, הורמונים, בניית ארוחות, קריאת תוויות, אלכוהול, צום לסירוגין - והכול מוסבר בעברית ברורה.' },
+  { icon: 'microbiome', title: 'פרק מיקרוביום ומעיים', desc: 'מה באמת קורה במעי שלך, איך זה קשור לנפיחות, לאנרגיה, למצב הרוח ולהורמונים, ומה אפשר להתחיל לעשות אחרת כבר עכשיו.' },
+  { icon: 'leaf', title: 'מדריך נפיחות פרקטי', desc: '7 סוגי נפיחות, Low FODMAP, טריגרים נפוצים, טבלת מעקב, תפריט התחלה, וכלים לזהות מה באמת מפעיל אותך.' },
+  { icon: 'moon', title: 'אורח חיים שמביא תוצאות', desc: 'שינה, סטרס, קורטיזול, הידרציה והרגלים קטנים שמשפיעים על איך את נראית, מרגישה ומתאוששת.' },
+  { icon: 'calendar', title: 'תוכנית 4 שבועות', desc: 'מסלול יישום ברור שעוזר לך להפוך ידע לפעולה, במקום רק לקרוא ולהרגיש מוצפת.' },
 ];
 
 const LANDING_FOR_HER = [
@@ -54,10 +54,10 @@ const LANDING_DIFFERENT = [
 ];
 
 const LANDING_VALUE_STACK = [
-  { icon: '🧭', title: 'בהירות', desc: 'תביני סוף סוף מה לעשות קודם, מה קשור למה, ואיפה בכלל מתחילים.' },
-  { icon: '🛠️', title: 'כלים אמיתיים', desc: 'מחשבון, טבלאות מעקב, תבניות לבניית ארוחות, תוכנית 4 שבועות וכלים שאפשר ממש להשתמש בהם.' },
-  { icon: '🧠', title: 'הבנה עמוקה', desc: 'לא רק "מה לאכול", אלא למה הגוף שלך מגיב כמו שהוא מגיב - במעיים, בהורמונים, בנפיחות ובשגרה היומיומית.' },
-  { icon: '📅', title: 'יישום לחיים', desc: 'תוכנית 4 שבועות, סדר פעולות ברור, והרבה פחות תחושה של הצפה.' },
+  { icon: 'compass', title: 'בהירות', desc: 'תביני סוף סוף מה לעשות קודם, מה קשור למה, ואיפה בכלל מתחילים.' },
+  { icon: 'tools', title: 'כלים אמיתיים', desc: 'מחשבון, טבלאות מעקב, תבניות לבניית ארוחות, תוכנית 4 שבועות וכלים שאפשר ממש להשתמש בהם.' },
+  { icon: 'brain', title: 'הבנה עמוקה', desc: 'לא רק "מה לאכול", אלא למה הגוף שלך מגיב כמו שהוא מגיב - במעיים, בהורמונים, בנפיחות ובשגרה היומיומית.' },
+  { icon: 'calendar', title: 'יישום לחיים', desc: 'תוכנית 4 שבועות, סדר פעולות ברור, והרבה פחות תחושה של הצפה.' },
 ];
 
 const LANDING_TAKEAWAYS = [
@@ -70,16 +70,16 @@ const LANDING_TAKEAWAYS = [
 
 const LANDING_TRANSFORMATION_POINTS = {
   before: [
-    'אוכלת "בסדר" ועדיין מסיימת ימים נפוחה',
-    'לא בטוחה אם הבעיה היא האוכל, ההורמונים או המעיים',
-    'כל שבוע מתחילה שוב משהו אחר',
-    'יש הרבה מידע, אבל אין סדר',
+    'אוכלת "בסדר" ועדיין מסיימת את היום עם בטן נפוחה וכבדה',
+    'לא באמת יודעת אם הטריגר שלך הוא אוכל, הורמונים, עצירות, סטרס או המעי עצמו',
+    'קופצת בין טיפים, רשימות מותר ואסור, ונשארת בלי שיטה אמיתית',
+    'מרגישה שהגוף לא משתף פעולה, אבל אין לך דרך להבין מה לבדוק קודם',
   ],
   after: [
-    'מבינה מה כנראה מפעיל אותך ומה לא',
-    'יודעת איך לאכול בצורה שמרגיעה את הגוף',
-    'יש לך שיטה ברורה ולא עוד ניסוי וטעייה',
-    'את מרגישה שיש לך על מה להישען',
+    'מבינה איזה סוג נפיחות כנראה שייך אלייך ומה הגיוני לבדוק קודם',
+    'יודעת לבנות ארוחות שמחזיקות שובע, מרגיעות את הגוף ומפחיתות בלבול',
+    'מקבלת כלים אמיתיים: תבניות, טבלאות, מחשבון ותוכנית יישום ל־4 שבועות',
+    'יוצאת עם דרך ברורה שאפשר לחזור אליה שוב ושוב, במקום להתחיל מחדש כל שבוע',
   ],
 };
 
@@ -102,6 +102,121 @@ const LANDING_FAQ = [
   },
 ];
 
+function LandingIcon({ name, size = 22, color = 'var(--color-accent)' }) {
+  const common = {
+    width: size,
+    height: size,
+    viewBox: '0 0 24 24',
+    fill: 'none',
+    stroke: color,
+    strokeWidth: 1.8,
+    strokeLinecap: 'round',
+    strokeLinejoin: 'round',
+    'aria-hidden': 'true',
+  };
+
+  const wrapStyle = {
+    width: size + 16,
+    height: size + 16,
+    borderRadius: 999,
+    display: 'grid',
+    placeItems: 'center',
+    background: 'rgba(123, 198, 164, 0.12)',
+    color,
+    flex: '0 0 auto',
+  };
+
+  const icons = {
+    nutrition: (
+      <svg {...common}>
+        <path d="M8 3c1 2 1.2 4.2.5 6.4C7.7 12 6 13.6 4 14v7" />
+        <path d="M4 14c-1.4-.4-2.5-1.8-2.5-3.4C1.5 7.8 3 5 6 3" />
+        <path d="M15 3v8" />
+        <path d="M18 3v8" />
+        <path d="M15 7h3" />
+        <path d="M16.5 11v10" />
+      </svg>
+    ),
+    microbiome: (
+      <svg {...common}>
+        <circle cx="8" cy="8" r="3" />
+        <circle cx="16.5" cy="6.5" r="2.5" />
+        <circle cx="15.5" cy="15.5" r="3.5" />
+        <circle cx="7" cy="16.5" r="2.5" />
+        <path d="M10.5 8h3.5" />
+        <path d="M8.8 10.4l4 3.1" />
+        <path d="M8.6 14.6l3.4-1" />
+      </svg>
+    ),
+    leaf: (
+      <svg {...common}>
+        <path d="M20 4c-7 .4-12 4.4-13.8 11.2" />
+        <path d="M4 14c0 3.3 2.7 6 6 6 6.2 0 10-7.7 10-16-8.3 0-16 3.8-16 10z" />
+      </svg>
+    ),
+    moon: (
+      <svg {...common}>
+        <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 9 9 0 1 0 20 14.5z" />
+      </svg>
+    ),
+    calendar: (
+      <svg {...common}>
+        <rect x="3" y="5" width="18" height="16" rx="2" />
+        <path d="M8 3v4" />
+        <path d="M16 3v4" />
+        <path d="M3 10h18" />
+      </svg>
+    ),
+    compass: (
+      <svg {...common}>
+        <circle cx="12" cy="12" r="9" />
+        <path d="M15.5 8.5l-2.2 6.2-6.2 2.2 2.2-6.2 6.2-2.2z" />
+      </svg>
+    ),
+    tools: (
+      <svg {...common}>
+        <path d="M14 5l5 5" />
+        <path d="M12 7l5 5" />
+        <path d="M5 19l7-7" />
+        <path d="M4 20l2-2" />
+        <path d="M14.5 4.5a3 3 0 0 0 4 4L14 13l-4-4 4.5-4.5z" />
+      </svg>
+    ),
+    brain: (
+      <svg {...common}>
+        <path d="M9 4a3 3 0 0 0-5 2.2A3.5 3.5 0 0 0 5 13v1a3 3 0 0 0 3 3h1" />
+        <path d="M15 4a3 3 0 0 1 5 2.2A3.5 3.5 0 0 1 19 13v1a3 3 0 0 1-3 3h-1" />
+        <path d="M9 4c0 1.5 1 2.5 3 2.5S15 5.5 15 4" />
+        <path d="M9 20c0-1.5 1-2.5 3-2.5S15 18.5 15 20" />
+        <path d="M12 6.5V17.5" />
+      </svg>
+    ),
+    book: (
+      <svg {...common}>
+        <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21z" />
+        <path d="M4 5.5V21" />
+        <path d="M8 7h8" />
+        <path d="M8 11h8" />
+      </svg>
+    ),
+    mail: (
+      <svg {...common}>
+        <rect x="3" y="5" width="18" height="14" rx="2" />
+        <path d="M4 7l8 6 8-6" />
+      </svg>
+    ),
+    question: (
+      <svg {...common}>
+        <path d="M9.5 9a2.5 2.5 0 1 1 4.3 1.7c-.8.8-1.8 1.3-1.8 2.8" />
+        <path d="M12 18h.01" />
+        <circle cx="12" cy="12" r="9" />
+      </svg>
+    ),
+  };
+
+  return <span style={wrapStyle}>{icons[name] || icons.compass}</span>;
+}
+
 function persistLandingLead(payload) {
   try {
     const current = JSON.parse(localStorage.getItem('landing_leads') || '[]');
@@ -110,25 +225,24 @@ function persistLandingLead(payload) {
   } catch (e) {}
 }
 
-async function submitLandingLead(payload) {
+async function createCheckout(payload) {
   persistLandingLead(payload);
 
-  if (!LANDING_FUNNEL.leadWebhookUrl) {
-    return { ok: true, mode: 'local' };
+  const res = await fetch('/api/orders/create', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload),
+  });
+
+  const data = await res.json().catch(function() {
+    return { ok: false, error: 'לא הצלחנו לפתוח את הסליקה כרגע.' };
+  });
+
+  if (!res.ok || !data.ok) {
+    throw new Error(data.error || 'לא הצלחנו לפתוח את הסליקה כרגע.');
   }
 
-  try {
-    const res = await fetch(LANDING_FUNNEL.leadWebhookUrl, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload),
-    });
-
-    if (!res.ok) throw new Error('Lead webhook failed');
-    return { ok: true, mode: 'webhook' };
-  } catch (error) {
-    return { ok: false, mode: 'error', error };
-  }
+  return data;
 }
 
 function LandingHero() {
@@ -162,12 +276,12 @@ function LandingHero() {
 
         <div className="hero-meta">
           {[
-            { icon: '📚', label: '5 פרקים עמוקים עם יישום אמיתי' },
-            { icon: '🛠️', label: 'כלים, טבלאות, מחשבון ותבניות' },
-            { icon: '📩', label: 'נשלח ישירות למייל שלך אחרי הרכישה' },
+            { icon: 'book', label: '5 פרקים עמוקים עם יישום אמיתי' },
+            { icon: 'tools', label: 'כלים, טבלאות, מחשבון ותבניות' },
+            { icon: 'mail', label: 'נשלח ישירות למייל שלך אחרי הרכישה' },
           ].map((m, i) => (
             <div key={i} className="hero-meta-item">
-              <span>{m.icon}</span>
+              <LandingIcon name={m.icon} size={18} />
               {m.label}
             </div>
           ))}
@@ -221,60 +335,30 @@ function LandingPainSection() {
 
 function BellyStateCard({ title, subtitle, chips, state = 'before' }) {
   const before = state === 'before';
+  const imageSrc = before ? 'assets/bloated.png' : 'assets/unbloated.png';
+  const imageAlt = before ? 'דוגמה לנפיחות בבטן' : 'דוגמה לבטן רגועה יותר';
   return (
     <div className="card" style={{ padding: '26px 24px', minHeight: 420 }}>
-      <div style={{ fontFamily: 'var(--font-display)', fontSize: 22, fontWeight: 700, marginBottom: 6 }}>{title}</div>
-      <div style={{ fontSize: 14, color: 'var(--color-fg3)', lineHeight: 1.7, marginBottom: 18 }}>{subtitle}</div>
-
       <div
         aria-hidden="true"
         style={{
-          height: 220,
-          borderRadius: 28,
+          borderRadius: 32,
           background: before
             ? 'linear-gradient(180deg, rgba(232,93,117,0.12), rgba(232,93,117,0.04))'
             : 'linear-gradient(180deg, rgba(123,198,164,0.16), rgba(187,178,238,0.08))',
           border: '1px solid rgba(25,34,29,0.08)',
-          display: 'grid',
-          placeItems: 'center',
-          marginBottom: 18,
           position: 'relative',
           overflow: 'hidden',
+          padding: '18px 18px 0',
+          marginBottom: 22,
         }}
       >
         <div
           style={{
             position: 'absolute',
-            width: before ? 170 : 148,
-            height: before ? 170 : 148,
-            borderRadius: '48% 52% 46% 54% / 44% 45% 55% 56%',
-            background: before
-              ? 'radial-gradient(circle at 40% 35%, #ffd2da 0%, #f3a8b7 48%, #e17b91 100%)'
-              : 'radial-gradient(circle at 40% 35%, #f6efe5 0%, #e8c7b3 44%, #d99d82 100%)',
-            transform: before ? 'translateY(14px)' : 'translateY(4px)',
-            boxShadow: before
-              ? '0 24px 50px rgba(232,93,117,0.16)'
-              : '0 24px 50px rgba(123,198,164,0.14)',
-          }}
-        />
-        <div
-          style={{
-            position: 'absolute',
-            width: before ? 112 : 96,
-            height: 140,
-            borderRadius: '48px 48px 24px 24px',
-            background: before
-              ? 'linear-gradient(180deg, #f7dccf 0%, #efc3ad 100%)'
-              : 'linear-gradient(180deg, #f8e2d3 0%, #efc6b1 100%)',
-            transform: 'translateY(-38px)',
-            boxShadow: '0 8px 20px rgba(25,34,29,0.06)',
-          }}
-        />
-        <div
-          style={{
-            position: 'absolute',
-            top: 28,
-            left: 28,
+            top: 16,
+            left: 16,
+            zIndex: 2,
             padding: '8px 12px',
             borderRadius: 999,
             background: before ? 'rgba(232,93,117,0.12)' : 'rgba(123,198,164,0.18)',
@@ -285,7 +369,25 @@ function BellyStateCard({ title, subtitle, chips, state = 'before' }) {
         >
           {before ? 'נפיחות, לחץ וכבדות' : 'יותר רוגע, יותר בהירות'}
         </div>
+        <img
+          src={imageSrc}
+          alt={imageAlt}
+          style={{
+            width: '100%',
+            maxWidth: 340,
+            height: 'auto',
+            display: 'block',
+            margin: '22px auto 0',
+            borderRadius: 24,
+            boxShadow: before
+              ? '0 24px 50px rgba(232,93,117,0.16)'
+              : '0 24px 50px rgba(123,198,164,0.14)',
+          }}
+        />
       </div>
+
+      <div style={{ fontFamily: 'var(--font-display)', fontSize: 24, fontWeight: 700, marginBottom: 8 }}>{title}</div>
+      <div style={{ fontSize: 14, color: 'var(--color-fg3)', lineHeight: 1.7, marginBottom: 18 }}>{subtitle}</div>
 
       <div style={{ display: 'grid', gap: 10 }}>
         {chips.map(function(chip, i) {
@@ -310,10 +412,10 @@ function LandingTransformationSection() {
           השינוי שהיא קונה
         </div>
         <h2 className="chapter-title" style={{ marginBottom: 14 }}>
-          לא עוד “אני נפוחה ואין לי מושג למה” - אלא יותר שקט, יותר הבנה, ויותר שליטה
+          לא עוד “אני נפוחה ואין לי מושג למה” - אלא הבנה, בהירות וכלים אמיתיים לעבוד איתם
         </h2>
         <p className="chapter-desc" style={{ marginBottom: 24 }}>
-          המדריך הזה לא מבטיח קסם ולא “בטן שטוחה ב־3 ימים”. הוא נותן משהו הרבה יותר חזק: הבנה אמיתית של מה כנראה קורה אצלך, וכלים להתחיל לשנות את זה בצורה חכמה.
+          המדריך הזה לא מוכר קסם ולא מבטיח “בטן שטוחה ב־3 ימים”. הוא נותן משהו הרבה יותר חזק: להבין מה כנראה קורה בגוף שלך, לדעת מה לבדוק קודם, ולקבל דרך מסודרת להתחיל לשנות את זה בלי לנחש.
         </p>
       </Reveal>
 
@@ -322,7 +424,7 @@ function LandingTransformationSection() {
           <BellyStateCard
             state="before"
             title="לפני"
-            subtitle="בלבול, נפיחות, ותחושה שהגוף עושה מה שהוא רוצה"
+            subtitle="את מנסה להשתדל, אבל עדיין אין לך דרך ברורה להבין למה הגוף מגיב כמו שהוא מגיב"
             chips={LANDING_TRANSFORMATION_POINTS.before}
           />
         </Reveal>
@@ -330,7 +432,7 @@ function LandingTransformationSection() {
           <BellyStateCard
             state="after"
             title="אחרי"
-            subtitle="יותר סדר, פחות בלבול, וכלים שמרגיעים את הגוף במקום להילחם בו"
+            subtitle="יש לך סוף סוף הסבר, סדר וכלים פרקטיים שאת יכולה להתחיל ליישם כבר מהשבוע הראשון"
             chips={LANDING_TRANSFORMATION_POINTS.after}
           />
         </Reveal>
@@ -360,7 +462,9 @@ function LandingValueSection() {
           return (
             <Reveal key={i} delay={i * 0.05}>
               <div className="card" style={{ padding: '24px 22px', minHeight: 180 }}>
-                <div style={{ fontSize: 28, marginBottom: 10 }}>{item.icon}</div>
+                <div style={{ marginBottom: 12 }}>
+                  <LandingIcon name={item.icon} size={22} />
+                </div>
                 <div style={{ fontFamily: 'var(--font-display)', fontSize: 20, fontWeight: 700, marginBottom: 10 }}>{item.title}</div>
                 <p style={{ fontSize: 14, color: 'var(--color-fg2)', lineHeight: 1.75, margin: 0 }}>{item.desc}</p>
               </div>
@@ -390,7 +494,9 @@ function LandingIncludesSection() {
           return (
             <Reveal key={i} delay={i * 0.05}>
               <div className="card" style={{ padding: '24px 22px', minHeight: 210 }}>
-                <div style={{ fontSize: 28, marginBottom: 10 }}>{item.icon}</div>
+                <div style={{ marginBottom: 12 }}>
+                  <LandingIcon name={item.icon} size={22} />
+                </div>
                 <div style={{ fontFamily: 'var(--font-display)', fontSize: 20, fontWeight: 700, marginBottom: 10 }}>{item.title}</div>
                 <p style={{ fontSize: 14, color: 'var(--color-fg2)', lineHeight: 1.75, margin: 0 }}>{item.desc}</p>
               </div>
@@ -529,21 +635,15 @@ function PurchaseSection() {
       page: window.location.href,
     };
 
-    setStatus('שומרת את הפרטים...');
-    const result = await submitLandingLead(payload);
+    setStatus('פותחת לך עמוד תשלום מאובטח...');
 
-    if (!result.ok) {
-      setStatus('הפרטים נשמרו. חיבור הסליקה/שרת עדיין לא הושלם, אבל הטופס עצמו קלט את הנתונים.');
-      return;
+    try {
+      const result = await createCheckout(payload);
+      setStatus('מעבירה אותך לתשלום מאובטח.');
+      window.location.href = result.checkoutUrl;
+    } catch (error) {
+      setStatus(error.message || 'לא הצלחנו לפתוח סליקה כרגע. נסי שוב בעוד רגע.');
     }
-
-    if (LANDING_FUNNEL.checkoutUrl) {
-      window.open(LANDING_FUNNEL.checkoutUrl, '_blank', 'noopener,noreferrer');
-      setStatus('הפרטים נשמרו. מעבירה אותך לרכישה.');
-      return;
-    }
-
-    setStatus('הפרטים נשמרו. השלב הבא הוא לחבר את העמוד הזה לרכישה האמיתית.');
   }
 
   return (
@@ -612,11 +712,6 @@ function PurchaseSection() {
               <button className="hero-cta" onClick={handleSubmit}>
                 אני רוצה את המדריך
               </button>
-              {LANDING_FUNNEL.checkoutUrl && (
-                <a href={LANDING_FUNNEL.checkoutUrl} target="_blank" rel="noreferrer" className="sales-secondary-btn">
-                  מעבר ישיר לרכישה
-                </a>
-              )}
             </div>
 
             {status && <p style={{ marginTop: 14, fontSize: 13, color: 'var(--color-fg3)', lineHeight: 1.7 }}>{status}</p>}
@@ -639,7 +734,7 @@ function DeliverySection() {
           <div style={{ display: 'grid', gap: 14 }}>
             {LANDING_FAQ.map(function(item, i) {
               return (
-                <AccordionCard key={i} icon="❓" title={item.q} color="#BBB2EE">
+                <AccordionCard key={i} icon={<LandingIcon name="question" size={18} color="#7B6BCF" />} title={item.q} color="#BBB2EE">
                   <p style={{ fontSize: 15, color: 'var(--color-fg2)', lineHeight: 1.7, margin: 0 }}>{item.a}</p>
                 </AccordionCard>
               );
