@@ -1,7 +1,7 @@
 {
   "scripts": {
     "dev": "vercel dev",
-    "check": "node --check api/orders/create.js && node --check api/cardcom/indicator.js && node --check api/_lib/cardcom.js"
+    "check": "node --check api/orders/create.js && node --check api/cardcom/indicator.js && node --check api/guide/access.js && node --check api/_lib/cardcom.js"
   },
   "devDependencies": {
     "vercel": "^53.3.2"

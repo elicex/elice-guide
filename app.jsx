@@ -6,9 +6,33 @@ const SECTION_IDS = [
 
 function App() {
   const activeSection = useActiveSection(SECTION_IDS);
+  const [accessState, setAccessState] = useState({ status: 'checking', buyer: null });
   const [completed, setCompleted] = useState(() =>
     JSON.parse(localStorage.getItem('guide_completed') || '[]')
   );
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const token = params.get('access');
+
+    if (!token) {
+      setAccessState({ status: 'denied', buyer: null });
+      return;
+    }
+
+    fetch(`/api/guide/access?access=${encodeURIComponent(token)}`)
+      .then(res => res.json().then(data => ({ ok: res.ok && data.ok, data })))
+      .then(result => {
+        if (result.ok) {
+          setAccessState({ status: 'granted', buyer: result.data });
+        } else {
+          setAccessState({ status: 'denied', buyer: null });
+        }
+      })
+      .catch(() => {
+        setAccessState({ status: 'error', buyer: null });
+      });
+  }, []);
 
   // Mark sections as completed when scrolled past them
   useEffect(() => {
@@ -30,6 +54,21 @@ function App() {
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, [completed]);
+
+  if (accessState.status === 'checking') {
+    return <GuideAccessScreen title="בודקות את הגישה שלך..." text="זה ייקח רגע קטן." />;
+  }
+
+  if (accessState.status !== 'granted') {
+    return (
+      <GuideAccessScreen
+        title="המדריך נעול"
+        text="כדי לפתוח את המדריך צריך להשתמש בקישור האישי שנשלח למייל אחרי הרכישה."
+        actionHref="landing.html#landing-purchase"
+        actionText="רכישת המדריך"
+      />
+    );
+  }
 
   return (
     <div>
@@ -63,6 +102,23 @@ function App() {
         </main>
       </div>
     </div>
+  );
+}
+
+function GuideAccessScreen({ title, text, actionHref, actionText }) {
+  return (
+    <main className="guide-access-screen">
+      <div className="guide-access-panel">
+        <img src="assets/elice-logo-purple.svg" alt="Elice Fit" className="guide-access-logo" />
+        <h1>{title}</h1>
+        <p>{text}</p>
+        {actionHref && (
+          <a className="hero-cta" href={actionHref}>
+            {actionText}
+          </a>
+        )}
+      </div>
+    </main>
   );
 }
 

@@ -2826,6 +2826,44 @@ body {
   max-width: 700px;
 }
 
+.guide-access-screen {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(232,93,117,0.12), transparent 34%),
+    var(--color-bg);
+}
+.guide-access-panel {
+  width: min(100%, 520px);
+  text-align: center;
+  padding: 44px 34px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  background: rgba(255,255,255,0.84);
+  box-shadow: var(--shadow-large);
+}
+[data-dark="true"] .guide-access-panel {
+  background: rgba(29,29,31,0.9);
+}
+.guide-access-logo {
+  height: 30px;
+  margin-bottom: 24px;
+}
+.guide-access-panel h1 {
+  margin: 0 0 12px;
+  font-family: var(--font-display);
+  font-size: 34px;
+  color: var(--color-fg1);
+}
+.guide-access-panel p {
+  margin: 0 auto 24px;
+  max-width: 380px;
+  color: var(--color-fg2);
+  line-height: 1.8;
+}
+
 @media (max-width: 900px) {
   .sales-shell,
   .sales-purchase-shell,

@@ -29,4 +29,5 @@ create table if not exists events (
 
 create index if not exists orders_email_idx on orders(email);
 create index if not exists orders_status_idx on orders(status);
+create index if not exists orders_guide_access_token_idx on orders(guide_access_token);
 create index if not exists events_order_id_idx on events(order_id);
