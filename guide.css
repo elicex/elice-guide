@@ -3463,6 +3463,47 @@ body {
     width: min(100%, 320px);
     height: auto;
   }
+  .micro-scene {
+    align-items: stretch;
+    gap: 18px;
+    overflow: visible;
+  }
+  .micro-scene-copy {
+    position: relative;
+    z-index: 2;
+  }
+  .micro-orbit {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    min-height: auto;
+    padding: 14px 0 4px;
+    margin-top: 4px;
+  }
+  .micro-core {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: 112px;
+    height: 112px;
+    margin-bottom: 4px;
+  }
+  .micro-ring,
+  .micro-spark {
+    display: none;
+  }
+  .micro-node {
+    position: static;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 38px;
+    width: 100%;
+    padding: 8px 10px;
+    text-align: center;
+    animation: none !important;
+    transform: none !important;
+    backdrop-filter: none;
+  }
   .pull-quote {
     margin: 28px 0;
     padding: 18px 20px;
