@@ -23,12 +23,6 @@ const LANDING_INCLUDES = [
   { icon: 'calendar', title: 'תוכנית יישום של 4 שבועות', desc: 'מה לעשות קודם, איך לעקוב, איך לבנות ארוחות, ואיך להפוך את כל ההבנה הזאת לשגרה שאת באמת יכולה להחזיק.' },
 ];
 
-const LANDING_FOR_HER = [
-  'אם את רוצה להבין למה הגוף שלך מגיב כמו שהוא מגיב, ולא רק לקבל עוד תפריט או עוד כלל.',
-  'אם את מרגישה שיש קשר בין הבטן, החשקים, האנרגיה, המחזור, הסטרס והירידה במשקל - אבל אף פעם לא עשו לך בזה סדר.',
-  'אם את אוהבת להבין לעומק, אבל צריכה שמישהו יתרגם לך את זה לפעולות פשוטות וברורות.',
-];
-
 const LANDING_RESULTS = [
   'תביני מה באמת משפיע על ירידה במשקל מעבר ל"תאכלי פחות"',
   'תלמדי איך המיקרוביום יכול להשפיע על נפיחות, רעב, הורמונים ואנרגיה',
@@ -573,43 +567,6 @@ function LandingTakeawaySection() {
   );
 }
 
-function LandingForWhoSection() {
-  return (
-    <section className="guide-section" style={{ paddingTop: 30 }}>
-      <Reveal>
-        <div className="sales-shell card">
-          <div className="sales-copy">
-            <div className="chapter-label" style={{ marginBottom: 16 }}>
-              <div className="chapter-label-line" />
-              למי זה מתאים
-            </div>
-            <h2 className="chapter-title" style={{ marginBottom: 14 }}>אם את רוצה להבין, ליישם ולהרגיש שינוי - את במקום הנכון</h2>
-            <div style={{ display: 'grid', gap: 12 }}>
-              {LANDING_FOR_HER.map(function(item, i) {
-                return (
-                  <div key={i} style={{ display: 'flex', gap: 10, alignItems: 'flex-start' }}>
-                    <span style={{ color: 'var(--color-accent)', fontWeight: 800 }}>✓</span>
-                    <div style={{ fontSize: 14, color: 'var(--color-fg2)', lineHeight: 1.75 }}>{item}</div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-          <div className="sales-visual" aria-hidden="true">
-            <div className="sales-flow-card sales-flow-card-1">פחות בלבול</div>
-            <div className="sales-flow-arrow">→</div>
-            <div className="sales-flow-card sales-flow-card-2">יותר הבנה</div>
-            <div className="sales-flow-arrow">→</div>
-            <div className="sales-flow-card sales-flow-card-3">יותר יישום</div>
-            <div className="sales-flow-arrow">→</div>
-            <div className="sales-flow-card sales-flow-card-4">יותר תוצאות</div>
-          </div>
-        </div>
-      </Reveal>
-    </section>
-  );
-}
-
 function LandingDifferentSection() {
   return (
     <section className="guide-section" style={{ paddingTop: 8 }}>
@@ -910,7 +867,6 @@ function LandingApp() {
       <LandingIncludesSection />
       <LandingPainSection />
       <LandingTakeawaySection />
-      <LandingForWhoSection />
       <LandingDifferentSection />
       <PurchaseSection />
       <DeliverySection />
