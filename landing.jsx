@@ -268,7 +268,7 @@ function LandingHero() {
 
         <h1 className="hero-title">
           {LANDING_FUNNEL.productName}<br />
-          <span>תביני מה באמת עומד בין הגוף שלך לבין ירידה במשקל, בטן רגועה ושגרה שעובדת</span>
+          <span>המדריך שמחבר בין מיקרוביום, נפיחות, הורמונים, רעב וחשקים - והופך את זה לסדר פעולה ברור</span>
         </h1>
 
         <p className="hero-subtitle">
