@@ -703,7 +703,7 @@ function PurchaseSection() {
               <span>
                 אני מאשרת שקראתי ואני מסכימה ל
                 <a href="terms.html" target="_blank" rel="noopener noreferrer">תנאי השימוש ומדיניות הביטולים</a>
-                , כולל ידיעה שהמדריך הוא מוצר דיגיטלי שנשלח בגישה מיידית ושלא יינתן החזר לאחר קבלת הגישה, בכפוף לכל דין.
+                .
               </span>
             </label>
 
