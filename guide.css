@@ -295,9 +295,14 @@ body {
   .guide-sidebar.mobile-open {
     display: flex;
     right: auto; left: 0;
+    z-index: 650;
+    background: var(--color-surface);
     box-shadow: var(--shadow-large);
   }
-  .mobile-toc-btn { display: flex; }
+  .mobile-toc-btn {
+    display: flex;
+    z-index: 700;
+  }
 }
 
 /* ── HERO ─────────────────────────────────────────────────── */
@@ -3198,6 +3203,7 @@ body {
     width: min(86vw, 320px);
     max-width: 320px;
     padding-top: 64px;
+    border-right: 1px solid var(--color-border);
   }
   .guide-content .hero-section {
     min-height: 100svh !important;
