@@ -2718,6 +2718,20 @@ body {
   font-size: 15px;
   line-height: 1.9;
 }
+.landing-personal-photo-wrap {
+  margin-top: 26px;
+  border-radius: 28px;
+  overflow: hidden;
+  border: 1px solid rgba(25,34,29,0.08);
+  box-shadow: 0 18px 46px rgba(17,17,19,0.12);
+}
+.landing-personal-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 7.4;
+  object-fit: cover;
+  object-position: center 56%;
+}
 .landing-section-cta {
   display: grid;
   justify-items: center;
@@ -3585,6 +3599,14 @@ body {
   }
   .landing-personal-note-text p {
     font-size: 14px;
+  }
+  .landing-personal-photo-wrap {
+    margin-top: 20px;
+    border-radius: 22px;
+  }
+  .landing-personal-photo {
+    aspect-ratio: 4 / 3;
+    object-position: center;
   }
   .landing-sticky-cta {
     display: flex;

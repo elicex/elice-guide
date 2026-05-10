@@ -330,6 +330,13 @@ function LandingPersonalNoteSection() {
               חשוב לי שתדעי: בדרך כלל הבעיה היא לא חוסר כוח רצון. ברוב המקרים חסר פשוט סדר.
             </p>
           </div>
+          <div className="landing-personal-photo-wrap">
+            <img
+              className="landing-personal-photo"
+              src="assets/elice-personal-note.jpg"
+              alt="אליס באימון על מזרן מול הים"
+            />
+          </div>
         </div>
       </Reveal>
     </section>
