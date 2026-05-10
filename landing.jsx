@@ -409,7 +409,7 @@ function LandingTransformationSection() {
       <Reveal>
         <div className="chapter-label" style={{ marginBottom: 16 }}>
           <div className="chapter-label-line" />
-          השינוי שהיא קונה
+          השינוי שאת מקבלת
         </div>
         <h2 className="chapter-title" style={{ marginBottom: 14 }}>
           לא עוד “אני נפוחה ואין לי מושג למה” - אלא הבנה, בהירות וכלים אמיתיים לעבוד איתם
@@ -657,14 +657,14 @@ function PurchaseSection() {
             </div>
             <h3 className="chapter-title" style={{ marginBottom: 12 }}>{LANDING_FUNNEL.productName}</h3>
             <p className="chapter-desc" style={{ marginBottom: 16 }}>
-              ברגע שהרכישה תושלם, המדריך יישלח ישירות למייל שלה עם קישור מסודר, כדי שתוכל לפתוח, לשמור ולחזור אליו בכל זמן.
+              ברגע שהרכישה תושלם, המדריך יישלח ישירות למייל שלך עם קישור מסודר, כדי שתוכלי לפתוח, לשמור ולחזור אליו בכל זמן.
             </p>
             <div style={{ display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap', marginBottom: 16 }}>
               <div className="sales-price-tag" style={{ fontSize: 16 }}>{LANDING_FUNNEL.priceLabel}</div>
               <div style={{ fontSize: 14, color: 'var(--color-fg3)', textDecoration: 'line-through' }}>380 ש"ח</div>
             </div>
             <div className="sales-mini-note">
-              ב־149 ש"ח היא מקבלת מדריך דיגיטלי עמוק, מסודר ויישומי, עם תבניות, טבלאות, מחשבון וכלים שיכולים לחסוך לה הרבה מאוד בלבול, זמן וניסוי וטעייה.
+              ב־149 ש"ח את מקבלת מדריך דיגיטלי עמוק, מסודר ויישומי, עם תבניות, טבלאות, מחשבון וכלים שיעזרו לך להבין מה קורה בגוף שלך ולחסוך הרבה בלבול, זמן וניסוי וטעייה.
             </div>
             <div style={{ marginTop: 18, display: 'grid', gap: 8 }}>
               {LANDING_RESULTS.map(function(item, i) {
