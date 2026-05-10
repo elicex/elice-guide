@@ -383,8 +383,9 @@ function BellyStateCard({ title, subtitle, chips, state = 'before' }) {
   const imageSrc = before ? 'assets/bloated.png' : 'assets/unbloated.png';
   const imageAlt = before ? 'דוגמה לנפיחות בבטן' : 'דוגמה לבטן רגועה יותר';
   return (
-    <div className="card" style={{ padding: '26px 24px', minHeight: 420 }}>
+    <div className="card landing-belly-card" style={{ padding: '26px 24px', minHeight: 420 }}>
       <div
+        className="landing-belly-visual"
         aria-hidden="true"
         style={{
           borderRadius: 32,
@@ -399,6 +400,7 @@ function BellyStateCard({ title, subtitle, chips, state = 'before' }) {
         }}
       >
         <div
+          className="landing-belly-badge"
           style={{
             position: 'absolute',
             top: 16,
@@ -415,6 +417,7 @@ function BellyStateCard({ title, subtitle, chips, state = 'before' }) {
           {before ? 'נפיחות, לחץ וכבדות' : 'יותר רוגע, יותר בהירות'}
         </div>
         <img
+          className="landing-belly-image"
           src={imageSrc}
           alt={imageAlt}
           style={{
@@ -431,13 +434,13 @@ function BellyStateCard({ title, subtitle, chips, state = 'before' }) {
         />
       </div>
 
-      <div style={{ fontFamily: 'var(--font-display)', fontSize: 24, fontWeight: 700, marginBottom: 8 }}>{title}</div>
-      <div style={{ fontSize: 14, color: 'var(--color-fg3)', lineHeight: 1.7, marginBottom: 18 }}>{subtitle}</div>
+      <div className="landing-belly-title" style={{ fontFamily: 'var(--font-display)', fontSize: 24, fontWeight: 700, marginBottom: 8 }}>{title}</div>
+      <div className="landing-belly-subtitle" style={{ fontSize: 14, color: 'var(--color-fg3)', lineHeight: 1.7, marginBottom: 18 }}>{subtitle}</div>
 
-      <div style={{ display: 'grid', gap: 10 }}>
+      <div className="landing-belly-points" style={{ display: 'grid', gap: 10 }}>
         {chips.map(function(chip, i) {
           return (
-            <div key={i} style={{ display: 'flex', gap: 10, alignItems: 'flex-start' }}>
+            <div key={i} className="landing-belly-point" style={{ display: 'flex', gap: 10, alignItems: 'flex-start' }}>
               <span style={{ color: before ? 'var(--color-accent)' : '#2E8B57', fontWeight: 800 }}>•</span>
               <div style={{ fontSize: 14, color: 'var(--color-fg2)', lineHeight: 1.7 }}>{chip}</div>
             </div>
@@ -465,7 +468,7 @@ function LandingTransformationSection() {
         </p>
       </Reveal>
 
-      <div className="card-grid-2">
+      <div className="card-grid-2 landing-before-after-grid">
         <Reveal>
           <BellyStateCard
             state="before"

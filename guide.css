@@ -2732,6 +2732,15 @@ body {
   object-fit: cover;
   object-position: center 56%;
 }
+.landing-before-after-grid {
+  align-items: stretch;
+}
+.landing-belly-card {
+  overflow: hidden;
+}
+.landing-belly-image {
+  object-fit: contain;
+}
 .landing-section-cta {
   display: grid;
   justify-items: center;
@@ -3607,6 +3616,54 @@ body {
   .landing-personal-photo {
     aspect-ratio: 4 / 3;
     object-position: center;
+  }
+  .landing-before-after-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+  }
+  .landing-belly-card {
+    min-height: 0 !important;
+    padding: 12px 10px !important;
+    border-radius: 18px;
+  }
+  .landing-belly-visual {
+    border-radius: 16px !important;
+    padding: 18px 8px 0 !important;
+    margin-bottom: 12px !important;
+  }
+  .landing-belly-badge {
+    top: 8px !important;
+    left: 8px !important;
+    max-width: calc(100% - 16px);
+    padding: 5px 7px !important;
+    font-size: 9px !important;
+    line-height: 1.25;
+    white-space: normal;
+  }
+  .landing-belly-image {
+    max-width: 100% !important;
+    margin-top: 18px !important;
+    border-radius: 14px !important;
+    box-shadow: none !important;
+  }
+  .landing-belly-title {
+    font-size: 18px !important;
+    margin-bottom: 5px !important;
+  }
+  .landing-belly-subtitle {
+    font-size: 11px !important;
+    line-height: 1.45 !important;
+    margin-bottom: 10px !important;
+  }
+  .landing-belly-points {
+    gap: 7px !important;
+  }
+  .landing-belly-point {
+    gap: 6px !important;
+  }
+  .landing-belly-point div {
+    font-size: 11px !important;
+    line-height: 1.45 !important;
   }
   .landing-sticky-cta {
     display: flex;
