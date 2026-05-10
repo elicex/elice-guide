@@ -873,10 +873,10 @@ function LandingApp() {
   return (
     <div className="landing-page">
       <LandingHero />
+      <LandingValueSection />
       <LandingTransformationSection />
       <LandingCuriositySection />
       <LandingPainSection />
-      <LandingValueSection />
       <LandingIncludesSection />
       <LandingTakeawaySection />
       <LandingForWhoSection />
