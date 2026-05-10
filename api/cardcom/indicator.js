@@ -44,6 +44,12 @@ module.exports = async function handler(req, res) {
         try {
           const invoice = await createMorningTaxInvoiceReceipt({ order, transactionId });
           await logEvent(order.id, 'morning_invoice_created', invoice);
+          if (!invoice.emailSent) {
+            await logEvent(order.id, 'morning_invoice_email_failed', {
+              documentId: invoice.documentId,
+              response: invoice.emailResponse || null,
+            });
+          }
         } catch (invoiceError) {
           console.error(invoiceError);
           await logEvent(order.id, 'morning_invoice_failed', {

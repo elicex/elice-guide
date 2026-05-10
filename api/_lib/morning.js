@@ -200,12 +200,37 @@ async function createMorningTaxInvoiceReceipt({ order, transactionId }) {
     throw error;
   }
 
+  const emailResult = await sendMorningDocumentEmail({
+    documentId: data.id,
+    email: order.email,
+  });
+
   return {
     documentId: data.id,
     documentNumber: data.number,
     customerId,
+    emailSent: emailResult.sent,
+    emailResponse: emailResult.data,
     raw: data,
   };
 }
 
-module.exports = { createMorningTaxInvoiceReceipt };
+async function sendMorningDocumentEmail({ documentId, email }) {
+  if (!documentId || !email) {
+    return { sent: false, data: { skipped: true } };
+  }
+
+  const response = await morningFetch(`/documents/${encodeURIComponent(documentId)}/send`, {
+    method: 'POST',
+    body: JSON.stringify({ emails: [email] }),
+  });
+
+  const data = await readMorningResponse(response);
+  return {
+    sent: response.ok,
+    statusCode: response.status,
+    data,
+  };
+}
+
+module.exports = { createMorningTaxInvoiceReceipt, sendMorningDocumentEmail };
