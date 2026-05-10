@@ -2,6 +2,7 @@ const LANDING_FUNNEL = {
   productName: 'בניית הגוף מבפנים ומבחוץ',
   subtitle: 'המדריך הדיגיטלי שמראה לך מה באמת משפיע על ירידה במשקל, נפיחות, הורמונים, רעב, אנרגיה והמיקרוביום - ואיך להתחיל לעבוד עם הגוף שלך בצורה חכמה ולא דרך ניחושים',
   priceLabel: '149 ש"ח במקום 380 ש"ח',
+  saleLabel: 'לזמן מוגבל',
   checkoutUrl: '',
   sellerEmail: '',
   leadWebhookUrl: '',
@@ -211,8 +212,8 @@ function StickyPurchaseCta() {
   return (
     <div className="landing-sticky-cta">
       <div>
-        <strong>149 ש"ח</strong>
-        <span>גישה מיידית למדריך</span>
+        <strong>149 ש"ח <small>במקום 380 ש"ח</small></strong>
+        <span>לזמן מוגבל · גישה מיידית</span>
       </div>
       <a href="#landing-purchase">רכישת המדריך</a>
     </div>
@@ -291,6 +292,7 @@ function LandingHero() {
 
         <div className="landing-hero-actions">
           <div className="sales-price-tag landing-hero-chip">{LANDING_FUNNEL.priceLabel}</div>
+          <div className="sales-limited-tag landing-hero-chip">{LANDING_FUNNEL.saleLabel}</div>
           <div className="sales-chip landing-hero-chip">גישה דיגיטלית מלאה + חזרה חופשית למדריך</div>
         </div>
 
@@ -654,7 +656,7 @@ function PurchaseSection() {
             </p>
             <div style={{ display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap', marginBottom: 16 }}>
               <div className="sales-price-tag" style={{ fontSize: 16 }}>{LANDING_FUNNEL.priceLabel}</div>
-              <div style={{ fontSize: 14, color: 'var(--color-fg3)', textDecoration: 'line-through' }}>380 ש"ח</div>
+              <div className="sales-limited-tag">{LANDING_FUNNEL.saleLabel}</div>
             </div>
             <div className="sales-mini-note">
               ב־149 ש"ח את מקבלת מדריך דיגיטלי עמוק, מסודר ויישומי שיעזור לך להבין את הקשר בין מיקרוביום, נפיחות, הורמונים, תזונה וירידה במשקל - עם כלים אמיתיים ליישום.
@@ -752,6 +754,7 @@ function LandingFinalCta() {
           <div>
             <div className="sales-final-kicker">הצעה מיוחדת</div>
             <div className="sales-final-title">149 ש"ח במקום 380 ש"ח</div>
+            <div className="sales-limited-tag sales-final-limited">{LANDING_FUNNEL.saleLabel}</div>
             <div className="sales-final-text">
               אם חיפשת סוף סוף להבין למה הגוף שלך מגיב כמו שהוא מגיב - זה המקום להתחיל ממנו. בשביל 149 ש"ח את מקבלת מדריך שמחבר בין מיקרוביום, נפיחות, הורמונים, תזונה, שינה וסטרס לתמונה אחת ברורה.
               <br /><br />
