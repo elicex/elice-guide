@@ -64,7 +64,7 @@ function App() {
       <GuideAccessScreen
         title="המדריך נעול"
         text="כדי לפתוח את המדריך צריך להשתמש בקישור האישי שנשלח למייל אחרי הרכישה."
-        actionHref="landing.html#landing-purchase"
+        actionHref="/#landing-purchase"
         actionText="רכישת המדריך"
       />
     );

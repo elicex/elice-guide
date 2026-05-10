@@ -43,7 +43,7 @@ module.exports = async function handler(req, res) {
 
     if (paid && !order.email_sent_at) {
       const baseUrl = optionalEnv('PUBLIC_BASE_URL');
-      const guideLink = `${baseUrl}/index.html?access=${encodeURIComponent(order.guide_access_token)}`;
+      const guideLink = `${baseUrl}/guide.html?access=${encodeURIComponent(order.guide_access_token)}`;
       await sendGuideEmail({ order, guideLink });
       await updateOrder(order.id, { email_sent_at: new Date().toISOString() });
       await logEvent(order.id, 'guide_email_sent', { to: order.email });
