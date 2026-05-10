@@ -167,7 +167,7 @@ async function createMorningTaxInvoiceReceipt({ order, transactionId }) {
     sendEmail: true,
     income: [
       {
-        description: order.product_name || 'בניית הגוף מבפנים ומבחוץ',
+        description: 'מדריך דיגיטלי',
         quantity: 1,
         price: amount,
         currency: order.currency || 'ILS',
