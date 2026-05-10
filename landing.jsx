@@ -102,6 +102,13 @@ const LANDING_FAQ = [
   },
 ];
 
+const TRUST_SIGNALS = [
+  'תשלום מאובטח ב-Cardcom',
+  'קישור אישי למייל אחרי הרכישה',
+  'גישה דיגיטלית מיידית',
+  '149 ש"ח בלבד',
+];
+
 function LandingIcon({ name, size = 22, color = 'var(--color-accent)' }) {
   const common = {
     width: size,
@@ -217,6 +224,44 @@ function LandingIcon({ name, size = 22, color = 'var(--color-accent)' }) {
   return <span style={wrapStyle}>{icons[name] || icons.compass}</span>;
 }
 
+function PurchaseCta({ note = 'רכישה מאובטחת, גישה אישית למדריך נשלחת למייל.' }) {
+  return (
+    <div className="landing-section-cta">
+      <a className="hero-cta landing-primary-cta" href="#landing-purchase">
+        רכישת המדריך
+      </a>
+      <div className="landing-cta-note">{note}</div>
+    </div>
+  );
+}
+
+function LandingTrustStrip() {
+  return (
+    <section className="landing-trust-strip" aria-label="פרטי רכישה ואמון">
+      {TRUST_SIGNALS.map(function(item, i) {
+        return (
+          <div key={i} className="landing-trust-item">
+            <span className="landing-trust-dot" aria-hidden="true" />
+            {item}
+          </div>
+        );
+      })}
+    </section>
+  );
+}
+
+function StickyPurchaseCta() {
+  return (
+    <div className="landing-sticky-cta">
+      <div>
+        <strong>149 ש"ח</strong>
+        <span>גישה מיידית למדריך</span>
+      </div>
+      <a href="#landing-purchase">רכישת המדריך</a>
+    </div>
+  );
+}
+
 function persistLandingLead(payload) {
   try {
     const current = JSON.parse(localStorage.getItem('landing_leads') || '[]');
@@ -293,7 +338,7 @@ function LandingHero() {
         </div>
 
         <a className="hero-cta landing-primary-cta" href="#landing-purchase">
-          אני רוצה את המדריך
+          רכישת המדריך
         </a>
       </div>
     </section>
@@ -328,6 +373,7 @@ function LandingPainSection() {
             })}
           </div>
         </div>
+        <PurchaseCta note="אם זה נשמע מוכר, המדריך בנוי בדיוק כדי לעשות לך סדר." />
       </Reveal>
     </section>
   );
@@ -437,6 +483,7 @@ function LandingTransformationSection() {
           />
         </Reveal>
       </div>
+      <PurchaseCta note="אפשר להתחיל כבר היום עם מסלול אחד ברור במקום עוד שבוע של ניחושים." />
     </section>
   );
 }
@@ -472,6 +519,7 @@ function LandingValueSection() {
           );
         })}
       </div>
+      <PurchaseCta note="כל הכלים מרוכזים במקום אחד, בלי לחפש ולחבר לבד." />
     </section>
   );
 }
@@ -504,6 +552,7 @@ function LandingIncludesSection() {
           );
         })}
       </div>
+      <PurchaseCta note="אם את רוצה להבין וליישם, זה השלב לעבור לרכישה." />
     </section>
   );
 }
@@ -603,6 +652,7 @@ function LandingDifferentSection() {
           );
         })}
       </div>
+      <PurchaseCta note="במקום עוד תוכן מפוזר, קבלי מסלול אחד מסודר." />
     </section>
   );
 }
@@ -629,7 +679,7 @@ function PurchaseSection() {
       productName: LANDING_FUNNEL.productName,
       name: form.name,
       email: form.email,
-      phone: form.phone,
+      phone: '',
       consent: !!form.consent,
       createdAt: new Date().toISOString(),
       page: window.location.href,
@@ -694,10 +744,6 @@ function PurchaseSection() {
                 <input className="sales-input" type="email" value={form.email} onChange={function(e) { updateField('email', e.target.value); }} placeholder="name@example.com" dir="ltr" />
               </div>
               <div>
-                <label className="sales-label">טלפון</label>
-                <input className="sales-input" type="text" value={form.phone} onChange={function(e) { updateField('phone', e.target.value); }} placeholder="050-0000000" dir="ltr" />
-              </div>
-              <div>
                 <label className="sales-label">אופן המסירה</label>
                 <div className="sales-static-box">מייל עם קישור ישיר למדריך</div>
               </div>
@@ -710,13 +756,14 @@ function PurchaseSection() {
 
             <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
               <button className="hero-cta" onClick={handleSubmit}>
-                אני רוצה את המדריך
+                רכישת המדריך
               </button>
             </div>
 
             {status && <p style={{ marginTop: 14, fontSize: 13, color: 'var(--color-fg3)', lineHeight: 1.7 }}>{status}</p>}
           </div>
         </div>
+        <PurchaseCta note="עדיין מתלבטת? הרכישה מאובטחת והגישה נשלחת ישירות למייל." />
       </Reveal>
     </section>
   );
@@ -761,7 +808,7 @@ function LandingFinalCta() {
             </div>
           </div>
           <a className="hero-cta landing-primary-cta" href="#landing-purchase">
-            עברי לרכישה
+            רכישת המדריך
           </a>
         </div>
       </Reveal>
@@ -773,6 +820,7 @@ function LandingApp() {
   return (
     <div className="landing-page">
       <LandingHero />
+      <LandingTrustStrip />
       <LandingPainSection />
       <LandingTransformationSection />
       <LandingValueSection />
@@ -783,6 +831,7 @@ function LandingApp() {
       <PurchaseSection />
       <DeliverySection />
       <LandingFinalCta />
+      <StickyPurchaseCta />
     </div>
   );
 }
