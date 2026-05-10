@@ -643,7 +643,7 @@ function LandingDifferentSection() {
 
 function PurchaseSection() {
   const [form, setForm] = useState(function() {
-    return JSON.parse(localStorage.getItem('landing_purchase_form') || '{"name":"","email":"","phone":"","consent":true}');
+    return JSON.parse(localStorage.getItem('landing_purchase_form') || '{"name":"","email":"","phone":"","consent":true,"termsAccepted":false}');
   });
   const [status, setStatus] = useState('');
 
@@ -656,6 +656,10 @@ function PurchaseSection() {
   async function handleSubmit() {
     if (!form.name || !form.email) {
       setStatus('כדי להתחיל צריך לפחות שם ומייל.');
+      return;
+    }
+    if (!form.termsAccepted) {
+      setStatus('כדי להמשיך לרכישה צריך לאשר שקראת את תנאי השימוש ומדיניות הביטולים.');
       return;
     }
 
@@ -737,6 +741,14 @@ function PurchaseSection() {
               <input type="checkbox" checked={!!form.consent} onChange={function(e) { updateField('consent', e.target.checked); }} />
               <span>אני מאשרת לקבל ממך בהמשך גם עדכונים, פידבק, מוצרים נוספים או הצעה לתכנית ליווי.</span>
             </label>
+            <label className="sales-consent sales-terms-consent">
+              <input type="checkbox" checked={!!form.termsAccepted} onChange={function(e) { updateField('termsAccepted', e.target.checked); }} />
+              <span>
+                אני מאשרת שקראתי ואני מסכימה ל
+                <a href="#terms">תנאי השימוש ומדיניות הביטולים</a>
+                , כולל ידיעה שהמדריך הוא מוצר דיגיטלי שנשלח בגישה מיידית ושלא יינתן החזר לאחר קבלת הגישה, בכפוף לכל דין.
+              </span>
+            </label>
 
             <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
               <button className="hero-cta" onClick={handleSubmit}>
@@ -800,6 +812,95 @@ function LandingFinalCta() {
   );
 }
 
+function TermsSection() {
+  return (
+    <section id="terms" className="guide-section landing-terms-section" style={{ paddingTop: 18 }}>
+      <Reveal>
+        <div className="landing-terms-card">
+          <div className="chapter-label" style={{ marginBottom: 16 }}>
+            <div className="chapter-label-line" />
+            תקנון שימוש ומדיניות ביטולים
+          </div>
+          <h2 className="chapter-title" style={{ marginBottom: 10 }}>תנאי שימוש במדריך הדיגיטלי</h2>
+          <p className="landing-terms-updated">עודכן לאחרונה: 10.5.2026</p>
+
+          <div className="landing-terms-grid">
+            <div>
+              <h3>1. כללי</h3>
+              <p>
+                השימוש בעמוד, רכישת המדריך והשימוש במדריך הדיגיטלי “בניית הגוף מבפנים ומבחוץ” מהווים אישור שקראת, הבנת והסכמת לתנאי שימוש אלה. אם אינך מסכימה לתנאים, אין לבצע רכישה או להשתמש במדריך.
+              </p>
+            </div>
+
+            <div>
+              <h3>2. מהות המוצר</h3>
+              <p>
+                המדריך הוא מוצר דיגיטלי לימודי הכולל תוכן, הסברים, תבניות, טבלאות וכלים ליישום עצמי. הגישה נשלחת למייל לאחר השלמת הרכישה, באמצעות קישור אישי.
+              </p>
+            </div>
+
+            <div>
+              <h3>3. אין ייעוץ רפואי או תזונתי אישי</h3>
+              <p>
+                כל המידע במדריך ניתן למטרות ידע, העשרה ויישום כללי בלבד. המדריך אינו מהווה ייעוץ רפואי, אבחון, טיפול, ייעוץ תזונתי אישי, המלצה רפואית או תחליף לפנייה לרופאה, דיאטנית קלינית או כל גורם מקצועי מוסמך. אם יש לך מצב רפואי, הריון, הנקה, הפרעת אכילה, מחלה כרונית, שימוש בתרופות, כאבים, תסמינים חריגים או כל ספק בריאותי - עלייך להתייעץ עם גורם מקצועי לפני יישום המידע.
+              </p>
+            </div>
+
+            <div>
+              <h3>4. אחריות המשתמשת</h3>
+              <p>
+                היישום של המידע במדריך נעשה באחריותך האישית. התוצאות עשויות להשתנות מאישה לאישה ותלויות בגורמים רבים, כולל מצב בריאותי, אורח חיים, התמדה, תזונה, שינה, סטרס, רקע רפואי ונסיבות אישיות. אין התחייבות לתוצאה מסוימת, ירידה במשקל, הפחתת נפיחות, שינוי בריאותי או שיפור ספציפי.
+              </p>
+            </div>
+
+            <div>
+              <h3>5. מדיניות ביטולים והחזרים</h3>
+              <p>
+                מאחר שמדובר במוצר דיגיטלי שניתן לצפייה, שימוש, שמירה או העתקה לאחר קבלת הגישה, לא יינתן החזר כספי לאחר שליחת הקישור או פתיחת הגישה למדריך, אלא אם קיימת חובה אחרת לפי דין. אם אירעה תקלה טכנית שמנעה קבלת גישה למדריך, יש לפנות במייל ונפעל לספק גישה תקינה או פתרון סביר.
+              </p>
+            </div>
+
+            <div>
+              <h3>6. שימוש אישי בלבד וזכויות יוצרים</h3>
+              <p>
+                המדריך, התוכן, הטבלאות, התבניות, העיצוב, הניסוחים והחומרים הכלולים בו מוגנים בזכויות יוצרים ומיועדים לשימוש אישי בלבד של הרוכשת. אין להעתיק, להפיץ, להעביר, למכור, לשתף, לפרסם, לצלם מסך, להעלות לרשת או למסור את המדריך או חלקים ממנו לצד שלישי ללא אישור מראש ובכתב.
+              </p>
+            </div>
+
+            <div>
+              <h3>7. גישה למדריך</h3>
+              <p>
+                הקישור למדריך הוא אישי. במקרה של שימוש חריג, שיתוף לא מורשה, ניסיון עקיפה, העברה לצד שלישי או שימוש בניגוד לתקנון, ניתן להגביל או לבטל את הגישה למדריך ללא החזר, בכפוף לכל דין.
+              </p>
+            </div>
+
+            <div>
+              <h3>8. פרטיות ופרטי רכישה</h3>
+              <p>
+                פרטים שתמסרי בעת הרכישה, כמו שם ומייל, ישמשו לצורך השלמת הרכישה, שליחת הגישה למדריך, שירות לקוחות ותיעוד העסקה. אם אישרת קבלת עדכונים, ייתכן שיישלחו אלייך גם עדכונים או הצעות נוספות, ותוכלי לבקש הסרה בכל עת.
+              </p>
+            </div>
+
+            <div>
+              <h3>9. שינויים ועדכונים</h3>
+              <p>
+                ניתן לעדכן את תנאי השימוש מעת לעת. הנוסח המחייב הוא הנוסח המופיע בעמוד במועד הרכישה, אלא אם הדין מחייב אחרת.
+              </p>
+            </div>
+
+            <div>
+              <h3>10. יצירת קשר</h3>
+              <p>
+                לכל שאלה בנוגע לרכישה, גישה למדריך או תנאי השימוש ניתן לפנות במייל: <a href="mailto:elice@elice.co.il">elice@elice.co.il</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </Reveal>
+    </section>
+  );
+}
+
 function LandingApp() {
   return (
     <div className="landing-page">
@@ -814,6 +915,7 @@ function LandingApp() {
       <PurchaseSection />
       <DeliverySection />
       <LandingFinalCta />
+      <TermsSection />
       <StickyPurchaseCta />
     </div>
   );

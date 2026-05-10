@@ -2928,6 +2928,21 @@ body {
   flex: 0 0 auto;
   margin-top: 4px;
 }
+.sales-terms-consent {
+  padding: 12px 14px;
+  border: 1px solid rgba(232,93,117,0.18);
+  border-radius: var(--radius-xl);
+  background: rgba(232,93,117,0.06);
+}
+.sales-terms-consent a {
+  color: var(--color-accent);
+  font-weight: 800;
+  text-decoration: none;
+  margin: 0 4px;
+}
+.sales-terms-consent a:hover {
+  text-decoration: underline;
+}
 .sales-secondary-btn {
   display: inline-flex;
   align-items: center;
@@ -2973,6 +2988,50 @@ body {
   color: var(--color-fg2);
   line-height: 1.8;
   max-width: 700px;
+}
+.landing-terms-section {
+  padding-bottom: 42px;
+}
+.landing-terms-card {
+  padding: 30px 28px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  background: rgba(255,255,255,0.82);
+  box-shadow: var(--shadow-soft);
+}
+.landing-terms-updated {
+  margin: 0 0 22px;
+  color: var(--color-fg3);
+  font-size: 13px;
+}
+.landing-terms-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 24px;
+}
+.landing-terms-grid > div {
+  min-width: 0;
+}
+.landing-terms-grid h3 {
+  margin: 0 0 8px;
+  color: var(--color-fg1);
+  font-family: var(--font-display);
+  font-size: 18px;
+  line-height: 1.35;
+}
+.landing-terms-grid p {
+  margin: 0;
+  color: var(--color-fg2);
+  font-size: 13px;
+  line-height: 1.85;
+}
+.landing-terms-grid a {
+  color: var(--color-accent);
+  font-weight: 800;
+  text-decoration: none;
+}
+.landing-terms-grid a:hover {
+  text-decoration: underline;
 }
 
 .guide-access-screen {
@@ -3092,6 +3151,13 @@ body {
   .sales-final-cta {
     display: grid;
     justify-items: stretch;
+  }
+  .landing-terms-card {
+    padding: 24px;
+  }
+  .landing-terms-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
   .sales-flow-card-2,
   .sales-flow-card-3,
