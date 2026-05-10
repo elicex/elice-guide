@@ -276,8 +276,8 @@ const sH3micro = { fontFamily: 'var(--font-display)', fontSize: 24, fontWeight: 
 
 function MicroTable({ headers, rows }) {
   return (
-    <div className="card" style={{ padding: 0, overflowX: 'auto' }}>
-      <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: 620 }}>
+    <div className="card mobile-table-card" style={{ padding: 0, overflowX: 'auto' }}>
+      <table className="mobile-stack-table" style={{ width: '100%', borderCollapse: 'collapse', minWidth: 620 }}>
         <thead>
           <tr>
             {headers.map((header, idx) => (
@@ -291,7 +291,7 @@ function MicroTable({ headers, rows }) {
           {rows.map((row, ridx) => (
             <tr key={ridx}>
               {row.map((cell, cidx) => (
-                <td key={cidx} style={{ verticalAlign: 'top', padding: '14px 18px', borderBottom: '1px solid var(--color-border)', color: 'var(--color-fg2)', fontSize: 14, lineHeight: 1.8 }}>
+                <td key={cidx} data-label={headers[cidx]} style={{ verticalAlign: 'top', padding: '14px 18px', borderBottom: '1px solid var(--color-border)', color: 'var(--color-fg2)', fontSize: 14, lineHeight: 1.8 }}>
                   {cell}
                 </td>
               ))}

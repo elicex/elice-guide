@@ -146,8 +146,8 @@ function ProgressTracker() {
   }
 
   return (
-    <div style={{ overflowX: 'auto' }}>
-      <table style={{ width: '100%', borderCollapse: 'separate', borderSpacing: 4 }}>
+    <div className="tracker-table-wrap" style={{ overflowX: 'auto' }}>
+      <table className="tracker-table mobile-progress-table" style={{ width: '100%', borderCollapse: 'separate', borderSpacing: 4 }}>
         <thead>
           <tr>
             <th style={{ textAlign: 'right', padding: '10px 12px', fontSize: 12, fontWeight: 700, color: 'var(--color-fg3)', minWidth: 140 }}>מדד</th>
@@ -160,10 +160,11 @@ function ProgressTracker() {
           {TRACKING.map(function(m) {
             return (
               <tr key={m.key}>
-                <td style={{ padding: '6px 12px', fontSize: 14, fontWeight: 600, color: 'var(--color-fg1)' }}>{m.label}</td>
+                <td className="tracker-metric-name" style={{ padding: '6px 12px', fontSize: 14, fontWeight: 600, color: 'var(--color-fg1)' }}>{m.label}</td>
                 {[0,1,2,3,4].map(function(w) {
+                  const weekLabel = ['התחלה','שבוע 1','שבוע 2','שבוע 3','שבוע 4'][w];
                   return (
-                    <td key={w} style={{ padding: 4 }}>
+                    <td key={w} data-label={weekLabel} style={{ padding: 4 }}>
                       <input type="text" value={data[m.key + '-w' + w] || ''} onChange={function(e) { update(m.key, w, e.target.value); }}
                         placeholder="-"
                         style={{ width: '100%', padding: '8px 8px', border: '1.5px solid var(--color-border-strong)', borderRadius: 'var(--radius-lg)', background: 'var(--color-surface)', fontFamily: 'var(--font-body)', fontSize: 13, color: 'var(--color-fg1)', textAlign: 'center', transition: 'border-color 0.2s' }}

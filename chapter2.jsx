@@ -568,8 +568,8 @@ function LabeledBloatParagraph({ text, isLast = false }) {
 
 function BloatTable({ headers, rows }) {
   return (
-    <div className="card" style={{ padding: 0, overflowX: 'auto' }}>
-      <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: 640 }}>
+    <div className="card mobile-table-card" style={{ padding: 0, overflowX: 'auto' }}>
+      <table className="mobile-stack-table" style={{ width: '100%', borderCollapse: 'collapse', minWidth: 640 }}>
         <thead>
           <tr>
             {headers.map((header, idx) => (
@@ -589,7 +589,7 @@ function BloatTable({ headers, rows }) {
           {rows.map((row, rIdx) => (
             <tr key={rIdx}>
               {row.map((cell, cIdx) => (
-                <td key={cIdx} style={{
+                <td key={cIdx} data-label={headers[cIdx]} style={{
                   verticalAlign: 'top',
                   padding: '15px 18px',
                   borderBottom: '1px solid var(--color-border)',
@@ -608,8 +608,8 @@ function BloatTable({ headers, rows }) {
 
 function EditableBloatTable({ headers, rows }) {
   return (
-    <div className="card" style={{ padding: 0, overflowX: 'auto' }}>
-      <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: 900 }}>
+    <div className="card mobile-table-card" style={{ padding: 0, overflowX: 'auto' }}>
+      <table className="mobile-stack-table mobile-edit-table" style={{ width: '100%', borderCollapse: 'collapse', minWidth: 900 }}>
         <thead>
           <tr>
             {headers.map((header, idx) => (
@@ -637,6 +637,7 @@ function EditableBloatTable({ headers, rows }) {
               {row.map((cell, cellIdx) => (
                 <td
                   key={cellIdx}
+                  data-label={headers[cellIdx]}
                   style={{
                     padding: '10px 12px',
                     borderBottom: rowIdx === rows.length - 1 ? 'none' : '1px solid var(--color-border)',

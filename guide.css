@@ -3345,19 +3345,98 @@ body {
   .food-table-wrap,
   .tracker-table-wrap {
     width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+    overflow-x: visible !important;
   }
-  .food-table {
-    min-width: 620px;
+  .mobile-table-card {
+    padding: 0 !important;
+    overflow-x: visible !important;
   }
+  .food-table,
+  .mobile-stack-table,
   .tracker-table {
-    min-width: 560px;
+    display: block;
+    width: 100% !important;
+    min-width: 0 !important;
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
   }
-  .food-table th,
-  .food-table td {
-    padding: 12px 14px;
-    font-size: 13px;
+  .food-table thead,
+  .mobile-stack-table thead,
+  .tracker-table thead {
+    display: none;
+  }
+  .food-table tbody,
+  .mobile-stack-table tbody,
+  .tracker-table tbody {
+    display: grid;
+    gap: 12px;
+    padding: 12px;
+  }
+  .food-table tr,
+  .mobile-stack-table tr,
+  .tracker-table tr {
+    display: block;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    border-radius: 18px;
+    background: var(--color-surface);
+  }
+  .food-table tr:hover td {
+    background: transparent;
+  }
+  .food-table td,
+  .mobile-stack-table td,
+  .tracker-table td {
+    display: grid;
+    grid-template-columns: minmax(86px, 34%) 1fr;
+    gap: 12px;
+    align-items: start;
+    width: 100% !important;
+    min-width: 0 !important;
+    padding: 12px 14px !important;
+    border-bottom: 1px solid var(--color-border) !important;
+    font-size: 13px !important;
+    text-align: right !important;
+    overflow-wrap: anywhere;
+  }
+  .food-table td:last-child,
+  .mobile-stack-table td:last-child,
+  .tracker-table td:last-child {
+    border-bottom: none !important;
+  }
+  .food-table td::before,
+  .mobile-stack-table td::before,
+  .tracker-table td::before {
+    content: attr(data-label);
+    color: var(--color-fg3);
+    font-size: 11px;
+    font-weight: 800;
+    line-height: 1.5;
+  }
+  .tracker-table .tracker-metric-name {
+    display: block;
+    grid-template-columns: 1fr;
+    background: var(--guide-rose-light);
+    color: var(--color-accent) !important;
+    font-weight: 800 !important;
+  }
+  .tracker-table .tracker-metric-name::before {
+    content: none;
+  }
+  .tracker-table input {
+    width: 100% !important;
+    min-height: 42px;
+    text-align: right !important;
+  }
+  .mobile-edit-table td {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .mobile-edit-table td::before {
+    display: block;
+  }
+  .mobile-edit-table textarea {
+    min-height: 92px !important;
   }
   .tab-bar {
     margin-right: -4px;
