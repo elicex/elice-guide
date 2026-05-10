@@ -954,7 +954,7 @@ body {
 /* ── DARK MODE TOGGLE ─────────────────────────────────────── */
 .dark-mode-toggle {
   position: fixed;
-  top: 20px; left: 60px;
+  top: 20px; left: 112px;
   width: 44px; height: 24px;
   background: var(--color-surface-elevated);
   border-radius: var(--radius-full);
@@ -3186,7 +3186,8 @@ body {
   }
   #guide-progress-pct {
     top: 10px;
-    left: 14px;
+    right: 14px;
+    left: auto;
     font-size: 10px;
   }
   .dark-mode-toggle {
