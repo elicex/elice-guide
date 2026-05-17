@@ -224,9 +224,11 @@ function AccordionCard({ icon, title, teaser, color = '#E85D75', children }) {
           <path d="M6 9l6 6 6-6"/>
         </svg>
       </button>
-      <div className="accordion-body">
-        <div className="accordion-body-inner">{children}</div>
-      </div>
+      {open && (
+        <div className="accordion-body">
+          <div className="accordion-body-inner">{children}</div>
+        </div>
+      )}
     </div>
   );
 }

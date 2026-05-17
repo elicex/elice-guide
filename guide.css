@@ -577,13 +577,9 @@ body {
 }
 .accordion-card.open .accordion-chevron { transform: rotate(180deg); }
 .accordion-body {
-  max-height: 0; overflow: hidden;
-  transition: max-height 0.4s var(--anim-ease);
-  padding: 0 24px;
-}
-.accordion-card.open .accordion-body {
-  max-height: none;
   overflow: visible;
+  padding: 0 24px;
+  animation: fade-scale 0.24s var(--anim-ease);
 }
 .accordion-body-inner {
   padding-bottom: 24px;
